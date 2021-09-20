@@ -34,7 +34,7 @@ export class OnlineEditorPage {
             this.createFileInRootPackage(newFile.name);
             cy.fixture(newFile.path).then(($fileContent) => {
                 const sanitizedContent = this.sanitizeInput($fileContent, packageName);
-                this.focusCodeEditor().type(sanitizedContent, { delay: 3 });
+                this.focusCodeEditor().type(sanitizedContent, { delay: 3, parseSpecialCharSequences: false });
                 // Delete the remaining content which has been automatically added by the code editor.
                 // We simply send as many {del} keystrokes as the file has characters. This shouldn't increase the test runtime by too long since we set the delay to 0.
                 const deleteRemainingContent = '{del}'.repeat(sanitizedContent.length);
@@ -45,12 +45,36 @@ export class OnlineEditorPage {
     }
 
     /**
+     * Writes all the content in the corresponding files in the online editor. NOTE: This does not create non existing files.
+     * It only opens existing files and writes the content there!
+     * @param submission object which contains the information about which files need to be edited with what content
+     * @param packageName the package name of the project to overwrite it in the submission templates
+     */
+    pasteSubmission(submission: ProgrammingExerciseSubmission, packageName: string) {
+        for (const newFile of submission.files) {
+            this.createFileInRootPackage(newFile.name);
+            cy.fixture(newFile.path).then((fileContent) => {
+                const sanitizedContent = this.sanitizeInput(fileContent, packageName);
+                this.pasteTextIntoEditor(sanitizedContent);
+            });
+        }
+    }
+
+    /**
+     * Directly pastes the text into the code editor. This does not type the text like a real user, so it is faster and is also not affected by the autocomplete of the ace editor.
+     * @param text the text to paste into the editor field
+     */
+    pasteTextIntoEditor(text: string) {
+        cy.get('.ace_text-input').first().focus().clear().invoke('val', text).trigger('input', { force: true }).wait(200);
+    }
+
+    /**
      * Makes sure that the input does not contain any characters, which might be recognized by cypress as special characters,
      * and replaces all newlines with the cypress '{enter}' command.
      * Apparently this causes issues in the ace code editor if there is no space before a newline, so we add a space there as well.
      */
     private sanitizeInput(input: string, packageName: string) {
-        return input.replace(/\${packageName}/g, packageName).replace(/{/g, '{{}');
+        return input.replace(/\${packageName}/g, packageName);
     }
 
     /**
@@ -141,7 +165,7 @@ export function makeSubmissionAndVerifyResults(editorPage: OnlineEditorPage, pac
     editorPage.deleteFile('Client.java');
     editorPage.deleteFile('BubbleSort.java');
     editorPage.deleteFile('MergeSort.java');
-    editorPage.typeSubmission(submission, packageName);
+    editorPage.pasteSubmission(submission, packageName);
     editorPage.submit();
     verifyOutput();
 }
