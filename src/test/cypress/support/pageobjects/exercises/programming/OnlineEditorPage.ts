@@ -109,7 +109,9 @@ export class OnlineEditorPage {
      * Opens a file in the file browser by clicking on it.
      */
     openFileWithName(name: string) {
-        this.findFile(name).click().wait(2000);
+        cy.intercept(GET, BASE_API + 'repository/*/**').as('getFile');
+        this.findFile(name).click();
+        return cy.wait('@getFile');
     }
 
     /**
