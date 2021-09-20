@@ -74,7 +74,7 @@ export class OnlineEditorPage {
      */
     pasteTextIntoEditor(text: string) {
         // Sometimes the text input field is hidden, so we have to use force here. We also sleep 200 ms to allow ace to react to the input event.
-        cy.get('.ace_text-input').first().focus().clear({ force: true }).invoke('val', text).trigger('input', { force: true }).wait(200);
+        cy.get('.ace_text-input').first().focus().clear({ force: true }).invoke('val', text).trigger('input', { force: true }).wait(500);
     }
 
     /**
