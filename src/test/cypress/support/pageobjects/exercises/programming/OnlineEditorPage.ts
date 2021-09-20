@@ -1,6 +1,6 @@
-import { COURSE_BASE } from './../requests/CourseManagementRequests';
-import { GET, BASE_API, POST } from './../constants';
-import { CypressCredentials } from '../users';
+import { COURSE_BASE } from '../../../requests/CourseManagementRequests';
+import { GET, BASE_API, POST } from '../../../constants';
+import { CypressCredentials } from '../../../users';
 
 const buildingAndTesting = 'Building and testing...';
 const exerciseRow = '.course-exercise-row';
@@ -159,12 +159,6 @@ export class OnlineEditorPage {
  * General method for entering, submitting and verifying something in the online editor.
  */
 export function makeSubmissionAndVerifyResults(editorPage: OnlineEditorPage, packageName: string, submission: ProgrammingExerciseSubmission, verifyOutput: () => void) {
-    // We create an empty file so that the file browser does not create an extra subfolder when all files are deleted
-    editorPage.createFileInRootPackage('placeholderFile');
-    // We delete all existing files, so we can create new files and don't have to delete their already existing content
-    editorPage.deleteFile('Client.java');
-    editorPage.deleteFile('BubbleSort.java');
-    editorPage.deleteFile('MergeSort.java');
     editorPage.pasteSubmission(submission, packageName);
     editorPage.submit();
     verifyOutput();
@@ -183,9 +177,9 @@ export function startParticipationInProgrammingExercise(courseName: string, prog
     cy.get(exerciseRow).contains(programmingExerciseName).should('be.visible');
     cy.get(exerciseRow).find('.start-exercise').click();
     cy.wait('@participateInExerciseQuery');
-    cy.intercept(GET, BASE_API + 'programming-exercise-participations/*/student-participation-with-latest-result-and-feedbacks').as('initialQuery');
+    cy.intercept(GET, BASE_API + 'repository/*/files').as('loadFiles');
     cy.get(exerciseRow).find('[buttonicon="folder-open"]').click();
-    cy.wait('@initialQuery');
+    cy.wait('@loadFiles');
 }
 
 /**
