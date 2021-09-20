@@ -112,7 +112,8 @@ export class OnlineEditorPage {
     openFileWithName(name: string) {
         cy.intercept(GET, BASE_API + 'repository/*/**').as('getFile');
         this.findFile(name).click();
-        return cy.wait('@getFile');
+        // Ace still needs a bit of time to load the content after the request returned
+        return cy.wait('@getFile').wait(200);
     }
 
     /**
@@ -122,7 +123,7 @@ export class OnlineEditorPage {
         cy.get('#submit_button').click();
         this.getResultPanel().contains(buildingAndTesting, { timeout: 15000 }).should('be.visible');
         this.getBuildOutput().contains(buildingAndTesting).should('be.visible');
-        this.getResultPanel().contains('GRADED', { timeout: 80000 }).should('be.visible');
+        this.getResultPanel().contains('GRADED', { timeout: 120000 }).should('be.visible');
     }
 
     /**
