@@ -45,8 +45,7 @@ export class OnlineEditorPage {
     }
 
     /**
-     * Writes all the content in the corresponding files in the online editor. NOTE: This does not create non existing files.
-     * It only opens existing files and writes the content there!
+     * Enters the specified submission. This method automatically creates missing files and edits existing files.
      * @param submission object which contains the information about which files need to be edited with what content
      * @param packageName the package name of the project to overwrite it in the submission templates
      */
