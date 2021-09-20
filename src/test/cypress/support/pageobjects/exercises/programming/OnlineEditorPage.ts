@@ -52,7 +52,15 @@ export class OnlineEditorPage {
      */
     pasteSubmission(submission: ProgrammingExerciseSubmission, packageName: string) {
         for (const newFile of submission.files) {
-            this.createFileInRootPackage(newFile.name);
+            this.findFileBrowser().then((fileBrowser) => {
+                const fileName = newFile.name;
+                const fileExistsAlready = fileBrowser.find(`:contains(${fileName})`).length > 0;
+                if (fileExistsAlready) {
+                    this.openFileWithName(fileName);
+                } else {
+                    this.createFileInRootPackage(fileName);
+                }
+            });
             cy.fixture(newFile.path).then((fileContent) => {
                 const sanitizedContent = this.sanitizeInput(fileContent, packageName);
                 this.pasteTextIntoEditor(sanitizedContent);
@@ -119,7 +127,7 @@ export class OnlineEditorPage {
      * @param fileName the name of the new file
      */
     createFileInRootPackage(fileName: string) {
-        cy.intercept('POST', '/api/repository/*/**').as('createFile');
+        cy.intercept(POST, BASE_API + 'repository/*/**').as('createFile');
         cy.get('.file-icons').children('button').first().click();
         cy.get('jhi-code-editor-file-browser-create-node').type(fileName).type('{enter}');
         cy.wait('@createFile');
@@ -179,7 +187,8 @@ export function startParticipationInProgrammingExercise(courseName: string, prog
     cy.wait('@participateInExerciseQuery');
     cy.intercept(GET, BASE_API + 'repository/*/files').as('loadFiles');
     cy.get(exerciseRow).find('[buttonicon="folder-open"]').click();
-    cy.wait('@loadFiles');
+    // Pageloading takes some time and waiting for request has a low standard timeout, so we increase it here
+    cy.wait('@loadFiles', { timeout: 20000 });
 }
 
 /**
