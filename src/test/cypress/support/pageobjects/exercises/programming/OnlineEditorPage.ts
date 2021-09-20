@@ -1,3 +1,4 @@
+import { DELETE } from './../../../constants';
 import { COURSE_BASE } from '../../../requests/CourseManagementRequests';
 import { GET, BASE_API, POST } from '../../../constants';
 import { CypressCredentials } from '../../../users';
@@ -89,7 +90,7 @@ export class OnlineEditorPage {
      * @param name the file name
      */
     deleteFile(name: string) {
-        cy.intercept('DELETE', '/api/repository/*/**').as('deleteFile');
+        cy.intercept(DELETE, BASE_API + 'repository/*/**').as('deleteFile');
         this.findFile(name).find('[data-icon="trash"]').click();
         cy.get('[jhitranslate="artemisApp.editor.fileBrowser.delete"]').click();
         cy.wait('@deleteFile').its('response.statusCode').should('eq', 200);
