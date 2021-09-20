@@ -20,17 +20,17 @@ describe('Programming exercise participations', () => {
         setupCourseAndProgrammingExercise();
     });
 
-    it('Makes a failing submission', function () {
+    it('Makes a failing submission', () => {
         startParticipationInProgrammingExercise(course.title, exercise.title, users.getStudentOne());
         makeFailingSubmission();
     });
 
-    it('Makes a partially successful submission', function () {
+    it('Makes a partially successful submission by typing', () => {
         startParticipationInProgrammingExercise(course.title, exercise.title, users.getStudentTwo());
         makePartiallySuccessfulSubmission();
     });
 
-    it('Makes a successful submission', function () {
+    it('Makes a successful submission', () => {
         startParticipationInProgrammingExercise(course.title, exercise.title, users.getStudentThree());
         makeSuccessfulSubmission();
     });
@@ -75,19 +75,28 @@ describe('Programming exercise participations', () => {
 
     /**
      * Makes a submission, which passes and fails some tests, and asserts the outcome in the UI.
+     * In this test we actually type the solution to make sure that a real user can type into the editor and we also test file deletion and creation.
+     * The other tests directly pass in the final text to save time.
      */
     function makePartiallySuccessfulSubmission() {
-        makeSubmissionAndVerifyResults(editorPage, exercise.packageName, partiallySuccessful, () => {
-            editorPage.getResultPanel().contains('46%').should('be.visible');
-            editorPage.getResultPanel().contains('6 of 13 passed').should('be.visible');
-            editorPage.getBuildOutput().contains('No build results available').should('be.visible');
-            editorPage.getInstructionSymbols().each(($el, $index) => {
-                if ($index < 3) {
-                    cy.wrap($el).find('[data-icon="check"]').should('be.visible');
-                } else {
-                    cy.wrap($el).find('[data-icon="times"]').should('be.visible');
-                }
-            });
+        const placeHolder = 'placeholderFile';
+        // We create an empty file so that the file browser does not create an extra subfolder when all files are deleted
+        editorPage.createFileInRootPackage(placeHolder);
+        // We delete all existing files, so we can create new files and don't have to delete their already existing content
+        editorPage.deleteFile('Client.java');
+        editorPage.deleteFile('BubbleSort.java');
+        editorPage.deleteFile('MergeSort.java');
+        editorPage.typeSubmission(partiallySuccessful, exercise.packageName);
+        editorPage.submit();
+        editorPage.getResultPanel().contains('46%').should('be.visible');
+        editorPage.getResultPanel().contains('6 of 13 passed').should('be.visible');
+        editorPage.getBuildOutput().contains('No build results available').should('be.visible');
+        editorPage.getInstructionSymbols().each(($el, $index) => {
+            if ($index < 3) {
+                cy.wrap($el).find('[data-icon="check"]').should('be.visible');
+            } else {
+                cy.wrap($el).find('[data-icon="times"]').should('be.visible');
+            }
         });
     }
 
