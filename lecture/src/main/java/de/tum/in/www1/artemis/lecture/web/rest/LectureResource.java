@@ -1,19 +1,4 @@
-package de.tum.in.www1.artemis.web.rest;
-
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+package de.tum.in.www1.artemis.lecture.web.rest;
 
 import de.tum.in.www1.artemis.domain.Course;
 import de.tum.in.www1.artemis.domain.Exercise;
@@ -22,22 +7,37 @@ import de.tum.in.www1.artemis.domain.User;
 import de.tum.in.www1.artemis.domain.lecture.AttachmentUnit;
 import de.tum.in.www1.artemis.domain.lecture.ExerciseUnit;
 import de.tum.in.www1.artemis.domain.lecture.LectureUnit;
+import de.tum.in.www1.artemis.lecture.service.LectureService;
+import de.tum.in.www1.artemis.lecture.service.messaging.ExerciseServiceProducer;
 import de.tum.in.www1.artemis.repository.CourseRepository;
 import de.tum.in.www1.artemis.repository.LectureRepository;
 import de.tum.in.www1.artemis.repository.UserRepository;
 import de.tum.in.www1.artemis.security.Role;
 import de.tum.in.www1.artemis.service.AuthorizationCheckService;
-import de.tum.in.www1.artemis.service.ExerciseService;
-import de.tum.in.www1.artemis.service.LectureService;
 import de.tum.in.www1.artemis.web.rest.errors.BadRequestAlertException;
+import de.tum.in.www1.artemis.web.rest.errors.InternalServerErrorException;
 import de.tum.in.www1.artemis.web.rest.util.HeaderUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import javax.jms.JMSException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * REST controller for managing Lecture.
  */
-@Deprecated // Moved to Lecture microservice. To be removed
 @RestController
-@RequestMapping("/api")
+@RequestMapping("api/")
 public class LectureResource {
 
     private final Logger log = LoggerFactory.getLogger(LectureResource.class);
@@ -57,26 +57,26 @@ public class LectureResource {
 
     private final UserRepository userRepository;
 
-    private final ExerciseService exerciseService;
+    private final ExerciseServiceProducer exerciseServiceProducer;
 
     public LectureResource(LectureRepository lectureRepository, LectureService lectureService, CourseRepository courseRepository, UserRepository userRepository,
-            AuthorizationCheckService authCheckService, ExerciseService exerciseService) {
+                           AuthorizationCheckService authCheckService, ExerciseServiceProducer exerciseServiceProducer) {
         this.lectureRepository = lectureRepository;
         this.lectureService = lectureService;
         this.courseRepository = courseRepository;
         this.userRepository = userRepository;
         this.authCheckService = authCheckService;
-        this.exerciseService = exerciseService;
+        this.exerciseServiceProducer = exerciseServiceProducer;
     }
 
     /**
-     * POST /lectures : Create a new lecture.
+     * POST lectures : Create a new lecture.
      *
      * @param lecture the lecture to create
      * @return the ResponseEntity with status 201 (Created) and with body the new lecture, or with status 400 (Bad Request) if the lecture has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/lectures")
+    @PostMapping("lectures")
     @PreAuthorize("hasRole('EDITOR')")
     public ResponseEntity<Lecture> createLecture(@RequestBody Lecture lecture) throws URISyntaxException {
         log.debug("REST request to save Lecture : {}", lecture);
@@ -91,13 +91,13 @@ public class LectureResource {
     }
 
     /**
-     * PUT /lectures : Updates an existing lecture.
+     * PUT lectures : Updates an existing lecture.
      *
      * @param lecture the lecture to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated lecture, or with status 400 (Bad Request) if the lecture is not valid, or with status 500 (Internal
      *         Server Error) if the lecture couldn't be updated
      */
-    @PutMapping("/lectures")
+    @PutMapping("lectures")
     @PreAuthorize("hasRole('EDITOR')")
     public ResponseEntity<Lecture> updateLecture(@RequestBody Lecture lecture) {
         log.debug("REST request to update Lecture : {}", lecture);
@@ -117,13 +117,13 @@ public class LectureResource {
     }
 
     /**
-     * GET /courses/:courseId/lectures : get all the lectures of a course for the course administration page
+     * GET courses/:courseId/lectures : get all the lectures of a course for the course administration page
      *
      * @param withLectureUnits if set associated lecture units will also be loaded
      * @param courseId         the courseId of the course for which all lectures should be returned
      * @return the ResponseEntity with status 200 (OK) and the list of lectures in body
      */
-    @GetMapping(value = "/courses/{courseId}/lectures")
+    @GetMapping(value = "courses/{courseId}/lectures")
     @PreAuthorize("hasRole('EDITOR')")
     public ResponseEntity<Set<Lecture>> getLecturesForCourse(@PathVariable Long courseId, @RequestParam(required = false, defaultValue = "false") boolean withLectureUnits) {
         log.debug("REST request to get all Lectures for the course with id : {}", courseId);
@@ -143,12 +143,12 @@ public class LectureResource {
     }
 
     /**
-     * GET /lectures/:lectureId : get the "lectureId" lecture.
+     * GET lectures/:lectureId : get the "lectureId" lecture.
      *
      * @param lectureId the lectureId of the lecture to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the lecture, or with status 404 (Not Found)
      */
-    @GetMapping("/lectures/{lectureId}")
+    @GetMapping("lectures/{lectureId}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<Lecture> getLecture(@PathVariable Long lectureId) {
         log.debug("REST request to get lecture {}", lectureId);
@@ -158,12 +158,12 @@ public class LectureResource {
     }
 
     /**
-     * GET /lectures/:lectureId/details : get the "lectureId" lecture.
+     * GET lectures/:lectureId/details : get the "lectureId" lecture.
      *
      * @param lectureId the lectureId of the lecture to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the lecture including posts, lecture units and learning goals, or with status 404 (Not Found)
      */
-    @GetMapping("/lectures/{lectureId}/details")
+    @GetMapping("lectures/{lectureId}/details")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<Lecture> getLectureWithDetails(@PathVariable Long lectureId) {
         log.debug("REST request to get lecture {} with details", lectureId);
@@ -180,12 +180,12 @@ public class LectureResource {
     }
 
     /**
-     * GET /lectures/:lectureId/title : Returns the title of the lecture with the given id
+     * GET lectures/:lectureId/title : Returns the title of the lecture with the given id
      *
      * @param lectureId the id of the lecture
      * @return the title of the lecture wrapped in an ResponseEntity or 404 Not Found if no lecture with that id exists
      */
-    @GetMapping(value = "/lectures/{lectureId}/title")
+    @GetMapping(value = "lectures/{lectureId}/title")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<String> getLectureTitle(@PathVariable Long lectureId) {
         final var title = lectureRepository.getLectureTitle(lectureId);
@@ -200,9 +200,12 @@ public class LectureResource {
         Set<Exercise> relatedExercises = lecture.getLectureUnits().stream().filter(Objects::nonNull).filter(lectureUnit -> lectureUnit instanceof ExerciseUnit)
                 .map(lectureUnit -> ((ExerciseUnit) lectureUnit).getExercise()).collect(Collectors.toSet());
 
-        Set<Exercise> exercisesUserIsAllowedToSee = exerciseService.filterOutExercisesThatUserShouldNotSee(relatedExercises, user);
-        Set<Exercise> exercisesWithAllInformationNeeded = exerciseService
-                .loadExercisesWithInformationForDashboard(exercisesUserIsAllowedToSee.stream().map(Exercise::getId).collect(Collectors.toSet()), user);
+        Set<Exercise> exercisesWithAllInformationNeeded;
+        try {
+            exercisesWithAllInformationNeeded = exerciseServiceProducer.getLectureExercises(relatedExercises, user);
+        } catch (JMSException jmsException) {
+            throw new InternalServerErrorException("Communication error occurred.");
+        }
 
         List<LectureUnit> lectureUnitsUserIsAllowedToSee = lecture.getLectureUnits().stream().filter(lectureUnit -> {
             if (lectureUnit == null) {
@@ -231,12 +234,12 @@ public class LectureResource {
     }
 
     /**
-     * DELETE /lectures/:id : delete the "id" lecture.
+     * DELETE lectures/:id : delete the "id" lecture.
      *
      * @param id the id of the lecture to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/lectures/{id}")
+    @DeleteMapping("lectures/{id}")
     @PreAuthorize("hasRole('INSTRUCTOR')")
     public ResponseEntity<Void> deleteLecture(@PathVariable Long id) {
         Optional<Lecture> optionalLecture = lectureRepository.findByIdWithPostsAndLectureUnitsAndLearningGoals(id);

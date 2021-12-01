@@ -1,18 +1,21 @@
-package de.tum.in.www1.artemis.service;
+package de.tum.in.www1.artemis.lecture.service;
+
+import de.tum.in.www1.artemis.domain.Attachment;
+import de.tum.in.www1.artemis.domain.Course;
+import de.tum.in.www1.artemis.domain.LearningGoal;
+import de.tum.in.www1.artemis.domain.Lecture;
+import de.tum.in.www1.artemis.domain.User;
+import de.tum.in.www1.artemis.domain.lecture.LectureUnit;
+import de.tum.in.www1.artemis.repository.LectureRepository;
+import de.tum.in.www1.artemis.repository.LectureUnitRepository;
+import de.tum.in.www1.artemis.service.AuthorizationCheckService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import de.tum.in.www1.artemis.domain.*;
-import de.tum.in.www1.artemis.domain.lecture.LectureUnit;
-import de.tum.in.www1.artemis.repository.LectureRepository;
-import de.tum.in.www1.artemis.repository.LectureUnitRepository;
-
-@Deprecated // Moved to Lecture microservice. To be removed
 @Service
 public class LectureService {
 
@@ -25,7 +28,7 @@ public class LectureService {
     private final LectureUnitService lectureUnitService;
 
     public LectureService(LectureRepository lectureRepository, AuthorizationCheckService authCheckService, LectureUnitRepository lectureUnitRepository,
-            LectureUnitService lectureUnitService) {
+                          LectureUnitService lectureUnitService) {
         this.lectureRepository = lectureRepository;
         this.authCheckService = authCheckService;
         this.lectureUnitRepository = lectureUnitRepository;
@@ -75,7 +78,7 @@ public class LectureService {
      * Attachments and Lecture Units are not explicitly deleted, as the delete operation is cascaded by the database.
      * @param lecture the lecture to be deleted
      */
-    @Transactional // ok
+    @Transactional
     public void delete(Lecture lecture) {
         Optional<Lecture> lectureToDeleteOptional = lectureRepository.findByIdWithPostsAndLectureUnitsAndLearningGoals(lecture.getId());
         if (lectureToDeleteOptional.isEmpty()) {
@@ -89,7 +92,7 @@ public class LectureService {
             Optional<LectureUnit> lectureUnitFromDbOptional = lectureUnitRepository.findByIdWithLearningGoalsBidirectional(lectureUnit.getId());
             if (lectureUnitFromDbOptional.isPresent()) {
                 LectureUnit lectureUnitFromDb = lectureUnitFromDbOptional.get();
-                Set<LearningGoal> associatedLearningGoals = new HashSet<>(lectureUnitFromDb.getLearningGoals());
+                Set<de.tum.in.www1.artemis.domain.LearningGoal> associatedLearningGoals = new HashSet<>(lectureUnitFromDb.getLearningGoals());
                 for (LearningGoal learningGoal : associatedLearningGoals) {
                     lectureUnitService.disconnectLectureUnitAndLearningGoal(lectureUnit, learningGoal);
                 }
