@@ -15,8 +15,14 @@ import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
+/**
+ * Message broker producer to send messages related to the exercise service
+ */
 @Component
 @EnableJms
 public class ExerciseServiceProducer {
@@ -32,22 +38,20 @@ public class ExerciseServiceProducer {
         this.jmsTemplate = jmsTemplate;
     }
 
+    /**
+     * Send a message to Artemis get lecture exercises accessible for the given user and wait for response
+     *
+     * @param exercises the exercises
+     * @param user the user
+     * @return the response from Artemis including set of exercises
+     * @throws JMSException
+     */
     public Set<Exercise> getLectureExercises(Set<Exercise> exercises, User user) throws JMSException {
         UserExerciseDTO userExerciseDTO = new UserExerciseDTO(exercises, user);
-        LOGGER.info("Send data {}", userExerciseDTO);
+        LOGGER.info("Send message in queue {} with body {}", LECTURE_QUEUE_GET_EXERCISES, userExerciseDTO);
         jmsTemplate.convertAndSend(LECTURE_QUEUE_GET_EXERCISES, userExerciseDTO);
         Message responseMessage = jmsTemplate.receive(LECTURE_QUEUE_GET_EXERCISES_RESPONSE);
-        return readData(responseMessage.getBody(String.class));
-    }
-
-    private Set<Exercise> readData(String value) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Set<Exercise> exercises = null;
-        try {
-            exercises = objectMapper.readValue(value, new TypeReference<Set<Exercise>>(){});
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return exercises;
+        LOGGER.info("Received response in queue {} with body {}", LECTURE_QUEUE_GET_EXERCISES_RESPONSE, userExerciseDTO);
+        return responseMessage.getBody(Set.class);
     }
 }

@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+/**
+ * Service for managing lecture units.
+ */
 @Service
 public class LectureUnitService {
 

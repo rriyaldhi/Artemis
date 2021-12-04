@@ -16,6 +16,9 @@ import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Service for managing lectures.
+ */
 @Service
 public class LectureService {
 

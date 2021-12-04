@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import de.tum.in.www1.artemis.domain.Exercise;
 
+/**
+ * Message producer to send response for exercise service communication.
+ */
 @Component
 @EnableJms
 public class ExerciseServiceResponseProducer {
@@ -26,8 +29,13 @@ public class ExerciseServiceResponseProducer {
         this.jmsTemplate = jmsTemplate;
     }
 
+    /**
+     * Send the response message
+     *
+     * @param exercises set of exercises
+     */
     public void sendLectureExercisesResponse(Set<Exercise> exercises) {
-        LOGGER.info("Send response data {}", exercises);
+        LOGGER.info("Send message in queue {} with body {}", LECTURE_QUEUE_GET_EXERCISES_RESPONSE, exercises);
         jmsTemplate.convertAndSend(LECTURE_QUEUE_GET_EXERCISES_RESPONSE, exercises);
     }
 }

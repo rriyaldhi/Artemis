@@ -1,9 +1,14 @@
 version: '2'
 services:
-  activemq-broker:
-    image: vromero/activemq-artemis:latest
-    environment:
-        - ARTEMIS_USERNAME=guest
-        - ARTEMIS_PASSWORD=guest
-    ports:
-    - 61613:61613
+    activemq-broker:
+        image: vromero/activemq-artemis:latest
+        environment:
+            - ARTEMIS_USERNAME=guest
+            - ARTEMIS_PASSWORD=guest
+            - ENABLE_JMX=true
+            - JMX_PORT=1199
+            - JMX_RMI_PORT=1198
+            - ENABLE_JMX_EXPORTER=true
+        ports:
+            - 61616:61616
+            - 8161:8161

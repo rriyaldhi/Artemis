@@ -1,5 +1,7 @@
 package de.tum.in.www1.artemis.service.dto;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -7,8 +9,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import de.tum.in.www1.artemis.domain.Exercise;
 import de.tum.in.www1.artemis.domain.User;
 
+/**
+ * DTO for sending exercises and user who wants to access those exercises
+ */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class UserExerciseDTO {
+public class UserExerciseDTO implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private Set<Exercise> exercises;
 
@@ -36,5 +44,10 @@ public class UserExerciseDTO {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("UserExerciseDTO{exercises=%s, user=%s}", getExercises(), getUser());
     }
 }
