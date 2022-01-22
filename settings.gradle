@@ -12,3 +12,6 @@ pluginManagement {
 }
 
 rootProject.name = 'Artemis'
+include 'tools:hashingBenchmark'
+findProject(':tools:hashingBenchmark')?.name = 'HashingBenchmark'
+

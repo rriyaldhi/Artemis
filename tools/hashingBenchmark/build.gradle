@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'de.tum.in.www1.artemis.tools'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-security:${spring_boot_version}"
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes(
+            'Main-Class': 'de.tum.in.www1.artemis.tools.Benchmark'
+        )
+    }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+}
