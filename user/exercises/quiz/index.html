@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz exercise &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -40,16 +42,38 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">Exercises</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../general/">General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assessment/">Assessment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming/">Programming Exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Quiz exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quiz exercise</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-a-quiz-exercise">Prepare a Quiz Exercise</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-new-quiz-exercise">Create new Quiz Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-drag-and-drop-model-quiz-exercise">Create Drag and Drop Model Quiz Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-a-quiz">Import a Quiz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#export-a-quiz">Export a Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#resolve-a-quiz-exercise">Resolve a Quiz Exercise</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../modeling/">Modeling exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../team-exercises/">Team exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -58,16 +82,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -95,9 +122,454 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="quiz-exercise">
-<h1>Quiz exercise<a class="headerlink" href="#quiz-exercise" title="Permalink to this headline"></a></h1>
+  <section id="quiz-exercise">
+<span id="quiz"></span><h1>Quiz exercise<a class="headerlink" href="#quiz-exercise" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#prepare-a-quiz-exercise" id="id2">Prepare a Quiz Exercise</a></p>
+<ul>
+<li><p><a class="reference internal" href="#create-new-quiz-exercise" id="id3">Create new Quiz Exercise</a></p></li>
+<li><p><a class="reference internal" href="#create-drag-and-drop-model-quiz-exercise" id="id4">Create Drag and Drop Model Quiz Exercise</a></p></li>
+<li><p><a class="reference internal" href="#import-a-quiz" id="id5">Import a Quiz</a></p></li>
+<li><p><a class="reference internal" href="#export-a-quiz" id="id6">Export a Quiz</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#resolve-a-quiz-exercise" id="id7">Resolve a Quiz Exercise</a></p></li>
+</ul>
 </div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Prepare a Quiz Exercise: Only instructors and editors can create, import, and export quiz exercises.</p></li>
+<li><p>Resolve a Quiz Exercise: Students can solve quiz exercises.</p></li>
+</ul>
+</section>
+<section id="prepare-a-quiz-exercise">
+<h2><a class="toc-backref" href="#id2">Prepare a Quiz Exercise</a><a class="headerlink" href="#prepare-a-quiz-exercise" title="Permalink to this heading"></a></h2>
+<p>This section describes the process to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create Quiz Exercises</p></li>
+<li><p>Create Drag and Drop Model Quiz Exercises</p></li>
+<li><p>Import Quiz Exercises from other courses</p></li>
+<li><p>Export Quiz Exercises</p></li>
+</ul>
+</div></blockquote>
+<section id="create-new-quiz-exercise">
+<h3><a class="toc-backref" href="#id3">Create new Quiz Exercise</a><a class="headerlink" href="#create-new-quiz-exercise" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>On the Artemis home page, click on the Course Management button <a class="reference internal" href="../../../_images/CourseManagementButton.png"><img alt="CourseManagementButton" src="../../../_images/CourseManagementButton.png" style="width: 168.0px; height: 33.0px;" /></a>.</p></li>
+<li><p>Navigate into <strong>Exercises</strong> of a specific course by clicking on the exercise button.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/course-dashboard.png" src="../../../_images/course-dashboard.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>In the quiz exercises section, click on the Create Quiz button <a class="reference internal" href="../../../_images/create-quiz-button.png"><img alt="CreateAQuizButton" src="../../../_images/create-quiz-button.png" style="width: 133.0px; height: 45.0px;" /></a> to open the following form to create the new quiz exercise.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/create-a-quiz-form.png" src="../../../_images/create-a-quiz-form.png" />
+</figure>
+<ul>
+<li><p><strong>Title</strong>: Provide a title for the quiz exercise (The red line means that this field is mandatory).</p></li>
+<li><p><strong>Categories</strong>: Type the category for the quiz exercise.</p></li>
+<li><p><strong>Difficulty</strong>: Select the difficulty level among Easy, Medium and Hard. It is possible to select No Level.</p></li>
+<li><p><strong>Duration</strong>: Provide the time in minutes and seconds for students to solve the quiz exercise.</p></li>
+<li><p><strong>Options</strong>: Choose between presenting the questions in random order or not.</p></li>
+<li><p><strong>Batch Mode</strong>: Batch Mode controls how students can participate in the quiz.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Synchronized: There is exactly one opportunity for all students to participate in the quiz.</p></li>
+<li><p>Batched: There are multiple opportunities for students to participate in the quiz by using a password.</p></li>
+<li><p>Individual: Students can participate in the quiz by themselves at any time while it is released.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Visible from</strong>: The date and hour when the quiz becomes visible to students.</p></li>
+<li><p><strong>Schedule Quiz Start</strong>: To establish the date and hour at which the quiz will be available for solving.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Start of working time</strong>: Set the time for the students to see the questions and start answering them. Students can start working on the quiz from this time until the duration ends.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Should this exercise be included in the course score calculation?</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Yes: the points will be included in the course score calculation.</p></li>
+<li><p>No: the points will not be included in the course score calculation.</p></li>
+<li><p>Bonus: the points will be considered as bonus points.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Questions</strong>: There are four ways to add questions to a quiz exercise.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Add Multiple-Choice Question</strong></p>
+<blockquote>
+<div><p>This kind of question is composed of a problem statement with multiple options.</p>
+<figure class="align-center">
+<img alt="../../../_images/multiple-choice-question.png" src="../../../_images/multiple-choice-question.png" />
+</figure>
+<ul>
+<li><p>Short question title: Provide a short title (Mandatory).</p></li>
+<li><p>Points: Assign the value points for this question.</p></li>
+<li><p>Scoring type:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All or Nothing</p></li>
+<li><p>Proportional with Penalty</p></li>
+<li><p>Proportional without Penalty</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Present answer options in random order.</p></li>
+<li><p>Single Choice Mode: When there is just one correct option. This disables the Scoring type (resp. sets it to All or Nothing).</p></li>
+<li><p>Delete icon: To delete the current question.</p></li>
+<li><p>Edit View: Enables the text editor to write the quiz statement and its options, hints and explanations.</p></li>
+<li><p>Edit bar: When the edit view is enabled, the format bar provides:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Style to the statement text</p></li>
+<li><p>Correct Options [correct]</p></li>
+<li><p>Incorrect Options [wrong]</p></li>
+<li><p>Explanations [exp]</p></li>
+<li><p>Hints [hint]</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Text editor: The quiz statement can be developed with options, hints and explanations.</p></li>
+<li><p>Preview View: Enables the student view.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Add Drag-And-Drop Question</strong></p>
+<blockquote>
+<div><p>This kind of question is composed of a problem statement, a background image, and drag and drop options.</p>
+<figure class="align-center">
+<img alt="../../../_images/drag-and-drop-question.png" src="../../../_images/drag-and-drop-question.png" />
+</figure>
+<ul>
+<li><p>Short question title: Provide a short title.</p></li>
+<li><p>Points: Assign the value points for this question.</p></li>
+<li><p>Scoring type:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All or Nothing</p></li>
+<li><p>Proportional with Penalty</p></li>
+<li><p>Proportional without Penalty</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Present Drag Items in Random order.</p></li>
+<li><p>Delete icon: To delete the current question.</p></li>
+<li><p>Edit View: Enables the text editor to write the question statement with explanations and hints.</p></li>
+<li><p>Edit bar: When the edit view is enabled, the format bar provides:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Style to the statement text</p></li>
+<li><p>Explanations [exp]</p></li>
+<li><p>Hints [hint]</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Text editor: The quiz statement can be developed with hints and explanations.</p></li>
+<li><p>Upload Background: To select and upload the background from the PC files to drag and drop the options over it.</p></li>
+<li><p>Add Drag Items:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Text items: Type the options.</p></li>
+<li><p>Image items: Can be uploaded from the PC files.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Preview View: Enables the student view.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Add Short-Answer Question</strong></p>
+<blockquote>
+<div><p>This kind of question is composed of a statement and spots to fill them out by typing the answers.</p>
+<figure class="align-center">
+<img alt="../../../_images/short-answer-question.png" src="../../../_images/short-answer-question.png" />
+</figure>
+<ul>
+<li><p>Short question title: Provide a short title.</p></li>
+<li><p>Points: Assign the value points for this question.</p></li>
+<li><p>Scoring type:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All or Nothing</p></li>
+<li><p>Proportional with Penalty</p></li>
+<li><p>Proportional without Penalty</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Match Letter Case</p></li>
+<li><p>Match Answers Exactly: This option moves the match slider to 100%.</p></li>
+<li><p>Delete icon: To delete the current question.</p></li>
+<li><p>Add Spot Option: To add the spot between the text to be filled out.</p></li>
+<li><p>Add Answer Option: To provide the answer for each spot.</p></li>
+<li><p>Text editor: The quiz statement can be developed with the spots and options.</p></li>
+<li><p>Text View: Enables the text editor to write and edit the question statement.</p></li>
+<li><p>Visual View: Enables the student view.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Add Existing Questions</strong></p>
+<blockquote>
+<div><p>This option allows to import existing questions from other quiz exercises, courses, exams and files.</p>
+<figure class="align-center">
+<img alt="../../../_images/existing-question.png" src="../../../_images/existing-question.png" />
+</figure>
+<ul>
+<li><p>Source buttons:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>From a course</p></li>
+<li><p>From an exam</p></li>
+<li><p>From a file</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>List picker to select a specific course, exam or file.</p></li>
+<li><p>Searching bar: to look for the question providing its name or part of it.</p></li>
+<li><p>Filter options according to the type of questions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Drag and Drop Question</p></li>
+<li><p>Multiple Choice Question</p></li>
+<li><p>Short Answer Question</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Apply filter button</p></li>
+<li><p>List of questions with the title, short title, and Type. In the Add column, it is possible to select all questions to be imported.</p></li>
+<li><p>At the end of the list, click the Add selected Questions button <a class="reference internal" href="../../../_images/add-selected-questions-button.png"><img alt="AddSelectedQuestionsButton" src="../../../_images/add-selected-questions-button.png" style="width: 194.0px; height: 46.0px;" /></a> to import all selected questions.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Footer</strong>: On the creation quiz page there is a footer with the following fields:</p>
+<blockquote>
+<div><blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/footer.png"><img alt="../../../_images/footer.png" src="../../../_images/footer.png" style="width: 391.0px; height: 70.0px;" /></a>
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p>Error messages</p></li>
+<li><p>Warning messages</p></li>
+<li><p>Cancel button</p></li>
+<li><p>Save button</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="create-drag-and-drop-model-quiz-exercise">
+<h3><a class="toc-backref" href="#id4">Create Drag and Drop Model Quiz Exercise</a><a class="headerlink" href="#create-drag-and-drop-model-quiz-exercise" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><ul>
+<li><p>In the quiz exercises section click on the Create Quiz button <a class="reference internal" href="../../../_images/create-drag-and-drop-quiz.png"><img alt="CreateDragAndDropQuizButton" src="../../../_images/create-drag-and-drop-quiz.png" style="width: 274.0px; height: 44.0px;" /></a>.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/apollon-diagrams.png" src="../../../_images/apollon-diagrams.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>On the Apollon Diagrams page, it is possible to see the list of Apollon Diagrams and the possible actions to perform with them.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open</p></li>
+<li><p>Delete</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Clicking on the creation of a new Apollon Diagram button <a class="reference internal" href="../../../_images/create-a-new-apollon-diagram.png"><img alt="CreateANewApollonDiagram" src="../../../_images/create-a-new-apollon-diagram.png" style="width: 266.0px; height: 46.0px;" /></a> opens the following form:</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/Apollon-form.png"><img alt="../../../_images/Apollon-form.png" src="../../../_images/Apollon-form.png" style="width: 796.0px; height: 285.0px;" /></a>
+</figure>
+<ul>
+<li><p>Title: provide the title of the Drag-and-Drop Model Quiz</p></li>
+<li><p>Diagram Type: It is a list picker to select between several diagrams:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Class Diagram</p></li>
+<li><p>Activity Diagram</p></li>
+<li><p>Object Diagram</p></li>
+<li><p>Use Case Diagram</p></li>
+<li><p>Communication Diagram</p></li>
+<li><p>Component Diagram</p></li>
+<li><p>Deployment Diagram</p></li>
+<li><p>Petri Net</p></li>
+<li><p>Syntax Tree</p></li>
+<li><p>Flowchart</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Save button</p></li>
+<li><p>Cancel button</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click the save button to open the Apollon editor</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/apollon-editor.png" src="../../../_images/apollon-editor.png" />
+</figure>
+<ul class="simple">
+<li><p>Title: Allows to edit the tile of the diagram.</p></li>
+<li><p>Crop image to selection: Allows to download the current selection.</p></li>
+<li><p>Download button: To download the selection.</p></li>
+<li><p>Generate a quiz exercise button.</p></li>
+<li><p>Save button.</p></li>
+<li><p>Modeling field: The items for modeling the diagram will be displayed here.</p></li>
+<li><p>Elements to Drag and Drop in the Modeling field.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="import-a-quiz">
+<h3><a class="toc-backref" href="#id5">Import a Quiz</a><a class="headerlink" href="#import-a-quiz" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><ul>
+<li><p>In the quiz exercises section, click on the Import a Quiz button <a class="reference internal" href="../../../_images/import-quiz-button.png"><img alt="ImportQuizButton" src="../../../_images/import-quiz-button.png" style="width: 141.0px; height: 45.0px;" /></a>.</p></li>
+<li><p>The list of existing quizzes will appear.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/import-list-quizzes.png"><img alt="../../../_images/import-list-quizzes.png" src="../../../_images/import-list-quizzes.png" style="width: 796.0px; height: 743.0px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>The searching bar: Allows to look for a specific quiz by typing its name or part of it.</p></li>
+<li><p>The list of quizzes: Whit their ID, title, course and indicator if they are exam questions.</p></li>
+<li><p>Clicking the Import button <a class="reference internal" href="../../../_images/import-button.png"><img alt="ImportButton" src="../../../_images/import-button.png" style="width: 78.0px; height: 42.0px;" /></a> opens the quiz editor with the existing questions. Here it is possible to edit all parameters such as in <strong>Create new Quiz Exercise</strong>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="export-a-quiz">
+<h3><a class="toc-backref" href="#id6">Export a Quiz</a><a class="headerlink" href="#export-a-quiz" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><ul>
+<li><p>In the quiz exercises section, click on the Export Quiz Exercises button <a class="reference internal" href="../../../_images/export-quiz-button.png"><img alt="ExportQuizExerciseButton" src="../../../_images/export-quiz-button.png" style="width: 193.0px; height: 45.0px;" /></a> and the list of quizzes will be shown</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/export-quizzes-list.png"><img alt="../../../_images/export-quizzes-list.png" src="../../../_images/export-quizzes-list.png" style="width: 1469.0px; height: 289.0px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Select the quizzes for being exported in the Export column.</p></li>
+<li><p>The Export button <a class="reference internal" href="../../../_images/export-button.png"><img alt="ExportButton" src="../../../_images/export-button.png" style="width: 88.0px; height: 53.0px;" /></a> will download the quiz in a JSON file.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="resolve-a-quiz-exercise">
+<h2><a class="toc-backref" href="#id7">Resolve a Quiz Exercise</a><a class="headerlink" href="#resolve-a-quiz-exercise" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul>
+<li><p>If a quiz exercise is available on the Artemis home page as a current exercise, it will be possible to see it in the course overview or inside the course where it belongs.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/current-quiz-exercise.png"><img alt="../../../_images/current-quiz-exercise.png" src="../../../_images/current-quiz-exercise.png" style="width: 991.0px; height: 108.0px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+<li><p>The current exercise box will show:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The name of the quiz</p></li>
+<li><p>The button to start the quiz</p></li>
+<li><p>The category</p></li>
+<li><p>The message if the quiz is active</p></li>
+<li><p>The due date</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>To start the quiz, the student must press the Open quiz button <a class="reference internal" href="../../../_images/open-quiz-button.png"><img alt="OpenQuizButton" src="../../../_images/open-quiz-button.png" style="width: 111.0px; height: 37.0px;" /></a>.</p></li>
+<li><p>If the quiz is set to start at a specific time and the student opens it before, he/she will see a message asking to wait until the quiz starts and displaying the remaining time.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/please-wait-message.png"><img alt="../../../_images/please-wait-message.png" src="../../../_images/please-wait-message.png" style="width: 494.0px; height: 203.0px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+<li><p>When the quiz starts, the student can see the questions and solve them.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/one-choice-question.png"><img alt="../../../_images/one-choice-question.png" src="../../../_images/one-choice-question.png" style="width: 1266.0px; height: 634.0px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+<li><p>The quiz page is composed of:</p>
+<blockquote>
+<div><ul>
+<li><p>Number and title of the question</p></li>
+<li><p>Points for solving that question</p></li>
+<li><p>The quiz statement</p></li>
+<li><p>Options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Options with circles mean one choice could be correct.</p></li>
+<li><p>Options with squares mean multiple options could be correct.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>In the footer:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The number of questions and overall points.</p></li>
+<li><p>Time left to complete the quiz.</p></li>
+<li><p>Last time saved: The quiz will save all changes after they occur.</p></li>
+<li><p>Connection status.</p></li>
+<li><p>Submit button: To allow the student to submit the quiz before the time ends.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>In the case of Drag and Drop questions, the items to be dragged and dropped in the spots will be available on the right side.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/drag-and-drop-view.png"><img alt="../../../_images/drag-and-drop-view.png" src="../../../_images/drag-and-drop-view.png" style="width: 1045.6000000000001px; height: 540.0px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>To submit and finish the quiz, the student must press the Submit button <a class="reference internal" href="../../../_images/submit-button1.png"><img alt="SubmitButton" src="../../../_images/submit-button1.png" style="width: 99.0px; height: 52.0px;" /></a>. However, when the quiz time’s up, the answers will be submitted automatically.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The assessment is automatic and the student can see the result of the overall quiz and of specific questions. In the case of MC questions, the solution will be displayed.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/final-quiz.png"><img alt="../../../_images/final-quiz.png" src="../../../_images/final-quiz.png" style="width: 945.6999999999999px; height: 453.59999999999997px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+<li><p>In the case of Drag and Drop questions, the solution is shown by clicking the Show Sample Solution button <a class="reference internal" href="../../../_images/show-sample-solution.png"><img alt="ShowSampleSolutionButton" src="../../../_images/show-sample-solution.png" style="width: 184.0px; height: 43.0px;" /></a>.</p>
+<blockquote>
+<div><figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/solution-drag-and-drop.png"><img alt="../../../_images/solution-drag-and-drop.png" src="../../../_images/solution-drag-and-drop.png" style="width: 936.8000000000001px; height: 564.0px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
 
 
            </div>

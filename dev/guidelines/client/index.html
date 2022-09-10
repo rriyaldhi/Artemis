@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Client &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -59,7 +70,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#strings">7. Strings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#buttons-and-links">8. Buttons and Links</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#icons-with-text">9. Icons with Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#style">10. Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-style">10. Code Style</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preventing-memory-leaks">11. Preventing Memory Leaks</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#what-are-memory-leaks">What are memory leaks?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-are-common-reasons-for-memory-leaks">What are common reasons for memory leaks?</a></li>
@@ -73,10 +84,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#chart-instantiation">14. Chart Instantiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#responsive-layout">15. Responsive Layout</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-design/">Client Theming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/">Database Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../criteria-builder/">Criteria Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development-process/">Development Process (How to Merge Changes)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
 </ul>
@@ -84,16 +98,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -121,11 +138,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="client">
-<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline"></a></h1>
-<p>WORK IN PROGRESS</p>
-<div class="section" id="general">
-<h2>0. General<a class="headerlink" href="#general" title="Permalink to this headline"></a></h2>
+  <section id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h1>
+<section id="general">
+<h2>0. General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
 <p>The Artemis client is an Angular project. Keep <a class="reference external" href="https://angular.io/guide/styleguide">https://angular.io/guide/styleguide</a> in mind.</p>
 <p>Some general aspects:</p>
 <ul class="simple">
@@ -133,9 +149,9 @@
 <li><p>The Artemis client uses lazy loading to keep the initial bundle size below 2 MB.</p></li>
 <li><p>Code quality and test coverage are important. Try to reuse code and avoid code duplication. Write meaningful tests!</p></li>
 </ul>
-</div>
-<div class="section" id="names">
-<h2>1. Names<a class="headerlink" href="#names" title="Permalink to this headline"></a></h2>
+</section>
+<section id="names">
+<h2>1. Names<a class="headerlink" href="#names" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Use PascalCase for type names.</p></li>
 <li><p>Do not use “I” as a prefix for interface names.</p></li>
@@ -145,56 +161,55 @@
 <li><p>Do not use “_” as a prefix for private properties.</p></li>
 <li><p>Use whole words in names when possible.</p></li>
 </ol>
-</div>
-<div class="section" id="components">
-<h2>2. Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+</section>
+<section id="components">
+<h2>2. Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>1 file per logical component (e.g. parser, scanner, emitter, checker).</p></li>
-<li><p>Do not add new files. :)</p></li>
 <li><p>files with “.generated.*” suffix are auto-generated, do not hand-edit them.</p></li>
 </ol>
-</div>
-<div class="section" id="types">
-<h2>3. Types<a class="headerlink" href="#types" title="Permalink to this headline"></a></h2>
+</section>
+<section id="types">
+<h2>3. Types<a class="headerlink" href="#types" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Do not export types/functions unless you need to share it across multiple components.</p></li>
 <li><p>Do not introduce new types/values to the global namespace.</p></li>
 <li><p>Shared types should be defined in ‘types.ts’.</p></li>
 <li><p>Within a file, type definitions should come first.</p></li>
 </ol>
-</div>
-<div class="section" id="null-and-undefined">
-<h2>4. <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code><a class="headerlink" href="#null-and-undefined" title="Permalink to this headline"></a></h2>
+</section>
+<section id="null-and-undefined">
+<h2>4. <code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code><a class="headerlink" href="#null-and-undefined" title="Permalink to this heading"></a></h2>
 <p>Use <strong>undefined</strong>. Do not use null.</p>
-</div>
-<div class="section" id="general-assumptions">
-<h2>5. General Assumptions<a class="headerlink" href="#general-assumptions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="general-assumptions">
+<h2>5. General Assumptions<a class="headerlink" href="#general-assumptions" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Consider objects like Nodes, Symbols, etc. as immutable outside the component that created them. Do not change them.</p></li>
 <li><p>Consider arrays as immutable by default after creation.</p></li>
 </ol>
-</div>
-<div class="section" id="comments">
-<h2>6. Comments<a class="headerlink" href="#comments" title="Permalink to this headline"></a></h2>
+</section>
+<section id="comments">
+<h2>6. Comments<a class="headerlink" href="#comments" title="Permalink to this heading"></a></h2>
 <p>Use JSDoc style comments for functions, interfaces, enums, and classes.</p>
-</div>
-<div class="section" id="strings">
-<h2>7. Strings<a class="headerlink" href="#strings" title="Permalink to this headline"></a></h2>
+</section>
+<section id="strings">
+<h2>7. Strings<a class="headerlink" href="#strings" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Use single quotes for strings.</p></li>
 <li><p>All strings visible to the user need to be localized (make an entry in the corresponding <code class="docutils literal notranslate"><span class="pre">*.json</span></code> file).</p></li>
 </ol>
-</div>
-<div class="section" id="buttons-and-links">
-<h2>8. Buttons and Links<a class="headerlink" href="#buttons-and-links" title="Permalink to this headline"></a></h2>
+</section>
+<section id="buttons-and-links">
+<h2>8. Buttons and Links<a class="headerlink" href="#buttons-and-links" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Be aware that Buttons navigate only in the same tab while Links provide the option to use the context menu or a middle-click to open the page in a new tab. Therefore:</p></li>
 <li><p>Buttons are best used to trigger certain functionalities (e.g. <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">(click)='deleteExercise(exercise)'&gt;...&lt;/button</span></code>)</p></li>
 <li><p>Links are best for navigating on Artemis (e.g. <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">[routerLink]='getLinkForExerciseEditor(exercise)'</span> <span class="pre">[queryParams]='getQueryParamsForEditor(exercise)'&gt;...&lt;/a&gt;</span></code>)</p></li>
 </ol>
-</div>
-<div class="section" id="icons-with-text">
-<h2>9. Icons with Text<a class="headerlink" href="#icons-with-text" title="Permalink to this headline"></a></h2>
+</section>
+<section id="icons-with-text">
+<h2>9. Icons with Text<a class="headerlink" href="#icons-with-text" title="Permalink to this heading"></a></h2>
 <p>If you use icons next to text (for example for a button or link), make sure that they are separated by a newline. HTML renders one or multiple newlines as a space.</p>
 <p>Do this:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">fa-icon</span> <span class="p">[</span><span class="na">icon</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&#39;times&#39;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">fa-icon</span><span class="p">&gt;</span>
@@ -212,9 +227,9 @@
 </pre></div>
 </div>
 <p>Ignoring this will lead to inconsistent spacing between icons and text.</p>
-</div>
-<div class="section" id="style">
-<h2>10. Style<a class="headerlink" href="#style" title="Permalink to this headline"></a></h2>
+</section>
+<section id="code-style">
+<h2>10. Code Style<a class="headerlink" href="#code-style" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Use arrow functions over anonymous function expressions.</p></li>
 <li><dl class="simple">
@@ -245,12 +260,12 @@
 </ol>
 <p>We use <code class="docutils literal notranslate"><span class="pre">prettier</span></code> to style code automatically and <code class="docutils literal notranslate"><span class="pre">eslint</span></code> to find additional issues.
 You can find the corresponding commands to invoke those tools in <code class="docutils literal notranslate"><span class="pre">package.json</span></code>.</p>
-</div>
-<div class="section" id="preventing-memory-leaks">
-<h2>11. Preventing Memory Leaks<a class="headerlink" href="#preventing-memory-leaks" title="Permalink to this headline"></a></h2>
+</section>
+<section id="preventing-memory-leaks">
+<h2>11. Preventing Memory Leaks<a class="headerlink" href="#preventing-memory-leaks" title="Permalink to this heading"></a></h2>
 <p>It is crucial that you try to prevent memory leaks in both your components and your tests.</p>
-<div class="section" id="what-are-memory-leaks">
-<h3>What are memory leaks?<a class="headerlink" href="#what-are-memory-leaks" title="Permalink to this headline"></a></h3>
+<section id="what-are-memory-leaks">
+<h3>What are memory leaks?<a class="headerlink" href="#what-are-memory-leaks" title="Permalink to this heading"></a></h3>
 <p>A very good explanation that you should definitely read to understand the problem: <a class="reference external" href="https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/">https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/</a></p>
 <p>In essence:</p>
 <ul class="simple">
@@ -259,9 +274,9 @@ You can find the corresponding commands to invoke those tools in <code class="do
 <li><p>Unwanted references are references to pieces of memory that the developer knows he or she won’t be needing
 anymore but that for some reason are kept inside the tree of an active root. <strong>In the context of JavaScript, unwanted references are variables kept somewhere in the code that will not be used anymore and point to a piece of memory that could otherwise be freed.</strong></p></li>
 </ul>
-</div>
-<div class="section" id="what-are-common-reasons-for-memory-leaks">
-<h3>What are common reasons for memory leaks?<a class="headerlink" href="#what-are-common-reasons-for-memory-leaks" title="Permalink to this headline"></a></h3>
+</section>
+<section id="what-are-common-reasons-for-memory-leaks">
+<h3>What are common reasons for memory leaks?<a class="headerlink" href="#what-are-common-reasons-for-memory-leaks" title="Permalink to this heading"></a></h3>
 <p><a class="reference external" href="https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/">https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/</a>:</p>
 <ul class="simple">
 <li><p>Accidental global variables</p></li>
@@ -273,9 +288,9 @@ anymore but that for some reason are kept inside the tree of an active root. <st
 Mocks not being restored after the end of a test, especially when it involves global objects.</p>
 <p><a class="reference external" href="https://www.twilio.com/blog/prevent-memory-leaks-angular-observable-ngondestroy">https://www.twilio.com/blog/prevent-memory-leaks-angular-observable-ngondestroy</a>
 RXJS subscriptions not being unsubscribed.</p>
-</div>
-<div class="section" id="what-are-ways-to-identify-memory-leaks">
-<h3>What are ways to identify memory leaks?<a class="headerlink" href="#what-are-ways-to-identify-memory-leaks" title="Permalink to this headline"></a></h3>
+</section>
+<section id="what-are-ways-to-identify-memory-leaks">
+<h3>What are ways to identify memory leaks?<a class="headerlink" href="#what-are-ways-to-identify-memory-leaks" title="Permalink to this heading"></a></h3>
 <p><strong>Number 1:</strong> Manually checking the heap usage and identifying heap dumps for causes of memory leaks
 <a class="reference external" href="https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html">https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html</a></p>
 <p>Corresponding commands from the article for our project (enter in the root directory of the project):</p>
@@ -303,10 +318,10 @@ RXJS subscriptions not being unsubscribed.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>jest --detectLeaks
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="defining-routes-and-breadcrumbs">
-<h2>12. Defining Routes and Breadcrumbs<a class="headerlink" href="#defining-routes-and-breadcrumbs" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="defining-routes-and-breadcrumbs">
+<h2>12. Defining Routes and Breadcrumbs<a class="headerlink" href="#defining-routes-and-breadcrumbs" title="Permalink to this heading"></a></h2>
 <p>The ideal schema for routes is that every variable in a path is preceded by a unique path segment: <code class="docutils literal notranslate"><span class="pre">\entityA\:entityIDA\entityB\:entityIDB</span></code></p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">\courses\:courseId\:exerciseId</span></code> is not a good path and should be written as <code class="docutils literal notranslate"><span class="pre">\courses\:courseId\exercises\:exerciseId</span></code>.
 Doubling textual segments like <code class="docutils literal notranslate"><span class="pre">\lectures\statistics\:lectureId</span></code> should be avoided and instead formulated as <code class="docutils literal notranslate"><span class="pre">\lectures\:lectureId\statistics</span></code>.</p>
@@ -335,24 +350,24 @@ Doubling textual segments like <code class="docutils literal notranslate"><span 
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="strict-template-check">
-<h2>13. Strict Template Check<a class="headerlink" href="#strict-template-check" title="Permalink to this headline"></a></h2>
+</section>
+<section id="strict-template-check">
+<h2>13. Strict Template Check<a class="headerlink" href="#strict-template-check" title="Permalink to this heading"></a></h2>
 <p>To prevent errors for strict template rule in TypeScript, Artemis uses following approaches.</p>
-<div class="section" id="use-artemistranslatepipe-instead-of-translatepipe">
-<h3>Use ArtemisTranslatePipe instead of TranslatePipe<a class="headerlink" href="#use-artemistranslatepipe-instead-of-translatepipe" title="Permalink to this headline"></a></h3>
+<section id="use-artemistranslatepipe-instead-of-translatepipe">
+<h3>Use ArtemisTranslatePipe instead of TranslatePipe<a class="headerlink" href="#use-artemistranslatepipe-instead-of-translatepipe" title="Permalink to this heading"></a></h3>
 <p>Do not use <code class="docutils literal notranslate"><span class="pre">placeholder=&quot;{{</span> <span class="pre">'global.form.newpassword.placeholder'</span> <span class="pre">|</span> <span class="pre">translate</span> <span class="pre">}}&quot;</span></code></p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">placeholder=&quot;{{</span> <span class="pre">'global.form.newpassword.placeholder'</span> <span class="pre">|</span> <span class="pre">artemisTranslate</span> <span class="pre">}}&quot;</span></code></p>
-</div>
-<div class="section" id="use-artemistimeagopipe-instead-of-timeagopipe">
-<h3>Use ArtemisTimeAgoPipe instead of TimeAgoPipe<a class="headerlink" href="#use-artemistimeagopipe-instead-of-timeagopipe" title="Permalink to this headline"></a></h3>
+</section>
+<section id="use-artemistimeagopipe-instead-of-timeagopipe">
+<h3>Use ArtemisTimeAgoPipe instead of TimeAgoPipe<a class="headerlink" href="#use-artemistimeagopipe-instead-of-timeagopipe" title="Permalink to this heading"></a></h3>
 <p>Do not use <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">[ngbTooltip]=&quot;submittedDate</span> <span class="pre">|</span> <span class="pre">artemisDate&quot;&gt;{{</span> <span class="pre">submittedDate</span> <span class="pre">|</span> <span class="pre">amTimeAgo</span> <span class="pre">}}&lt;/span&gt;</span></code></p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">[ngbTooltip]=&quot;submittedDate</span> <span class="pre">|</span> <span class="pre">artemisDate&quot;&gt;{{</span> <span class="pre">submittedDate</span> <span class="pre">|</span> <span class="pre">artemisTimeAgo</span> <span class="pre">}}&lt;/span&gt;</span></code></p>
-</div>
-</div>
-<div class="section" id="chart-instantiation">
-<h2>14. Chart Instantiation<a class="headerlink" href="#chart-instantiation" title="Permalink to this headline"></a></h2>
-<p>We are using the framework ngx-charts in order to instantiate charts and diagrams in Artemis.</p>
+</section>
+</section>
+<section id="chart-instantiation">
+<h2>14. Chart Instantiation<a class="headerlink" href="#chart-instantiation" title="Permalink to this heading"></a></h2>
+<p>We are using the framework <a class="reference external" href="https://github.com/swimlane/ngx-charts">ngx-charts</a> in order to instantiate charts and diagrams in Artemis.</p>
 <p>The following is an example HTML template for a vertical bar chart:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">#</span><span class="na">containerRef</span><span class="p"> </span><span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-9&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ngx-charts-bar-vertical</span>
@@ -380,10 +395,34 @@ containing the desired content within the selector. The framework dynamically re
 the tooltips are configured in order to present the percentage value corresponding to the absolute value represented by the bar.
 Depending on the chart type, there is more than one type of tooltip configurable.
 For more information visit <a class="reference external" href="https://swimlane.gitbook.io/ngx-charts/">https://swimlane.gitbook.io/ngx-charts/</a></p></li>
+<li><p>In order to manipulate the content of the data label (e.g. the text floating above a chart bar), the framework provides a <code class="docutils literal notranslate"><span class="pre">[dataLabelFormatting]</span></code> property in the
+HTML template that can be assigned to a method. For example:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="na">dataLabelFormatting</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;formatDataLabel&quot;</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="nx">formatDataLabel</span><span class="p">(</span><span class="nx">averageScore</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">averageScore</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>appends a percentage sign to the data label.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The method is passed to the framework itself and executed there. This means that at runtime it does not have access to global variables of the component it is originally implemented in.
+If this access is necessary, create a (readonly) variable assigned to this method and bind it to the component: <code class="docutils literal notranslate"><span class="pre">readonly</span> <span class="pre">bindFormatting</span> <span class="pre">=</span> <span class="pre">this.formatDataLabel.bind(this);</span></code></p>
+</div>
+</li>
 <li><p>Some design properties are not directly configurable via the framework (e.g. the font-size and weight of the data labels).
 The tool <code class="docutils literal notranslate"><span class="pre">::ng-deep</span></code> is useful in these situations as it allows to change some of these properties by overwriting them in
 a corresponding style sheet. Adapting the font-size and weight of data labels would look like this:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">::</span><span class="nd">ng-deep</span> <span class="p">.</span><span class="nc">textDataLabel</span> <span class="p">{</span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">::ng-deep</span></code> breaks the view encapsulation of the rule. This can lead to undesired and flaky side effects on other pages of Artemis.
+For more information, refer to the <a class="reference external" href="https://angular.io/guide/component-styles#deprecated-deep--and-ng-deep">Angular documentation</a>.
+<strong>Therefore, only use this annotation if this is absolutely necessary.</strong> To limit the potential of side effects, add a <code class="docutils literal notranslate"><span class="pre">:host</span></code> in front of the command.</p>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">host</span><span class="p">::</span><span class="nd">ng-deep</span> <span class="p">.</span><span class="nc">textDataLabel</span> <span class="p">{</span>
     <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bolder</span><span class="p">;</span>
     <span class="k">font-size</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
@@ -394,11 +433,45 @@ a corresponding style sheet. Adapting the font-size and weight of data labels wo
 First, annotate the parent container with a reference (in the example <code class="docutils literal notranslate"><span class="pre">#containerRef</span></code>).
 Then, when configuring the dimensions of the chart in <code class="docutils literal notranslate"><span class="pre">[view]</span></code>, insert <code class="docutils literal notranslate"><span class="pre">containerRef.offsetWidth</span></code> instead
 of an specific value for the width.</p></li>
+<li><p>There are two ways to keep axis labels and axis ticks translation-sensitive if they contain natural language:</p>
+<ul class="simple">
+<li><p>Axis labels are passed directly as property in the HTML template. Simply insert the translation string together with the translate pipe:</p></li>
+</ul>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="na">xAxisLabel</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&#39;artemisApp.exam.charts.xAxisLabel&#39; | artemisTranslate&quot;</span>
+<span class="p">[</span><span class="na">yAxisLabel</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&#39;artemisApp.exam.charts.yAxisLabel&#39; | artemisTranslate&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>For some chart types, the framework derives the ticks of one axis from the name property of the passed data objects.
+So, these names have to be translated every time the user switches the language settings.
+In this case, inject the <code class="docutils literal notranslate"><span class="pre">TranslateService</span></code> to the underlying component and subscribe to the <code class="docutils literal notranslate"><span class="pre">onLangChange</span></code> event emitter:</p></li>
+</ul>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">translateService</span>: <span class="kt">TranslateService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">translateService</span><span class="p">.</span><span class="nx">onLangChange</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">updateXAxisLabel</span><span class="p">();</span> <span class="c1">// a method re-assigning the names of the objects to the translated string</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </div></blockquote>
 <p>Some parts of these guidelines are adapted from <a class="reference external" href="https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md">https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md</a></p>
+</section>
+<section id="responsive-layout">
+<h2>15. Responsive Layout<a class="headerlink" href="#responsive-layout" title="Permalink to this heading"></a></h2>
+<p>Ensure that the layout of your page or component shrinks accordingly and adapts to all display sizes (responsive design).</p>
+<p>Prefer using the <code class="docutils literal notranslate"><span class="pre">.container</span></code> class (<a class="reference external" href="https://getbootstrap.com/docs/5.2/layout/containers/">https://getbootstrap.com/docs/5.2/layout/containers/</a>) when you want limit the page width on extra-large screens.
+Do not use the following for this purpose if it can be avoided:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-12 col-lg-8&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Do not do this --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
 </div>
-</div>
+</section>
+</section>
 
 
            </div>

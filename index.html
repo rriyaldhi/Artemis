@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artemis: Interactive Learning with Individual Feedback &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="#" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex/" />
@@ -38,9 +40,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -49,16 +60,19 @@
 <li class="toctree-l1"><a class="reference internal" href="dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -85,10 +99,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="artemis-interactive-learning-with-individual-feedback">
-<span id="artemis"></span><h1>Artemis: Interactive Learning with Individual Feedback<a class="headerlink" href="#artemis-interactive-learning-with-individual-feedback" title="Permalink to this headline"></a></h1>
-<div class="section" id="main-features">
-<h2>Main features<a class="headerlink" href="#main-features" title="Permalink to this headline"></a></h2>
+  <section id="artemis-interactive-learning-with-individual-feedback">
+<span id="artemis"></span><h1>Artemis: Interactive Learning with Individual Feedback<a class="headerlink" href="#artemis-interactive-learning-with-individual-feedback" title="Permalink to this heading"></a></h1>
+<section id="main-features">
+<h2>Main features<a class="headerlink" href="#main-features" title="Permalink to this heading"></a></h2>
 <p>Artemis supports the following exercises:</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="user/exercises/programming/"><span class="doc">Programming exercises</span></a> with version control and automatic assessment with test cases and continuous integration</p></li>
@@ -104,7 +118,13 @@
 <li class="toctree-l1"><a class="reference internal" href="user/exercises/">Exercises</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user/exercises/general/">General Information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/general/#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/exercises/general/#complaints">Complaints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/exercises/assessment/">Assessment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/assessment/#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/assessment/#manual-assessment">Manual Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/assessment/#automatic-assessment">Automatic Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/assessment/#complaints">Complaints</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="user/exercises/programming/">Programming Exercise</a><ul>
@@ -113,13 +133,24 @@
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#static-code-analysis-default-configuration">Static Code Analysis Default Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#submission-policy-configuration">Submission Policy Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#online-editor">Online Editor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#testing-with-artemis-java-test-sandbox">Testing with Artemis Java Test Sandbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#testing-with-ares">Testing with Ares</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#best-practices-for-writing-test-cases">Best practices for writing test cases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/programming/#sending-feedback-back-to-artemis">Sending Feedback back to Artemis</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user/exercises/quiz/">Quiz exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user/exercises/modeling/">Modeling exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/exercises/quiz/">Quiz exercise</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/quiz/#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/quiz/#prepare-a-quiz-exercise">Prepare a Quiz Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/quiz/#resolve-a-quiz-exercise">Resolve a Quiz Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/exercises/modeling/">Modeling exercise</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/modeling/#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/modeling/#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/modeling/#student-submission">Student Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/modeling/#assessment">Assessment</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="user/exercises/textual/">Textual exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user/exercises/file-upload/">File Upload Exercise</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/file-upload/#overview">Overview</a></li>
@@ -128,16 +159,50 @@
 <li class="toctree-l3"><a class="reference internal" href="user/exercises/file-upload/#assessment">Assessment</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="user/exercises/team-exercises/">Team exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/team-exercises/#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/team-exercises/#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/team-exercises/#collaboration">Collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exercises/team-exercises/#team-overview">Team overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user/exam_mode/">Exam Mode</a><ul>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/lectures/">Lectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/lectures/#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#students">Students</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#instructors">Instructors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/lectures/#managing-lectures">Managing Lectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/lectures/#lecture-units">Lecture Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#attachment-unit">Attachment Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#exercise-unit">Exercise Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#online-unit">Online Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#text-unit">Text Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/lectures/#video-unit">Video Unit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/lectures/#learning-goals">Learning Goals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/exam_mode/">Exams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/exams/students_guide/">Students’ Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/students_guide/#general-information">General Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/students_guide/#participating-in-the-artemis-online-exam">Participating in the Artemis Online Exam</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="user/exams/instructors_guide/">Instructors’ Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user/exams/instructors_guide/#timeline-of-an-artemis-online-exam">Timeline of an Artemis Online Exam</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user/exams/students_guide/">Students’ Guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/exams/students_guide/#general-information">General Information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/exams/students_guide/#participating-in-the-artemis-online-exam">Participating in the Artemis Online Exam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/exams/live_statistics/">Live Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#enable-disable">1. Enable/Disable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#navigate-to-the-dashboard">2. Navigate to the Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#live-statistics-header">3. Live Statistics Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#section-overview">4. Section: Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#section-exercises">5. Section: Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/exams/live_statistics/#section-activity-log">6. Section: Activity log</a></li>
 </ul>
 </li>
 </ul>
@@ -155,33 +220,104 @@
 <li class="toctree-l2"><a class="reference internal" href="user/orion/#assessment-in-orion">Assessment in Orion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user/discussion/">Discussion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user/discussion/#overview">Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#enabling-discussions">Enabling Discussions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#lecture-posts">Lecture Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#exercise-posts">Exercise Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#course-wide-posts-course-discussion-overview">Course-wide Posts &amp; Course Discussion Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/communication/">Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#enabling-communication">Enabling Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#lecture-posts">Lecture Posts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#exercise-posts">Exercise Posts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#course-wide-posts-course-communication-overview">Course-wide Posts &amp; Course Communication Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#features-for-users">Features for Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#search-filter-and-sort-posts">Search, Filter and Sort Posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#react-on-posts">React on Posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#reference-posts">Reference Posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#prevent-post-duplication">Prevent Post Duplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#mark-your-post-as-resolved">Mark Your Post As Resolved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#tag-your-post">Tag Your Post</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user/discussion/#features-for-users">Features for Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#search-filter-and-sort-posts">Search, Filter and Sort Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#react-on-posts">React on Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#reference-posts">Reference Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#prevent-duplicated-posts">Prevent Duplicated Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#mark-your-post-as-resolved">Mark Your Post As Resolved</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#tag-your-post">Tag Your Post</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#features-for-moderators">Features for Moderators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#move-posts">Move Posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#pin-posts">Pin Posts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#archive-posts">Archive Posts</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user/discussion/#features-for-moderators">Features for Moderators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#move-posts">Move Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#pin-posts">Pin Posts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#archive-posts">Archive Posts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/communication/#features-for-instructors">Features for Instructors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/communication/#post-announcements">Post Announcements</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user/discussion/#features-for-instructors">Features for Instructors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/discussion/#post-announcements">Post Announcements</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="user/plagiarism-check/">Plagiarism checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/plagiarism-check/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/plagiarism-check/#plagiarism-check-overview">Plagiarism Check Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#actions">Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/plagiarism-check/#plagiarism-check-workflow">Plagiarism Check Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#tutors">Tutors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#instructors">Instructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/plagiarism-check/#students">Students</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/learning-analytics/">Learning Analytics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/learning-analytics/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/learning-analytics/#learning-analytics-for-students">Learning Analytics for Students</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#overall-points">Overall Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#performance-in-exercises">Performance in Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#points-per-exercise">Points per Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#learning-goal-statistics">Learning Goal Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/learning-analytics/#learning-analytics-for-instructors">Learning Analytics for Instructors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#course-statistics">Course Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#exercise-statistics">Exercise Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/learning-analytics/#id3">Learning Goal Statistics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/notifications/">Notifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/notifications/#web-notifications">Web Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/notifications/#email-notifications">Email Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/notifications/#settings">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/user-experience/">User Experience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/user-experience/guided_tours/">Guided Tours</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/user-experience/guided_tours/#control-guided-tours">Control Guided Tours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/user-experience/guided_tours/#restart-or-resume-guided-tours">Restart or Resume Guided Tours</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user/user-experience/themes/">User Interface Themes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/user-experience/themes/#changing-the-theme">Changing the theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user/user-experience/themes/#synchronize-the-theme-with-your-operating-system">Synchronize the theme with your operating system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/grading/">Grading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/grading/#instructors">Instructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/grading/#students">Students</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/courses/customizable/">Customizing Courses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/courses/customizable/#creating-courses">Creating courses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/courses/customizable/#managing-courses">Managing courses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/scaling/">Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/scaling/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/scaling/#build-system">Build system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/scaling/#artemis">Artemis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user/markdown-support/">Markdown Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user/markdown-support/#integrated-markdown-editor">Integrated Markdown Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/markdown-support/#markdown-extensions-for-communication">Markdown Extensions For Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/markdown-support/#supported-syntax">Supported Syntax</a></li>
 </ul>
 </li>
 </ul>
@@ -190,7 +326,10 @@
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dev/setup/">Setup Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev/setup/#mysql-setup">MySQL Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/setup/#mysql-setup">MySQL Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dev/setup/#set-empty-root-password-for-mysql-8">Set empty root password for MySQL 8</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dev/setup/#server-setup">Server Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/bamboo-bitbucket-jira/">Bamboo, Bitbucket and Jira</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/jenkins-gitlab/">Jenkins and Gitlab</a></li>
@@ -200,6 +339,7 @@
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/programming-exercises/#caching-example-for-maven">Caching example for Maven</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/kubernetes/">Kubernetes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/#run-the-server-via-a-service-configuration">Run the server via a service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/setup/#run-the-server-via-docker">Run the server via Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/#run-the-server-via-a-run-configuration-in-intellij">Run the server via a run configuration in IntelliJ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/#run-the-server-with-spring-boot-and-spring-profiles">Run the server with Spring Boot and Spring profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/setup/#run-the-server-with-the-command-line-gradle-wrapper">Run the server with the command line (Gradle wrapper)</a></li>
@@ -251,10 +391,12 @@
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#proper-annotation-of-sql-query-parameters">17. Proper annotation of SQL query parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#sql-statement-formatting">18. SQL statement formatting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#avoid-the-usage-of-sub-queries">19. Avoid the usage of Sub-queries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#rest-endpoint-best-practices-for-authorization">20. REST endpoint best practices for authorization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#assert-using-the-most-specific-overload-method">21. Assert using the most specific overload method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#general-testing-tips">22. General Testing Tips</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#avoid-using-mockbean">23. Avoid using &#64;MockBean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#criteria-builder">20. Criteria Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#rest-endpoint-best-practices-for-authorization">21. REST endpoint best practices for authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#assert-using-the-most-specific-overload-method">22. Assert using the most specific overload method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#general-testing-tips">23. General Testing Tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#counting-database-query-calls-within-tests">24. Counting database query calls within tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/server/#avoid-using-mockbean">25. Avoid using &#64;MockBean</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dev/guidelines/client/">Client</a><ul>
@@ -268,25 +410,44 @@
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#strings">7. Strings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#buttons-and-links">8. Buttons and Links</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#icons-with-text">9. Icons with Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#style">10. Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#code-style">10. Code Style</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#preventing-memory-leaks">11. Preventing Memory Leaks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#defining-routes-and-breadcrumbs">12. Defining Routes and Breadcrumbs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#strict-template-check">13. Strict Template Check</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#chart-instantiation">14. Chart Instantiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client/#responsive-layout">15. Responsive Layout</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dev/guidelines/client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/guidelines/client-design/">Client Theming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client-design/#color-usage">0. Color Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client-design/#theme-specific-global-styles">1. Theme-specific global styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/client-design/#theme-service">2. Theme Service</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dev/guidelines/database/">Database Relationships</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#retrieving-and-building-objects">1. Retrieving and Building Objects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#relationships">2. Relationships</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#cascade-types">2. Cascade Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#cascade-types">3. Cascade Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#best-practices">Best Practices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/database/#solutions-for-known-issues">Solutions for known issues</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dev/guidelines/criteria-builder/">Criteria Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#requirements">1. Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#generating-the-query">2. Generating the query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#operations">3. Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#joins">4. Joins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#sub-queries">5. Sub-Queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#examples">6. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#limitations">7. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/criteria-builder/#additional-links">8. Additional links</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dev/guidelines/development-process/">Development Process (How to Merge Changes)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/development-process/#naming-conventions-for-github-pull-requests">Naming Conventions for GitHub Pull Requests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/guidelines/development-process/#steps-to-create-and-merge-a-pull-request">Steps to Create and Merge a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dev/guidelines/development-process/#stale-bot">Stale Bot</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dev/guidelines/language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a><ul>
@@ -320,7 +481,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev/guided-tour/">Guided Tour</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev/guided-tour/#create-guidedtour-object">Create GuidedTour object</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev/guided-tour/#texttourstep-with-highlighted-element">TextTourStep with highlighted element</a></li>
@@ -354,12 +514,20 @@
 <li class="toctree-l2"><a class="reference internal" href="dev/docker/#steps-for-updating-the-dockerbuilds-used-in-artemis">Steps for Updating the DockerBuilds used in Artemis</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dev/cypress/">Cypress Bamboo Plans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev/cypress/#artemis-deployment-on-bamboo-build-agent">Artemis Deployment on Bamboo Build Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/cypress/#artemis-deployment-in-test-environment">Artemis Deployment in Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/cypress/#maintenance">Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev/open-source/">Open-Source</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin/accessRights/">Access Rights</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="admin/accessRights/#navigation">Navigation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="admin/accessRights/#course">Course</a></li>
@@ -377,10 +545,14 @@
 <li class="toctree-l2"><a class="reference internal" href="admin/troubleshooting/#repository-download-of-large-courses-fails">Repository download of large courses fails</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="admin/knownIssues/">Known Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="admin/knownIssues/#no-user-updates-with-jenkins-without-password">No user updates with Jenkins without password</a></li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

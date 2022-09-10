@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assessment &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Programming Exercise" href="../programming/" />
+    <link rel="prev" title="General Information" href="../general/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../general/">General Information</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Assessment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-assessment">Manual Assessment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assessment-dashboard">Assessment Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-assessment">Automatic Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complaints">Complaints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#more-feedback-requests">More Feedback Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming/">Programming Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quiz/">Quiz exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modeling/">Modeling exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../team-exercises/">Team exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">Exercises</a> &raquo;</li>
+      <li>Assessment</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/exercises/assessment.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="assessment">
+<span id="id1"></span><h1>Assessment<a class="headerlink" href="#assessment" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#manual-assessment" id="id3">Manual Assessment</a></p>
+<ul>
+<li><p><a class="reference internal" href="#assessment-dashboard" id="id4">Assessment Dashboard</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#automatic-assessment" id="id5">Automatic Assessment</a></p></li>
+<li><p><a class="reference internal" href="#complaints" id="id6">Complaints</a></p>
+<ul>
+<li><p><a class="reference internal" href="#more-feedback-requests" id="id7">More Feedback Requests</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Artemis offers three different modes of exercise assessment:</p>
+<ul class="simple">
+<li><p><strong>Manual:</strong> Tutors must manually grade the submissions of students.</p></li>
+<li><p><strong>Automatic:</strong> Artemis automatically grades the submissions of students.</p></li>
+<li><p><strong>Semi-Automatic:</strong> Artemis provides an automatic starting point for the tutors to manually improve the grading afterward.</p></li>
+</ul>
+</section>
+<section id="manual-assessment">
+<h2><a class="toc-backref" href="#id3">Manual Assessment</a><a class="headerlink" href="#manual-assessment" title="Permalink to this heading"></a></h2>
+<p>Manual assessment is available for all exercise types except quiz exercises.
+The manual assessment begins after the deadline of an exercise has passed for all students and is double-blind. This means that the tutors do not know the names of the students they assess, and the students do not know the identity of the tutors.</p>
+<p>Instructors can use the assessment training process to make the grading more consistent. They define a series of example submissions and assessments that the tutors must first read through.</p>
+<p>Students have the option to rate the assessments of the tutors. They can also complain or ask for more feedback.</p>
+<section id="assessment-dashboard">
+<h3><a class="toc-backref" href="#id4">Assessment Dashboard</a><a class="headerlink" href="#assessment-dashboard" title="Permalink to this heading"></a></h3>
+<p>To keep track of the manual assessments, Artemis offers the assessment dashboard.
+It shows the assessment progress of each exercise by showing the state of the exercise, the total number of submissions, the number of submissions that have been assessed, and the number of complaints and more feedback requests.
+It also shows the average rating the students have given to each exercise.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="A picture of the assessment dashboard (of an exam)" src="../../../_images/assessment_dashboard1.png" />
+</figure>
+</div></blockquote>
+<p>Artemis also offers a way for instructors to monitor the tutors’ assessments. The first part of this is the tutor leaderboard, which is visible to all tutors. The tutor leaderboard shows the number of assessments each tutor has done and the amount of more feedback requests and accepted complaints about them.
+It also shows the average score the tutor has given and the average rating they received for their assessments.</p>
+<p>Each exercise also has its own assessment dashboard that shows all of this information for a single exercise.</p>
+</section>
+</section>
+<section id="automatic-assessment">
+<h2><a class="toc-backref" href="#id5">Automatic Assessment</a><a class="headerlink" href="#automatic-assessment" title="Permalink to this heading"></a></h2>
+<p>Automatic assessment is available for programming and quiz exercises.
+For quiz exercises this is the only mode of assessment available. Artemis automatically grades students’ submissions after the quiz deadline has passed. See the section about <a class="reference internal" href="../quiz/#quiz"><span class="std std-ref">Quiz exercise</span></a> for more information about this.</p>
+<p>For programming exercises, this is done via instructor-written test cases that are run for each submission either during or after the deadline. See the section about <a class="reference internal" href="../programming/#programming"><span class="std std-ref">Programming Exercise</span></a> for detailed information about this.
+Instructors can enable complaints for automatically graded programming exercises.</p>
+</section>
+<section id="complaints">
+<span id="exercise-complaints"></span><h2><a class="toc-backref" href="#id6">Complaints</a><a class="headerlink" href="#complaints" title="Permalink to this heading"></a></h2>
+<p>After receiving an assessment, students can complain once about the assessment of an exercise if the instructor enabled this option and the students think the assessment is erroneous.
+The student has to write an additional text when submitting a complaint to justify the reevaluation.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="The student complains about the assessment of an exercise" src="../../../_images/complaint1.png" />
+</figure>
+</div></blockquote>
+<p>A complaint leads to a reevaluation of the submission by another tutor. This tutor sees the existing assessment and the complaint reason. The tutor can then either accept or reject the complaint.
+Only if the tutor accepts the complaint, they can modify the assessment’s score.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="A tutor answers the complaint of a student" src="../../../_images/complaint_response1.png" />
+</figure>
+</div></blockquote>
+<p>The instructor can set a maximum number of allowed complaints per course. These so-called tokens are used for each complaint.
+The token is given back to the student if the tutor accepts the complaint.
+This means a student can submit as many complaints as they want, as long as they are accepted.</p>
+<section id="more-feedback-requests">
+<span id="exercise-more-feedback-request"></span><h3><a class="toc-backref" href="#id7">More Feedback Requests</a><a class="headerlink" href="#more-feedback-requests" title="Permalink to this heading"></a></h3>
+<p>Another possibility after receiving an assessment is the <em>More Feedback Request</em>.
+Compared to the complaints, they do not cost a token, but the tutor cannot change the score after a feedback request.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Sending a <em>More Feedback Request</em> removes the option to complain about the assessment entirely.
+The score cannot be changed even if the tutor made a mistake during the first assessment and acknowledges this during the <em>More Feedback Request</em>.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../general/" class="btn btn-neutral float-left" title="General Information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../programming/" class="btn btn-neutral float-right" title="Programming Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

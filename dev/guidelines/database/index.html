@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Database Relationships &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="Development Process (How to Merge Changes)" href="../development-process/" />
-    <link rel="prev" title="Client Tests" href="../client-tests/" /> 
+    <link rel="next" title="Criteria Builder" href="../criteria-builder/" />
+    <link rel="prev" title="Client Theming" href="../client-design/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -50,14 +61,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../server/">Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client/">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-design/">Client Theming</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database Relationships</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#retrieving-and-building-objects">1. Retrieving and Building Objects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#relationships">2. Relationships</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cascade-types">2. Cascade Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cascade-types">3. Cascade Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#solutions-for-known-issues">Solutions for known issues</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../criteria-builder/">Criteria Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development-process/">Development Process (How to Merge Changes)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
 </ul>
@@ -65,16 +78,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -102,11 +118,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="database-relationships">
-<h1>Database Relationships<a class="headerlink" href="#database-relationships" title="Permalink to this headline"></a></h1>
+  <section id="database-relationships">
+<h1>Database Relationships<a class="headerlink" href="#database-relationships" title="Permalink to this heading"></a></h1>
 <p>WORK IN PROGRESS</p>
-<div class="section" id="retrieving-and-building-objects">
-<h2>1. Retrieving and Building Objects<a class="headerlink" href="#retrieving-and-building-objects" title="Permalink to this headline"></a></h2>
+<section id="retrieving-and-building-objects">
+<h2>1. Retrieving and Building Objects<a class="headerlink" href="#retrieving-and-building-objects" title="Permalink to this heading"></a></h2>
 <p>The cost of retrieving and building an object’s relationships far exceeds the cost of selecting the object. This is especially true for relationships where it would trigger the loading of every child through the relationship hierarchy. The solution to this issue is <strong>lazy fetching</strong> (lazy loading). Lazy fetching allows the fetching of a relationship to be deferred until it is accessed. This is important not only to avoid the database access, but also to avoid the cost of building the objects if they are not needed. <br /></p>
 <p>In JPA lazy fetching can be set on any relationship using the fetch attribute. The fetch can be set to either <code class="docutils literal notranslate"><span class="pre">LAZY</span></code> or <code class="docutils literal notranslate"><span class="pre">EAGER</span></code> as defined in the <code class="docutils literal notranslate"><span class="pre">FetchType</span></code> enum. The default fetch type is <code class="docutils literal notranslate"><span class="pre">LAZY</span></code> for all relationships except for <strong>OneToOne</strong> and <strong>ManyToOne</strong>, but in general it is a good idea to make every relationship <code class="docutils literal notranslate"><span class="pre">LAZY</span></code>. The <code class="docutils literal notranslate"><span class="pre">EAGER</span></code> default for <strong>OneToOne</strong> and <strong>ManyToOne</strong> is for implementation reasons (more easier to implement), not because it is a good idea. <br /></p>
 <p>We <strong>always</strong> use <code class="docutils literal notranslate"><span class="pre">FetchType.LAZY</span></code>, unless there is a very strong case to be made for <code class="docutils literal notranslate"><span class="pre">FetchType.EAGER</span></code>.</p>
@@ -116,9 +132,9 @@
 <p>Additional effort to use <code class="docutils literal notranslate"><span class="pre">FetchType.LAZY</span></code> does not count as a strong argument.</p>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="relationships">
-<h2>2. Relationships<a class="headerlink" href="#relationships" title="Permalink to this headline"></a></h2>
+</section>
+<section id="relationships">
+<h2>2. Relationships<a class="headerlink" href="#relationships" title="Permalink to this heading"></a></h2>
 <p>A relationship is a reference from one object to another. In a relational database relationships are defined through foreign keys. The source row contains the primary key of the target row to define the relationship (and sometimes the inverse). A query must be performed to read the target objects of the relationship using the foreign key and primary key information. If there is a relationship to a collection of other objects, a <code class="docutils literal notranslate"><span class="pre">Collection</span></code> or <code class="docutils literal notranslate"><span class="pre">array</span></code> type is used to hold the contents of the relationship. In a relational database, collection relations are either defined by the target objects having a foreign key back to the source object’s primary key, or by having an intermediate join table to store the relationship (containing both objects’ primary keys). <br /></p>
 <p>In this section, we depict common entity relationships we use in Artemis and show some code snippets.</p>
 <ul class="simple">
@@ -172,14 +188,26 @@
 <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Exercise</span><span class="o">&gt;</span> <span class="n">exercises</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
+</div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For <strong>OneToMany</strong>, <strong>ManyToOne</strong>, and <strong>ManyToMany</strong> relationships you must not forget to mark the associated elements with <code class="docutils literal notranslate"><span class="pre">&#64;JsonIgnoreProperties()</span></code>. Without this, the object serialization process will be stuck in an endless loop and throw an error. For more information check out the examples listed above and see: <a class="reference external" href="https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype">Jackson and JsonIgnoreType</a>.</p>
 </div>
-</div></blockquote>
+<div class="admonition-lazy-relationships admonition">
+<p class="admonition-title">Lazy relationships</p>
+<p>Lazy relationships in Artemis may require some additional special handling to work correctly:</p>
+<ul>
+<li><p>Lazy <strong>OneToOne</strong> relationships require the additional presence of the <code class="docutils literal notranslate"><span class="pre">&#64;JoinColumn</span></code> annotation and only work in one direction.
+They can only lazily load the child of the relationship, not the parent. The parent is the entity whose database table owns the foreign key.</p>
+<p>E.g., You can lazily load <code class="docutils literal notranslate"><span class="pre">ProgrammingExercise::solutionParticipation</span></code> but not <code class="docutils literal notranslate"><span class="pre">SolutionProgrammingExerciseParticipation::programmingExercise</span></code>, as the foreign key is part of the <code class="docutils literal notranslate"><span class="pre">exercise</span></code> table.</p>
+</li>
+<li><p>Lazy <strong>ManyToOne</strong> relationships require the additional presence of the <code class="docutils literal notranslate"><span class="pre">&#64;JoinColumn</span></code> annotation.</p></li>
+<li><p>Lazy <strong>OneToMany</strong> and <strong>ManyToMany</strong> relationships work without further changes.</p></li>
+</ul>
 </div>
-<div class="section" id="cascade-types">
-<h2>2. Cascade Types<a class="headerlink" href="#cascade-types" title="Permalink to this headline"></a></h2>
+</section>
+<section id="cascade-types">
+<h2>3. Cascade Types<a class="headerlink" href="#cascade-types" title="Permalink to this heading"></a></h2>
 <p>Entity relationships often depend on the existence of another entity — for example, the Result-Feedback relationship. Without the Result, the Feedback entity doesn’t have any meaning of its own. When we delete the Result entity, our Feedback entity should also get deleted. For more information see: <a class="reference external" href="https://www.baeldung.com/jpa-cascade-types">jpa cascade types</a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CascadeType.ALL</span></code> Propagates all operations mentioned below from the parent object to the to child object.</p></li>
@@ -233,9 +261,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">CascadeType.REFRESH</span></code> If the source entity is refreshed, it cascades the refresh to the target of the association. This is used to refresh the data in the object and its associations. This is useful for cases where there is a change which needs to be synchronized FROM the database.</p></li>
 </ul>
 <p>Not used in Artemis yet.</p>
-</div>
-<div class="section" id="best-practices">
-<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline"></a></h2>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>If you want to create a <code class="docutils literal notranslate"><span class="pre">&#64;OneToMany</span></code> relationship or <code class="docutils literal notranslate"><span class="pre">&#64;ManyToMany</span></code> relationship, first think about if it is important for the association to be ordered. If you do not need the association to be ordered, then always go for a <code class="docutils literal notranslate"><span class="pre">Set</span></code> instead of <code class="docutils literal notranslate"><span class="pre">List</span></code>. If you are unsure, start with a <code class="docutils literal notranslate"><span class="pre">Set</span></code>.</p>
 <ul>
@@ -295,9 +323,9 @@
 </li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="solutions-for-known-issues">
-<h2>Solutions for known issues<a class="headerlink" href="#solutions-for-known-issues" title="Permalink to this headline"></a></h2>
+</section>
+<section id="solutions-for-known-issues">
+<h2>Solutions for known issues<a class="headerlink" href="#solutions-for-known-issues" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">org.hibernate.LazyInitializationException</span> <span class="pre">:</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">initialize</span> <span class="pre">proxy</span> <span class="pre">–</span> <span class="pre">no</span> <span class="pre">Session</span></code> caused by <code class="docutils literal notranslate"><span class="pre">fetchType.LAZY</span></code>. You must explicitly load the associated object from the database before trying to access those. Example of how to eagerly fetch the feedbacks with the result:</p></li>
 </ul>
@@ -339,15 +367,15 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../client-tests/" class="btn btn-neutral float-left" title="Client Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../development-process/" class="btn btn-neutral float-right" title="Development Process (How to Merge Changes)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../client-design/" class="btn btn-neutral float-left" title="Client Theming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../criteria-builder/" class="btn btn-neutral float-right" title="Criteria Builder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

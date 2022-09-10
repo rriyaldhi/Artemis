@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cypress Bamboo Plans &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Open-Source" href="../open-source/" />
+    <link rel="prev" title="Builds and Dependency Management" href="../docker/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cypress Bamboo Plans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#artemis-deployment-on-bamboo-build-agent">Artemis Deployment on Bamboo Build Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#artemis-deployment-in-test-environment">Artemis Deployment in Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maintenance">Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>Cypress Bamboo Plans</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/dev/cypress.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cypress-bamboo-plans">
+<h1>Cypress Bamboo Plans<a class="headerlink" href="#cypress-bamboo-plans" title="Permalink to this heading"></a></h1>
+<p><strong>Background</strong></p>
+<p>The Cypress test suite contains system tests verifying the most important features of Artemis. System tests test the whole system and therefore require a complete deployment of Artemis first.
+In order to prevent as many faults (bugs) as possible from being introduced into the develop branch, we want to execute the Cypress test suite whenever new commits are pushed to a Git branch (just like the unit and integration test suites).</p>
+<p>To accomplish this we need to be able to dynamically deploy multiple different instances of Artemis at the same time. An ideal setup would be to deploy the whole Artemis system using Kubernetes. However, this setup is too complex at the moment.
+The main reason for the complexity is that it is very hard to automatically setup Docker containers for the external services (Jira, Bitbucket and Bamboo) and connect them directly with Artemis.</p>
+<p>Therefore, the current setup only dynamically deploys the Artemis server and configures it to connect to the prelive system, which is already properly setup in the university data center.</p>
+<section id="artemis-deployment-on-bamboo-build-agent">
+<h2>Artemis Deployment on Bamboo Build Agent<a class="headerlink" href="#artemis-deployment-on-bamboo-build-agent" title="Permalink to this heading"></a></h2>
+<p>Every execution of the Cypress test suite requires its own deployment of Artemis. The easiest way to accomplish this is to deploy Artemis locally on the build agent, which executes the Cypress tests.
+Using docker-compose we can start a MySQL database and the Artemis server locally on the build agent and connect it to the prelive system in the university data center.</p>
+<figure class="align-center" id="id1">
+<img alt="Artemis Deployment on Bamboo Build Agent for Cypress" src="../../_images/cypress_bamboo_deployment_diagram.svg" /><figcaption>
+<p><span class="caption-text">Artemis Deployment on Bamboo Build Agent for Cypress</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In total there are three Docker containers started in the Bamboo build agent:</p>
+<ol class="arabic">
+<li><p>MySQL</p>
+<p>This container starts a MySQL database and exposes it on port 3306. The container automatically creates a new database ‘Artemis’ and configures it with the recommended settings for Artemis.
+The Cypress setup reuses the already existing <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/docker/mysql.yml">MySQL docker image</a> from the standard Artemis Docker setup.</p>
+</li>
+<li><p>Artemis</p>
+<p>The Docker image for the Artemis container is created from the already existing <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/docker/Dockerfile">Dockerfile</a>. When the Bamboo build of the Cypress test suite starts, it retrieves the Artemis executable (.war file) from the <a class="reference external" href="https://bamboo.ase.in.tum.de/browse/ARTEMIS-WEBAPP">Artemis build plan</a>.
+Upon creation of the Artemis Docker image the executable is copied into the image together with configuration files for the Artemis server.</p>
+<p>The main configuration of the Artemis server is contained in the <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/docker/cypress/application.yml">application.yml file</a>.
+However, this file does not contain any security relevant information. Security relevant settings like the credentials to the Jira admin account in the prelive system are instead passed to the Docker container via environment variables.
+This information is accessible to the Bamboo build agent via <a class="reference external" href="https://confluence.atlassian.com/bamboo/bamboo-variables-289277087.html">Bamboo plan variables</a>.</p>
+<p>The Artemis container is also configured to <a class="reference external" href="https://docs.docker.com/compose/compose-file/compose-file-v2/#depends_on">depend on</a> the MySQL container and uses <a class="reference external" href="https://docs.docker.com/compose/compose-file/compose-file-v2/#healthcheck">health checks</a> to wait until the MySQL container is up and running.</p>
+</li>
+<li><p>Cypress</p>
+<p>Cypress offers a <a class="reference external" href="https://github.com/cypress-io/cypress-docker-images">variety of docker images</a> to execute Cypress tests. We use an image which has the Cypress operating system dependencies and a Chrome browser installed.
+However, Cypress itself is not installed in <a class="reference external" href="https://github.com/cypress-io/cypress-docker-images/tree/master/browsers">these images</a>. This is convenient for us because the image is smaller and the Artemis Cypress project requires additional dependencies to fully function.
+Therefore, the Artemis Cypress Docker container is configured to install all dependencies (using <code class="code docutils literal notranslate"><span class="pre">npm</span> <span class="pre">ci</span></code>) upon start. This will also install Cypress itself. Afterwards the Artemis Cypress test suite is executed.</p>
+<p>The necessary configuration for the Cypress test suite is also passed in via environment variables. Furthermore, the Cypress container depends on the Artemis container and is only started once Artemis has been fully booted.</p>
+</li>
+</ol>
+<p><strong>Bamboo webhook</strong></p>
+<p>The Artemis instance deployed on the build agent is not publicly available to improve the security of this setup.
+However, in order to get the build results for programming exercise submissions Artemis relies on a webhook from Bamboo to send POST requests to Artemis.
+To allow this, an extra rule has been added to the firewall allowing only the Bamboo instance in the prelive system to connect to the Artemis instance in the build agent.</p>
+<p><strong>Timing</strong></p>
+<p>As mentioned above, we want the Cypress test suite to be executed whenever new commits are pushed to a Git branch. This has been achieved by adding the <a class="reference external" href="https://bamboo.ase.in.tum.de/browse/ARTEMIS-AETG">Cypress Github build plan</a> as a <a class="reference external" href="https://confluence.atlassian.com/bamboo/setting-up-plan-build-dependencies-289276887.html">child dependency</a> to the <a class="reference external" href="https://bamboo.ase.in.tum.de/browse/ARTEMIS-WEBAPP">Artemis Build build plan</a>.
+The <em>Artemis Build</em> build plan is triggered whenever a new commit has been pushed to a branch.</p>
+<p>The Cypress build plan is only triggered after a successful build of the Artemis executable.
+This does imply a delay (about 10 minutes on average) between the push of new commits and the execution of the Cypress test suite, since the new Artemis executable first has to be built.</p>
+<p><strong>NOTE:</strong> The Cypress test suite is only automatically executed for internal branches and pull requests (requires access to this GitHub repository) <strong>not</strong> for external ones. In case you need access rights, please contact the maintainer <a class="reference external" href="https://github.com/krusche">Stephan Krusche</a>.</p>
+</section>
+<section id="artemis-deployment-in-test-environment">
+<h2>Artemis Deployment in Test Environment<a class="headerlink" href="#artemis-deployment-in-test-environment" title="Permalink to this heading"></a></h2>
+<p>There is another build plan on Bamboo which executes the Cypress test suite. <a class="reference external" href="https://bamboo.ase.in.tum.de/chain/viewChain.action?planKey=ARTEMIS-AETBB">This build plan</a> deploys the latest Artemis executable of the develop branch on an already configured test environment (test server 3) and executes the Cypress test suite against it.
+This build plan is automatically executed every 8 hours and verifies that test server 3 is working properly.</p>
+<figure class="align-center" id="id2">
+<img alt="Artemis Deployment on test environment for Cypress" src="../../_images/cypress_test_environment_deployment_diagram.svg" /><figcaption>
+<p><span class="caption-text">Artemis Deployment on test environment for Cypress</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The difference of this setup is that the Artemis server is deployed on a separate environment which already contains the necessary configuration files for the Artemis server to connect to the prelive system.
+The Docker image for the Cypress container should be exactly the same as the Cypress image used in the docker-compose file for the deployment on a Bamboo build agent.</p>
+</section>
+<section id="maintenance">
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this heading"></a></h2>
+<p>The Artemis Dockerfile as well as the MySQL image are already maintained because they are used in other Artemis Docker setups. Therefore, only Cypress and the Cypress Docker image require active maintenance.
+Since the Cypress test suite simulates a real user, it makes sense to execute the test suite with the latest Chrome browser. The Cypress Docker image we use always has a specific Chrome version installed.
+Therefore, the <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/docker/cypress/docker-compose.yml">docker-compose file</a> as well as the <a class="reference external" href="https://bamboo.ase.in.tum.de/build/admin/edit/editBuildDocker.action?buildKey=ARTEMIS-AETBB-QE">build plan configuration for the Cypress tests on test server 3</a> should be updated every month to make sure that the latest Cypress image for the Chrome browser is used.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../docker/" class="btn btn-neutral float-left" title="Builds and Dependency Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../open-source/" class="btn btn-neutral float-right" title="Open-Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

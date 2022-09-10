@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lectures &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Exams" href="../exam_mode/" />
+    <link rel="prev" title="Team exercises" href="../exercises/team-exercises/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lectures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#students">Students</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructors">Instructors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-lectures">Managing Lectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lecture-units">Lecture Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attachment-unit">Attachment Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercise-unit">Exercise Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#online-unit">Online Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-unit">Text Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-unit">Video Unit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-goals">Learning Goals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>Lectures</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/lectures.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lectures">
+<span id="id1"></span><h1>Lectures<a class="headerlink" href="#lectures" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#students" id="id3">Students</a></p></li>
+<li><p><a class="reference internal" href="#instructors" id="id4">Instructors</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#managing-lectures" id="id5">Managing Lectures</a></p></li>
+<li><p><a class="reference internal" href="#lecture-units" id="id6">Lecture Units</a></p>
+<ul>
+<li><p><a class="reference internal" href="#attachment-unit" id="id7">Attachment Unit</a></p></li>
+<li><p><a class="reference internal" href="#exercise-unit" id="id8">Exercise Unit</a></p></li>
+<li><p><a class="reference internal" href="#online-unit" id="id9">Online Unit</a></p></li>
+<li><p><a class="reference internal" href="#text-unit" id="id10">Text Unit</a></p></li>
+<li><p><a class="reference internal" href="#video-unit" id="id11">Video Unit</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#learning-goals" id="id12">Learning Goals</a></p></li>
+</ul>
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Apart from <a class="reference internal" href="../exercises/#exercises"><span class="std std-ref">Exercises</span></a> and <a class="reference internal" href="../exam_mode/#exams"><span class="std std-ref">Exams</span></a>, Artemis can also host the <strong>Lectures</strong> of a course.</p>
+<section id="students">
+<h3><a class="toc-backref" href="#id3">Students</a><a class="headerlink" href="#students" title="Permalink to this heading"></a></h3>
+<p>Students can see all published lectures of a course, grouped by date, when clicking on the tab labeled <em>Lectures</em>.</p>
+<p><a class="reference internal" href="../../_images/lectures-overview.png"><img alt="lectures-overview" src="../../_images/lectures-overview.png" style="width: 800px;" /></a></p>
+<p>Clicking on a lecture leads to the following page, where students can see the title, description, lecture units, and attachments.</p>
+<p><a class="reference internal" href="../../_images/lecture-details.png"><img alt="lecture-details" src="../../_images/lecture-details.png" style="width: 800px;" /></a></p>
+</section>
+<section id="instructors">
+<h3><a class="toc-backref" href="#id4">Instructors</a><a class="headerlink" href="#instructors" title="Permalink to this heading"></a></h3>
+<p>Instructors can upload files, such as lecture slides, and partition the lecture’s content into individual lecture units.
+Lecture units can consist of files, text, external links, videos or livestreams (e.g., lecture recordings).
+To directly link the necessary knowledge to its application, regular course exercises can be added to the lecture as a unit, too.
+Instructors can also define learning goals so that students can keep track of the knowledge they should have after working with those lecture materials.</p>
+<p>On the course management site, clicking on <a class="reference internal" href="../../_images/lectures-management-button.png"><img alt="lectures-management-btn" src="../../_images/lectures-management-button.png" style="width: 80px;" /></a> opens the following page for managing lectures.</p>
+<p><a class="reference internal" href="../../_images/lectures-management.png"><img alt="lectures-management" src="../../_images/lectures-management.png" style="width: 800px;" /></a></p>
+</section>
+</section>
+<section id="managing-lectures">
+<h2><a class="toc-backref" href="#id5">Managing Lectures</a><a class="headerlink" href="#managing-lectures" title="Permalink to this heading"></a></h2>
+<p>Instructors have two options for creating a lecture.</p>
+<blockquote>
+<div><p>1. Create a new lecture from scratch by clicking on <a class="reference internal" href="../../_images/create-lecture-button.png"><img alt="create-lecture-btn" src="../../_images/create-lecture-button.png" style="width: 120px;" /></a>.
+Lectures consist of a title, a description, and optionally a start and end date.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/create-lecture.png"><img alt="create-lecture" src="../../_images/create-lecture.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+<p>2. Alternatively, instructors can also import a lecture from any other course where they at least have <em>editor</em> access.
+Clicking on <a class="reference internal" href="../../_images/import-lecture-button.png"><img alt="import-lecture-btn" src="../../_images/import-lecture-button.png" style="width: 120px;" /></a> opens the import modal, where instructors can search for an existing lecture and import it.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/import-lecture.png"><img alt="import-lecture" src="../../_images/import-lecture.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+</div></blockquote>
+<p>Once a lecture is created, instructors can add attachments to it.
+An attachment is a file (e.g., document, image) with a title and an optional release date.</p>
+<p><a class="reference internal" href="../../_images/create-attachment.png"><img alt="create-attachment" src="../../_images/create-attachment.png" style="width: 800px;" /></a></p>
+</section>
+<section id="lecture-units">
+<h2><a class="toc-backref" href="#id6">Lecture Units</a><a class="headerlink" href="#lecture-units" title="Permalink to this heading"></a></h2>
+<p>Lectures can be divided into lecture units, which can be of the following types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Text unit:</strong> A text with markup.</p></li>
+<li><p><strong>Exercise unit:</strong> An exercise from the same course.</p></li>
+<li><p><strong>Video unit:</strong> An embedded video stream or video from an external source.</p></li>
+<li><p><strong>Online unit:</strong> A link to an external website.</p></li>
+<li><p><strong>Attachment unit:</strong> A file that the student may download.</p></li>
+</ul>
+</div></blockquote>
+<p>Students see all released lecture units on the lecture details page.
+Clicking on a unit opens its contents.
+Artemis shows a flag icon with a popover next to the unit if it is associated with a learning goal.
+Students complete lecture units automatically (e.g., when they are opened) or manually by clicking the checkbox.</p>
+<p><a class="reference internal" href="../../_images/lecture-details.png"><img alt="lecture-details" src="../../_images/lecture-details.png" style="width: 800px;" /></a></p>
+<p>Instructors can create lecture units on the lecture unit management page.</p>
+<p><a class="reference internal" href="../../_images/units-management-empty.png"><img alt="units-management-empty" src="../../_images/units-management-empty.png" style="width: 800px;" /></a></p>
+<p>After adding lecture units, instructors may edit or delete each one with the buttons to the right of the unit.
+Using the arrow buttons, the order of the lecture units can be changed.</p>
+<p><a class="reference internal" href="../../_images/units-management.png"><img alt="units-management" src="../../_images/units-management.png" style="width: 800px;" /></a></p>
+<section id="attachment-unit">
+<h3><a class="toc-backref" href="#id7">Attachment Unit</a><a class="headerlink" href="#attachment-unit" title="Permalink to this heading"></a></h3>
+<p>An attachment unit consists of a name, file, and optionally a description and release date.
+Students complete this unit once they download the file.</p>
+<p><a class="reference internal" href="../../_images/create-attachment-unit.png"><img alt="create-attachment-unit" src="../../_images/create-attachment-unit.png" style="width: 800px;" /></a></p>
+</section>
+<section id="exercise-unit">
+<h3><a class="toc-backref" href="#id8">Exercise Unit</a><a class="headerlink" href="#exercise-unit" title="Permalink to this heading"></a></h3>
+<p>An exercise can be added as a unit to a lecture.
+For the exercise unit, Artemis uses the title, release date, etc. of the exercise itself.
+Students complete this unit when they participate in the exercise.</p>
+<p><a class="reference internal" href="../../_images/create-exercise-unit.png"><img alt="create-exercise-unit" src="../../_images/create-exercise-unit.png" style="width: 800px;" /></a></p>
+</section>
+<section id="online-unit">
+<h3><a class="toc-backref" href="#id9">Online Unit</a><a class="headerlink" href="#online-unit" title="Permalink to this heading"></a></h3>
+<p>An online unit consists of a link to an external website, a name, and optionally a description and release date.
+Artemis automatically pre-fills the title and description from the website’s metadata once the URL is set.
+Students complete this unit once they navigate to the external website.</p>
+<p><a class="reference internal" href="../../_images/create-online-unit.png"><img alt="create-online-unit" src="../../_images/create-online-unit.png" style="width: 800px;" /></a></p>
+</section>
+<section id="text-unit">
+<h3><a class="toc-backref" href="#id10">Text Unit</a><a class="headerlink" href="#text-unit" title="Permalink to this heading"></a></h3>
+<p>A text unit consists of a name, some rich-text content and optionally a release date.
+Students complete this unit as soon as they open it.</p>
+<p><a class="reference internal" href="../../_images/create-text-unit.png"><img alt="create-text-unit" src="../../_images/create-text-unit.png" style="width: 800px;" /></a></p>
+</section>
+<section id="video-unit">
+<h3><a class="toc-backref" href="#id11">Video Unit</a><a class="headerlink" href="#video-unit" title="Permalink to this heading"></a></h3>
+<p>A video unit consists of a name, an embeddable video link, and optionally a description and release date.
+Artemis can convert the website link from common video sources to an embeddable URL using the arrow button.
+Students complete this unit when they watch the video for at least five minutes.</p>
+<p><a class="reference internal" href="../../_images/create-video-unit.png"><img alt="create-video-unit" src="../../_images/create-video-unit.png" style="width: 800px;" /></a></p>
+</section>
+</section>
+<section id="learning-goals">
+<h2><a class="toc-backref" href="#id12">Learning Goals</a><a class="headerlink" href="#learning-goals" title="Permalink to this heading"></a></h2>
+<p>Instructors can define learning goals to group course content and associate units from different lectures with the same learning goal.</p>
+<p><a class="reference internal" href="../../_images/learning-goals-management.png"><img alt="learning-goals-management" src="../../_images/learning-goals-management.png" style="width: 800px;" /></a></p>
+<p>To create a learning goal, as an instructor click on the plus button and enter a name and description.
+Then select a lecture from the dropdown and mark some of its units to associate them with this learning goal.</p>
+<p><a class="reference internal" href="../../_images/create-learning-goal.png"><img alt="create-learning-goal" src="../../_images/create-learning-goal.png" style="width: 800px;" /></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../exercises/team-exercises/" class="btn btn-neutral float-left" title="Team exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../exam_mode/" class="btn btn-neutral float-right" title="Exams" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

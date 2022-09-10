@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adjustments for programming exercises &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -60,6 +71,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#caching-example-for-maven">Caching example for Maven</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kubernetes/">Kubernetes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-service-configuration">Run the server via a service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-docker">Run the server via Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-run-configuration-in-intellij">Run the server via a run configuration in IntelliJ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-spring-boot-and-spring-profiles">Run the server with Spring Boot and Spring profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-the-command-line-gradle-wrapper">Run the server with the command line (Gradle wrapper)</a></li>
@@ -77,16 +89,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -114,12 +129,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="adjustments-for-programming-exercises">
-<h1>Adjustments for programming exercises<a class="headerlink" href="#adjustments-for-programming-exercises" title="Permalink to this headline"></a></h1>
+  <section id="adjustments-for-programming-exercises">
+<h1>Adjustments for programming exercises<a class="headerlink" href="#adjustments-for-programming-exercises" title="Permalink to this heading"></a></h1>
 <p>There are several variables that can be configured when using programming exercises.
 They are presented in this separate page to keep the ‘normal’ setup guide shorter.</p>
-<div class="section" id="path-variables">
-<h2>Path variables<a class="headerlink" href="#path-variables" title="Permalink to this headline"></a></h2>
+<section id="path-variables">
+<h2>Path variables<a class="headerlink" href="#path-variables" title="Permalink to this heading"></a></h2>
 <p>There are variables for several paths:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">artemis.repo-clone-path</span></code></p>
@@ -139,16 +154,16 @@ No changes to the data in the VCS are stored in this directory (or they can be r
 Note that this is the path to the folder where the <cite>templates</cite> folder is located, not the path to the <cite>templates</cite> folder itself.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="templates">
-<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline"></a></h2>
-<p>Templates are shipped with Artemis (they can be found within the <code class="docutils literal notranslate"><span class="pre">src/main/resources/templates</span></code> folder in Github).
+</section>
+<section id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this heading"></a></h2>
+<p>Templates are shipped with Artemis (they can be found within the <code class="docutils literal notranslate"><span class="pre">src/main/resources/templates</span></code> folder in GitHub).
 These templates should fit well for many deployments, but one might want to change some of them for special deployments.</p>
 <p>As of now, you can overwrite the <code class="docutils literal notranslate"><span class="pre">jenkins</span></code> folders that is present within the <code class="docutils literal notranslate"><span class="pre">src/main/resources/templates</span></code> folder.
 Files that are present in the file system will be used, if a file is not present in the file system, it is loaded from the classpath (e.g. the .war archive).</p>
 <p>We plan to make other folders configurable as well, but this is not supported yet.</p>
-<div class="section" id="jenkins-template">
-<h3>Jenkins template<a class="headerlink" href="#jenkins-template" title="Permalink to this headline"></a></h3>
+<section id="jenkins-template">
+<h3>Jenkins template<a class="headerlink" href="#jenkins-template" title="Permalink to this heading"></a></h3>
 <p>The build process in Jenkins is stored in a <code class="docutils literal notranslate"><span class="pre">config.xml</span></code>-file (<code class="docutils literal notranslate"><span class="pre">src/main/resources/templates/jenkins</span></code>) that shares common steps for all programming languages (e.g. triggering a build when a push to GitLab occurred).
 It is extended by a <code class="docutils literal notranslate"><span class="pre">Jenkinsfile</span></code> that is dependent on the used programming language which will be included in the generic <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> file.
 The builds steps (including used docker images, the checkout process, the actual build steps, and the reporting of the results to Artemis) is included in the <code class="docutils literal notranslate"><span class="pre">Jenkinsfile</span></code>.</p>
@@ -160,11 +175,11 @@ Note that the <code class="docutils literal notranslate"><span class="pre">Jenki
 </ul>
 <p>The variables <cite>#dockerImage</cite>, <cite>#testRepository</cite>, <cite>#assignmentRepository</cite>, <cite>#jenkinsNotificationToken</cite> and <cite>#notificationsUrl</cite> will automatically be replaced (for the normal Jenkinsfile, within the Jenkinsfile-staticCodeAnalysis, #staticCodeAnalysisScript is also replaced).</p>
 <p>You should not need to touch any of these variables, except the <cite>#dockerImage</cite> variable, if you want to use a different agent setup (e.g. a Kubernetes setup).</p>
-</div>
-</div>
-</div>
-<div class="section" id="caching-example-for-maven">
-<h1>Caching example for Maven<a class="headerlink" href="#caching-example-for-maven" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+</section>
+<section id="caching-example-for-maven">
+<h1>Caching example for Maven<a class="headerlink" href="#caching-example-for-maven" title="Permalink to this heading"></a></h1>
 <p>The Docker image used to run the maven-tests already contains a set of commonly used dependencies (see <a class="reference external" href="https://github.com/ls1intum/artemis-maven-docker">artemis-maven-docker</a>).
 This significantly speeds up builds as the dependencies do not have to be downloaded every time a build is started.
 However, the dependencies included in the Docker image might not match the dependencies required in your tests (e.g. because you added new dependencies or the Docker image is outdated).</p>
@@ -186,8 +201,8 @@ stages <span class="o">{</span>
 </div>
 <p>You have to add permissions to the folder (which will be located at the $HOME folder of the user that jenkins uses), e.g. with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chmod</span> <span class="pre">777</span> <span class="pre">maven-cache-docker</span> <span class="pre">-R</span></code>.</p>
 <p>Note that this might allow students to access shared resources (e.g. jars used by Maven), and they might be able to overwrite them.
-You can use <a class="reference external" href="https://github.com/ls1intum/artemis-java-test-sandbox">Artemis-java-testing-sandbox</a> to prevent this by restricting the resources the student’s code can access.</p>
-</div>
+You can use <a class="reference external" href="https://github.com/ls1intum/Ares">Ares</a> to prevent this by restricting the resources the student’s code can access.</p>
+</section>
 
 
            </div>

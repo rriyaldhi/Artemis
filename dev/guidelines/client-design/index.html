@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Theming &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Database Relationships" href="../database/" />
+    <link rel="prev" title="Client Tests" href="../client-tests/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../setup/">Setup Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Coding and design guidelines</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../server/">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client/">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Client Theming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#color-usage">0. Color Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theme-specific-global-styles">1. Theme-specific global styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theme-service">2. Theme Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../database/">Database Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../criteria-builder/">Criteria Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development-process/">Development Process (How to Merge Changes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">Coding and design guidelines</a> &raquo;</li>
+      <li>Client Theming</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/dev/guidelines/client-design.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="client-theming">
+<h1>Client Theming<a class="headerlink" href="#client-theming" title="Permalink to this heading"></a></h1>
+<p>Artemis ships with two themes: Light Mode and Dark Mode. It is important to ensure that all UI components look
+consistent and good in both themes. Therefore, please follow the rules and hints below.</p>
+<p>In general, keep in mind: <strong>All UI changes need to be verified in both themes!</strong></p>
+<section id="color-usage">
+<h2>0. Color Usage<a class="headerlink" href="#color-usage" title="Permalink to this heading"></a></h2>
+<p>We use different colors for our UI elements in both themes. These colors are passed into Bootstrap, so if you use
+default components such as buttons, cards, forms, etc., they will be automagically themed correctly.</p>
+<p>For your custom components and custom stylesheets, please follow this strict global rule:</p>
+<style> .bigred { color: red; font-size: 18px; font-weight: bold; } </style><p><span class="bigred">Do not hard code any color values in your component stylesheets, templates or TypeScript files!</span></p>
+<p>Most likely, any colors hard-coded in your component stylesheets will look bad in either the light mode or dark mode.
+So, you either need to specify different colors for both themes, or you could just use default colors, which is preferred.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p><strong>Pull Requests with hard-coded colors in component files will not be merged.</strong></p></li>
+<li><p>We want to avoid further color fragmentation in the future.
+You need a good justification to not use default or already provided colors, be it derived or completely custom ones.</p></li>
+</ul>
+</div>
+<p>Please check your available options in this order:</p>
+<ol class="arabic">
+<li><dl>
+<dt>Use global default colors and Bootstrap classes <em>(preferred)</em></dt><dd><p>For most use-cases, using one of the pre-provided colors is the way to go. Really think deeply whether you need
+a custom color.</p>
+<p>Check out the top of <code class="docutils literal notranslate"><span class="pre">_default_variables.scss</span></code> to see the available default colors. While you should not
+use <code class="docutils literal notranslate"><span class="pre">black,</span> <span class="pre">gray-XXX,</span> <span class="pre">white</span></code> in your components as that would equal a hard-coded, not theme-aware color, you should re-use signal colors, base colors and pre-provided ‘colorful’ colors.</p>
+<p>All variables in this file are globally available in the application as native CSS variables.
+For example, <code class="docutils literal notranslate"><span class="pre">$danger</span></code> can be accessed in all SCSS files using <code class="docutils literal notranslate"><span class="pre">var(--danger)</span></code>.</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Important default and signal colors</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 63%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Color</p></th>
+<th class="head"><p>Use case</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bs-body-color</span></code></p></td>
+<td><p>The default font color; will be black in light mode and white in dark mode.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--bs-body-color)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bs-body-bg</span></code></p></td>
+<td><p>The body background color; will be something bright in light mode and something darker in dark mode.</p>
+<p>It can be used for smaller boxes in main content, as it’s usually pretty distinguishable from the
+background color used in Artemis’ primary content area.</p>
+</td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--bs-body-bg)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">artemis-dark</span></code></p></td>
+<td><p>A dark color that is typical for some of Artemis’ UI elements, for example the navbar background.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--artemis-dark)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">primary</span></code></p></td>
+<td><p>A blue-ish default color to indicate a primary action. Also used as link color. Use this to indicate
+the primary next step for the user (or one of them).</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--primary)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-primary&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-primary&quot;&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">secondary</span></code></p></td>
+<td><p>A gray color. Use this for secondary action buttons and hint texts.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--secondary)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-secondary&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-secondary&quot;&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p>A green color indicating a successful operation, state, or safe action.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--success)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-success&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-success&quot;&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">danger</span></code></p></td>
+<td><p>A red color indicating a failed operation, error-state, or dangerous action.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--danger)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-danger&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-danger&quot;&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">warning</span></code></p></td>
+<td><p>An orange color indicating a partly failed operation, a warning, or an unsafe, yet not ultra-dangerous action.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--warning)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-warning&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-warning&quot;&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">info</span></code></p></td>
+<td><p>An teal-ish color indicating an informational element.</p></td>
+<td><p>CSS: <code class="docutils literal notranslate"><span class="pre">var(--info)</span></code></p>
+<p>For text: <code class="docutils literal notranslate"><span class="pre">&lt;span</span> <span class="pre">class=&quot;text-info&quot;&gt;</span></code></p>
+<p>For buttons: <code class="docutils literal notranslate"><span class="pre">&lt;button</span> <span class="pre">class=&quot;btn</span> <span class="pre">btn-info&quot;&gt;</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>There are more theme-aware colors to choose from; please see the variables file.</p>
+<p>If you need to design entire boxes using one of the signal colors, you should use alert boxes.</p>
+<p>Either add one of the Boostrap alert classes to your box, such as <code class="docutils literal notranslate"><span class="pre">alert</span> <span class="pre">alert-danger</span></code>, or use our globally
+defined colors:</p>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">var</span><span class="o">(</span><span class="nt">--artemis-alert-XXXX-color</span><span class="o">);</span> <span class="o">//</span> <span class="nt">The</span> <span class="nt">text</span> <span class="nt">color</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">alert</span>
+<span class="nt">var</span><span class="o">(</span><span class="nt">--artemis-alert-XXXX-background</span><span class="o">);</span> <span class="o">//</span> <span class="nt">The</span> <span class="nt">less</span> <span class="nt">intensive</span> <span class="nt">background</span> <span class="nt">color</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">alert</span>
+<span class="nt">var</span><span class="o">(</span><span class="nt">--artemis-alert-XXX-border</span><span class="o">);</span> <span class="o">//</span> <span class="nt">The</span> <span class="nt">border</span> <span class="nt">color</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">alert</span>
+</pre></div>
+</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">XXX</span></code> being one of: <code class="docutils literal notranslate"><span class="pre">info,</span> <span class="pre">danger,</span> <span class="pre">warning,</span> <span class="pre">success,</span> <span class="pre">neutral</span></code>.</p>
+<p>If you need to separate something from the background, try to use the <code class="docutils literal notranslate"><span class="pre">bg-light</span></code> class which should work in both themes.</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>Define your own colors for each theme</strong></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">If the options above don’t suit your use case, you can define your own color variables.</div>
+<div class="line">These colors must be theme-aware, so you have to select a good color for both themes and add them to each
+theme’s stylesheet.</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">Artemis uses <code class="docutils literal notranslate"><span class="pre">white</span></code> in light mode and <code class="docutils literal notranslate"><span class="pre">$neutral-dark</span></code> in dark mode
+as background for the main content area, cards, etc.</div>
+<div class="line"><br /></div>
+<div class="line">For <code class="docutils literal notranslate"><span class="pre">$neutral-dark</span></code>, a few lightened default options exist: <code class="docutils literal notranslate"><span class="pre">$neutral-dark-l-5;</span></code> to <code class="docutils literal notranslate"><span class="pre">$neutral-dark-l-20;</span></code> in steps of 5.</div>
+<div class="line">Therefore, if you need to separate something from the background, choose one of <code class="docutils literal notranslate"><span class="pre">gray-XXX</span></code> for light mode and a lightened option of <code class="docutils literal notranslate"><span class="pre">$neutral-dark</span></code> in dark mode.</div>
+<div class="line"><br /></div>
+<div class="line">Keep this in mind while you select the colors to use.</div>
+</div>
+</div>
+<p>Let’s go through it step by step. Let’s say, you want to give a box a special background color.</p>
+<ol class="arabic">
+<li><p>Define a class for it in your component’s SCSS file, and use a new, unique variable name as value:</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nc">.my-box</span> <span class="p">{</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">var</span><span class="o">(</span><span class="nt">--my-special-component-my-box-background-color</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Add the variable as SCSS variable to both theme variable sheets (<code class="docutils literal notranslate"><span class="pre">_default-variables.scss</span></code> and <code class="docutils literal notranslate"><span class="pre">_dark-variables.scss</span></code>):</p>
+<blockquote>
+<div><div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="c1">// My Special Component</span>
+<span class="nv">$my-special-component-my-box-background-color</span><span class="o">:</span> <span class="p">[</span><span class="o">...</span><span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Select a value for each theme.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Re-use preset colors where possible!</strong> For example, choose <code class="docutils literal notranslate"><span class="pre">gray-700</span></code> in light mode and <code class="docutils literal notranslate"><span class="pre">gray-400</span></code> in dark mode.</div>
+<div class="line">This is still a good approach as you’re reusing already provided colors.</div>
+</div>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="c1">// My Special Component</span>
+<span class="nv">$my-special-component-my-box-background-color</span><span class="o">:</span> <span class="nv">$gray-600</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The two options below are meant as a fallback for special cases.
+Please justify the use of these options in your PR description.</p>
+</div>
+<p>If you need a <strong>slightly modified preset color</strong>, use <a class="reference external" href="https://sass-lang.com/documentation/modules/color">SCSS functions</a> to derive it.</p>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="c1">// My Special Component</span>
+<span class="nv">$my-special-component-my-box-background-color</span><span class="o">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$success</span><span class="o">,</span> <span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>If all of this doesn’t work, define your own colors.</strong></p>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="c1">// My Special Component</span>
+<span class="nv">$my-special-component-my-box-background-color</span><span class="o">:</span> <span class="mh">#123456</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="theme-specific-global-styles">
+<h2>1. Theme-specific global styles<a class="headerlink" href="#theme-specific-global-styles" title="Permalink to this heading"></a></h2>
+<p>It might happen that you need to modify a global style rule in one of the themes, for example if you’re using an external library which styles need to be overridden.</p>
+<div class="line-block">
+<div class="line">Each theme has its own file to which custom global styles can be added: <code class="docutils literal notranslate"><span class="pre">theme-dark.scss</span></code> and <code class="docutils literal notranslate"><span class="pre">theme-default.scss</span></code>.</div>
+<div class="line">For styles that should be applied in both themes, use <code class="docutils literal notranslate"><span class="pre">global.scss</span></code>.</div>
+</div>
+</section>
+<section id="theme-service">
+<h2>2. Theme Service<a class="headerlink" href="#theme-service" title="Permalink to this heading"></a></h2>
+<p>There will be occasions where you need to know in your components which theme is currently applied.
+The <code class="docutils literal notranslate"><span class="pre">ThemeService</span></code> will provide this information where needed.
+For example, you could add a reactive flag to your component that indicates whether or not the current theme is dark:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">@Component</span><span class="p">({</span>
+    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;jhi-my-component&#39;</span><span class="p">,</span>
+    <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;./my-component.component.html&#39;</span><span class="p">,</span>
+    <span class="nx">styleUrls</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;my-component.component.scss&#39;</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">{</span>
+    <span class="nx">isDark</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">themeSubscription</span>: <span class="kt">Subscription</span><span class="p">;</span>
+
+    <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">themeService</span>: <span class="kt">ThemeService</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="nx">ngOnInit() {</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">themeSubscription</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">themeService</span><span class="p">.</span><span class="nx">getCurrentThemeObservable</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">theme</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">isDark</span> <span class="o">=</span> <span class="nx">theme</span> <span class="o">===</span> <span class="nx">Theme</span><span class="p">.</span><span class="nx">DARK</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">ngOnDestroy() {</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">themeSubscription</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">From there, you can do whatever you need to do to change the behavior of your component based on the theme.</div>
+<div class="line">Alternatively, you can execute any actions directly in the <code class="docutils literal notranslate"><span class="pre">subscribe()</span></code> block.
+<strong>The service will fire an event containing the current theme immediately as soon as you subscribe</strong>, and one more
+event for each theme change from then on util you unsubscribe.</div>
+<div class="line">You can get the current theme using <code class="docutils literal notranslate"><span class="pre">themeService.getCurrentTheme()</span></code> at any time.</div>
+</div>
+<p>Additionally, it’s possible to change the theme programmatically. <strong>However, this should be rare</strong>: Usually, the user decides which theme
+they want to use by using the theme switching component in the navbar. Any use of this must therefore be justified and
+survive a detailed review.</p>
+<p>Example:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">themeService</span><span class="p">.</span><span class="nx">applyThemeExplicitly</span><span class="p">(</span><span class="nx">Theme</span><span class="p">.</span><span class="nx">DARK</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../client-tests/" class="btn btn-neutral float-left" title="Client Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../database/" class="btn btn-neutral float-right" title="Database Relationships" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>General Information &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,11 +14,12 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="Programming Exercise" href="../programming/" />
+    <link rel="next" title="Assessment" href="../assessment/" />
     <link rel="prev" title="Exercises" href="../" /> 
 </head>
 
@@ -41,22 +43,29 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../">Exercises</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">General Information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#complaints">Complaints</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#more-feedback-requests">More Feedback Requests</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../assessment/">Assessment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming/">Programming Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quiz/">Quiz exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../modeling/">Modeling exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../team-exercises/">Team exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -65,16 +74,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -102,21 +114,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="general-information">
-<h1>General Information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h1>
+  <section id="general-information">
+<h1>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
-<li><p><a class="reference internal" href="#complaints" id="id2">Complaints</a></p>
-<ul>
-<li><p><a class="reference internal" href="#more-feedback-requests" id="id3">More Feedback Requests</a></p></li>
-</ul>
-</li>
 </ul>
 </div>
-<div class="section" id="overview">
-<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>Artemis offers different exercise types that have these things in common:</p>
 <ul class="simple">
 <li><p><strong>Release Date:</strong> The date at which the exercise is released to the students. When an exercise does not have a release date, it is shown to the students immediately.</p></li>
@@ -124,34 +131,15 @@
 <li><p><strong>Assessment Due Date:</strong> The date until the tutors should finish the assessment of the student submissions. All assessments prior to this date will be released on the assessment due date.</p></li>
 <li><p><strong>Points:</strong> You can achieve points in each exercise. Depending on the exercise configuration these points are not included in the course score, count towards the course score or are used as bonus points.</p></li>
 </ul>
-</div>
-<div class="section" id="complaints">
-<h2><a class="toc-backref" href="#id2">Complaints</a><a class="headerlink" href="#complaints" title="Permalink to this headline"></a></h2>
-<p>After receiving an assessment, students can complain once about the assessment of an exercise, if the instructor enabled this option.
-A complaint leads to a reevaluation of the submission by another tutor.
-The student can also write an additional text when submitting a complaint to justify the reevaluation.</p>
-<p>The instructor can set a maximum number of allowed complaints per course. These so-called tokens are used for each complaint.
-If the tutor accepts the complaint, the token is given back to the student.
-So a student can submit as many complaints as they want, as long as they are accepted.</p>
-<div class="section" id="more-feedback-requests">
-<h3><a class="toc-backref" href="#id3">More Feedback Requests</a><a class="headerlink" href="#more-feedback-requests" title="Permalink to this headline"></a></h3>
-<p>Another possibility after receiving an assessment is the <em>More Feedback Request</em>.
-In comparison to the complaints they do not cost a token, but the score cannot be changed by the tutor after a feedback request.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Sending a <em>More Feedback Request</em> removes the option to complain about the assessment entirely.
-Even if the tutor made a mistake during the first assessment and acknowledges this during the <em>More Feedback Request</em>, the score cannot be changed.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../" class="btn btn-neutral float-left" title="Exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../programming/" class="btn btn-neutral float-right" title="Programming Exercise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../assessment/" class="btn btn-neutral float-right" title="Assessment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

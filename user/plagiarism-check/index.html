@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plagiarism checks &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Learning Analytics" href="../learning-analytics/" />
+    <link rel="prev" title="Communication" href="../communication/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plagiarism checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plagiarism-check-overview">Plagiarism Check Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actions">Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#plagiarism-check-workflow">Plagiarism Check Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tutors">Tutors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructors">Instructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#students">Students</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>Plagiarism checks</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/plagiarism-check.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="plagiarism-checks">
+<span id="plagiarism-check"></span><h1>Plagiarism checks<a class="headerlink" href="#plagiarism-checks" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#plagiarism-check-overview" id="id3">Plagiarism Check Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#settings" id="id4">Settings</a></p></li>
+<li><p><a class="reference internal" href="#actions" id="id5">Actions</a></p></li>
+<li><p><a class="reference internal" href="#results" id="id6">Results</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#plagiarism-check-workflow" id="id7">Plagiarism Check Workflow</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tutors" id="id8">Tutors</a></p></li>
+<li><p><a class="reference internal" href="#instructors" id="id9">Instructors</a></p></li>
+<li><p><a class="reference internal" href="#students" id="id10">Students</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>Artemis allows tutors and exercise instructors to check assignment submissions from students for plagiarism.
+With this feature, different types of assignments can be checked in Artemis, including programming assignments, modeling assignments, and text assignments.
+To perform the plagiarism check, the responsible tutors must initiate the checking process for a specific exercise.
+First, we give an overview of different available features of the plagiarism check.
+Next, we explain the plagiarism check workflows from the perspective of various Artemis users, using UML Activity Diagrams to visualize the process.</p>
+</section>
+<section id="plagiarism-check-overview">
+<h2><a class="toc-backref" href="#id3">Plagiarism Check Overview</a><a class="headerlink" href="#plagiarism-check-overview" title="Permalink to this heading"></a></h2>
+<p>In this section we give an overview of available features of plagiarism check. We explain different configuration settings, possible user actions and present the plagiarism result views, which are accessible after plagiarism checks run.</p>
+<section id="settings">
+<span id="id1"></span><h3><a class="toc-backref" href="#id4">Settings</a><a class="headerlink" href="#settings" title="Permalink to this heading"></a></h3>
+<p>Before starting the plagiarism check, the user can configure different settings to get the best possible results.</p>
+<p><a class="reference internal" href="../../_images/running-check-settings.png"><img alt="run-settings" src="../../_images/running-check-settings.png" style="width: 1000px;" /></a></p>
+<ol class="arabic simple">
+<li><p>Similarity Threshold in % (minimum value 0, maximum value 100).</p></li>
+</ol>
+<blockquote>
+<div><p>Ignore comparisons whose similarity is below this threshold.
+A similarity of 0% means that there is no overlap between two submissions, a similarity of 50% means that about
+half of two submissions are identical.
+A similarity of 100% means that two submissions are completely identical.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Minimum Score in % (minimum value 0, maximum value 100).</p></li>
+</ol>
+<blockquote>
+<div><p>Consider only submissions with a score greater than or equal to this value.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Minimum Size.</p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Default value: Consider only submissions whose size is greater or equal to this value.</p></li>
+<li><p>Modeling exercises: Consider only submissions that have at least as many modeling elements as the specified value.</p></li>
+<li><p>Text exercises: Consider only submissions that have at least as many words as the specified value.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="actions">
+<h3><a class="toc-backref" href="#id5">Actions</a><a class="headerlink" href="#actions" title="Permalink to this heading"></a></h3>
+<p>The user can use different actions to run a plagiarism check, inspect the results or improve the performance.</p>
+<p><a class="reference internal" href="../../_images/plagiarism-actions1.png"><img alt="plagiarism-actions1" src="../../_images/plagiarism-actions1.png" style="width: 1000px;" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Plagiarism detection can take a long time for large courses.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Detect plagiarism: The user can execute the plagiarism check using this action.</p></li>
+<li><p>Rerun plagiarism detection: The user can rerun the plagiarism check by executing this action. It can be helpful to check for plagiarism using the different settings as described in section <a class="reference internal" href="#settings"><span class="std std-ref">Settings</span></a>.</p></li>
+<li><p>Clean up: The user can clean up the latest plagiarism check results for the selected exercise. It helps to keep the database slim and safe storage capacity. Moreover, it should improve the overall system performance. To execute the clean-up action, the user must approve it by clicking ok on the dialog, as this action deletes all potentially approved or denied plagiarism cases.</p></li>
+</ol>
+<p><a class="reference internal" href="../../_images/clean-up-dialog.png"><img alt="clean-up-dialog" src="../../_images/clean-up-dialog.png" style="width: 500px;" /></a></p>
+<ol class="arabic simple" start="4">
+<li><p>Download: The user can download the plagiarism results in JSON or CSV format to open them in a selected editor for the further analysis.</p></li>
+</ol>
+</section>
+<section id="results">
+<h3><a class="toc-backref" href="#id6">Results</a><a class="headerlink" href="#results" title="Permalink to this heading"></a></h3>
+<p>After the plagiarism check was executed, the results can be inspected in different views.</p>
+<ol class="arabic simple">
+<li><p>Overview of the similarity distribution. This statistical overview shows the similarity distribution based on the percentage as a histogram chart. The user can analyze the distribution quickly and adjust the plagiarism check settings as needed accordingly.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/run-results.png"><img alt="run-results" src="../../_images/run-results.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Selected submission. When the user selects the submission from the submission list on the left side of the plagiarism run result view, new actions can be selected to initiate the plagiarism check workflow. We will provide further details to the workflow in the next section.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/run-results-selected-submission.png"><img alt="run-results-selected-submissions" src="../../_images/run-results-selected-submission.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+</section>
+</section>
+<section id="plagiarism-check-workflow">
+<h2><a class="toc-backref" href="#id7">Plagiarism Check Workflow</a><a class="headerlink" href="#plagiarism-check-workflow" title="Permalink to this heading"></a></h2>
+<p>In this section, we explain the process of the plagiarism case detection process from different users’ perspective.</p>
+<section id="tutors">
+<h3><a class="toc-backref" href="#id8">Tutors</a><a class="headerlink" href="#tutors" title="Permalink to this heading"></a></h3>
+<p>Tutors and instructors can execute plagiarism checks. They carefully review the automatically identified cases and provide a first decision whether to accept or deny the found case.
+We visualized the process in the following diagram.</p>
+<p><a class="reference internal" href="../../_images/tutor-workflow.png"><img alt="tutor-workflow" src="../../_images/tutor-workflow.png" style="width: 700px;" /></a></p>
+<ol class="arabic simple">
+<li><p>Open the Exercise via: Course Management → Course → Exercises → Your Exercise.</p></li>
+<li><p>Access the plagiarism tool as seen in the picture</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/exercise_page.png"><img alt="exercise-page" src="../../_images/exercise_page.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Run the Plagiarism Check.</p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Tutors and instructors can adjust the similarity threshold and other settings as described in section <a class="reference internal" href="#settings"><span class="std std-ref">Settings</span></a> if deemed necessary (most of the time not, depends on the formulation of the exercise and on the number of possible solution. A similarity of less than 50% typically means that students did not plagiarize).</p></li>
+<li><p>Checking exercises with many students can take some time (sometimes multiple minutes) and might be resource intensive → We recommend to run plagiarism checks at times when only a few users actively use Artemis in such cases</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Start checking for plagiarism.</p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Review if the presented matches are actual plagiarism cases or not.</p></li>
+<li><p>Depending on your decision, either deny or confirm the match as plagiarism.</p></li>
+<li><p>Continue until the matches start to get “too different”.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="instructors">
+<h3><a class="toc-backref" href="#id9">Instructors</a><a class="headerlink" href="#instructors" title="Permalink to this heading"></a></h3>
+<p>The instructors can execute the same actions as tutors, additionally they are able to make a final decision on the particular confirmed plagiarism case.
+We visualized the process in the following diagram.</p>
+<p><a class="reference internal" href="../../_images/instructors-workflow.png"><img alt="instructors-workflow" src="../../_images/instructors-workflow.png" style="width: 700px;" /></a></p>
+<ol class="arabic simple">
+<li><p>Open the plagiarism cases via: Course Management → Course → Plagiarism Cases.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/plagiarism-cases-navigation.png"><img alt="plagiarism-cases-navigation" src="../../_images/plagiarism-cases-navigation.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Overview the current status of all confirmed plagiarism cases by inspecting the management overview. The overview provides the following information about each confirmed case:</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/confirmed-plagiarism-cases-management.png"><img alt="confirmed-plagiarism-cases-management" src="../../_images/confirmed-plagiarism-cases-management.png" style="width: 1000px;" /></a></p>
+<ol class="loweralpha simple">
+<li><p>In how many comparisons the confirmed case appears.</p></li>
+<li><p>Student was notified or not.</p></li>
+<li><p>Student has responded or not.</p></li>
+<li><p>Final verdict.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Export the confirmed cases as CSV file to analyze them in another editor.</p></li>
+<li><p>Select one confirmed case and navigate to the case detail view.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/selected-confirmed-case.png"><img alt="selected-confirmed-case" src="../../_images/selected-confirmed-case.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Notify the student about the potential plagiarism case and ask him or her for a statement.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/student-notification.png"><img alt="student-notification" src="../../_images/student-notification.png" style="width: 500px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Make a final verdict by selecting one of 3 available options. The final verdict must be approved by clicking ‘Confirm’ in the dialog.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/point-deduction-verdict.png"><img alt="verdict-dialog" src="../../_images/point-deduction-verdict.png" style="width: 500px;" /></a></p>
+<ol class="loweralpha simple">
+<li><p>Point deduction in % (minimum value 0%, maximum 100). Deduct exercise points and confirm  the verdict in the dialog.</p></li>
+<li><p>Warning. The instructor can write a warning message to the student and confirm the verdict in the dialog.</p></li>
+<li><p>Plagiarism. Next steps must be made manually by contacting responsible persons in the university to mark the student grade as “Unterschleif”.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="students">
+<h3><a class="toc-backref" href="#id10">Students</a><a class="headerlink" href="#students" title="Permalink to this heading"></a></h3>
+<p>After the student got a notification that the instructor asked for the statement, he or she has one week to respond.
+The process is visualized in the following diagram.</p>
+<p><a class="reference internal" href="../../_images/student-workflow.png"><img alt="student-workflow" src="../../_images/student-workflow.png" style="width: 700px;" /></a></p>
+<ol class="arabic simple">
+<li><p>Open the notified plagiarism confirmed case via: Course Overview → Course → Exercise → Plagiarism Case.</p></li>
+</ol>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/plagiarism-case-navigation.png"><img alt="student-plagiarism-case-navigation" src="../../_images/plagiarism-case-navigation.png" style="width: 1000px;" /></a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Reply to the message of the instructor.</p></li>
+<li><p>Wait for the final verdict.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../communication/" class="btn btn-neutral float-left" title="Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../learning-analytics/" class="btn btn-neutral float-right" title="Learning Analytics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

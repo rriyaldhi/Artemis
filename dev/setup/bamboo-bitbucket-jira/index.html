@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup for Programming Exercises with Bamboo, Bitbucket and Jira &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -62,6 +73,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../programming-exercises/#caching-example-for-maven">Caching example for Maven</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kubernetes/">Kubernetes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-service-configuration">Run the server via a service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-docker">Run the server via Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-run-configuration-in-intellij">Run the server via a run configuration in IntelliJ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-spring-boot-and-spring-profiles">Run the server with Spring Boot and Spring profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-the-command-line-gradle-wrapper">Run the server with the command line (Gradle wrapper)</a></li>
@@ -79,16 +91,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -116,8 +131,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="setup-for-programming-exercises-with-bamboo-bitbucket-and-jira">
-<h1>Setup for Programming Exercises with Bamboo, Bitbucket and Jira<a class="headerlink" href="#setup-for-programming-exercises-with-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h1>
+  <section id="setup-for-programming-exercises-with-bamboo-bitbucket-and-jira">
+<h1>Setup for Programming Exercises with Bamboo, Bitbucket and Jira<a class="headerlink" href="#setup-for-programming-exercises-with-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h1>
 <p>This page describes how to set up a programming exercise environment
 based on Bamboo, Bitbucket and Jira.</p>
 <div class="line-block">
@@ -149,42 +164,26 @@ setup is present.</p>
 <li><p><a class="reference internal" href="#how-to-verify-the-connection-works" id="id12">How to verify the connection works?</a></p></li>
 </ul>
 </div>
-<div class="section" id="docker-compose">
-<h2><a class="toc-backref" href="#id9">Docker-Compose</a><a class="headerlink" href="#docker-compose" title="Permalink to this headline"></a></h2>
+<section id="docker-compose">
+<h2><a class="toc-backref" href="#id9">Docker-Compose</a><a class="headerlink" href="#docker-compose" title="Permalink to this heading"></a></h2>
 <p>Before you start the docker-compose, check if the bamboo version in the
 <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> (search for <code class="docutils literal notranslate"><span class="pre">com.atlassian.bamboo:bamboo-specs</span></code>) is
-equal to the bamboo version number in the Dockerfiles of bamboo stored in
-<code class="docutils literal notranslate"><span class="pre">src/main/docker/bamboo</span></code> (<code class="docutils literal notranslate"><span class="pre">src/main/docker/bamboo/Dockerfile</span></code>, <code class="docutils literal notranslate"><span class="pre">src/main/docker/bamboo/swift/Dockerfile</span></code>, and <code class="docutils literal notranslate"><span class="pre">src/main/docker/bamboo/c/Dockerfile</span></code>).
-If the version number is not equal, adjust the version number in the Dockerfile.</p>
-<p>In case you want to enable Swift or C programming exercises, you need to change
-the specified Dockerfile in the docker-compose file <code class="docutils literal notranslate"><span class="pre">atlassian.yml</span></code> stored in <code class="docutils literal notranslate"><span class="pre">src/main/docker</span></code>.
-To use the Swift Dockerfile, change the following:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bamboo</span><span class="p">:</span>
-        <span class="n">container_name</span><span class="p">:</span> <span class="n">artemis_bamboo</span>
-        <span class="n">build</span><span class="p">:</span> <span class="n">bamboo</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>to:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bamboo</span><span class="p">:</span>
-        <span class="n">container_name</span><span class="p">:</span> <span class="n">artemis_bamboo</span>
-        <span class="n">build</span><span class="p">:</span> <span class="n">bamboo</span><span class="o">/</span><span class="n">swift</span>
-</pre></div>
-</div>
-</div></blockquote>
+equal to the bamboo version number in the docker compose in
+<code class="docutils literal notranslate"><span class="pre">src/main/docker/atlassian.yml</span></code>
+If the version number is not equal, adjust the version number. Further details about the docker-compose setup can be found in
+<code class="docutils literal notranslate"><span class="pre">src/main/docker</span></code></p>
 <p>Execute the docker-compose file e.g. with
-<code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">src/main/docker/atlassian.yml</span> <span class="pre">up</span> <span class="pre">-d</span></code>.
-If you notice that the used image didn’t change, append the flag <code class="docutils literal notranslate"><span class="pre">--build</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">src/main/docker/atlassian.yml</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</p>
 <p>Error Handling: It can happen that there is an overload with other
 docker networks
 <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">Pool</span> <span class="pre">overlaps</span> <span class="pre">with</span> <span class="pre">other</span> <span class="pre">one</span> <span class="pre">on</span> <span class="pre">this</span> <span class="pre">address</span> <span class="pre">space</span></code>. Use the
 command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">network</span> <span class="pre">prune</span></code> to resolve this issue.</p>
 <p>Make sure that docker has enough memory (~ 6GB). To adapt it, go to <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Resources</span></code></p>
-</div>
-<div class="section" id="configure-bamboo-bitbucket-and-jira">
-<h2><a class="toc-backref" href="#id10">Configure Bamboo, Bitbucket and Jira</a><a class="headerlink" href="#configure-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h2>
+<p>In case you want to enable Swift or C programming exercises, refer to the readme in
+<code class="docutils literal notranslate"><span class="pre">src/main/docker</span></code></p>
+</section>
+<section id="configure-bamboo-bitbucket-and-jira">
+<h2><a class="toc-backref" href="#id10">Configure Bamboo, Bitbucket and Jira</a><a class="headerlink" href="#configure-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h2>
 <p>By default, the Jira instance is reachable under <code class="docutils literal notranslate"><span class="pre">localhost:8081</span></code>, the
 Bamboo instance under <code class="docutils literal notranslate"><span class="pre">localhost:8085</span></code> and the Bitbucket instance
 under <code class="docutils literal notranslate"><span class="pre">localhost:7990</span></code>.</p>
@@ -198,6 +197,7 @@ under <code class="docutils literal notranslate"><span class="pre">localhost:799
 </ul>
 </li>
 <li><p>Provide the just created license key during the setup and create an admin user with the same credentials in all 3 applications.
+For the Bamboo database you can choose H2.
 Also, you can select the evaluation/internal/test/dev setups if you are asked.
 Follow the additional steps for Jira and Bitbucket.</p>
 <ul class="simple">
@@ -214,20 +214,21 @@ Follow the additional steps for Jira and Bitbucket.</p>
 <li><p>Bitbucket: Do not connect Bitbucket with Jira yet</p></li>
 </ul>
 </li>
-<li><p>Make sure that <a class="reference external" href="https://www.howtoinstall.me/ubuntu/18-04/xdg-utils/">xdg-utils</a> is installed before running the following script.</p>
+<li><p>Make sure that Jira, Bitbucket and Bamboo have finished starting up.</p>
 <blockquote>
-<div><details>
+<div><p>(Only Linux &amp; Windows) Make sure that <a class="reference external" href="https://www.howtoinstall.me/ubuntu/18-04/xdg-utils/">xdg-utils</a> is installed before running the following script.</p>
+<details>
 <summary>xdg-utils for Windows users</summary>
 An easy way to use the xdg-utils on Windows would be to install them on the linux-subsystem, which should be activated anyways when running Docker on Windows.
 For the installation on the subsystem the above linked explanation can be used.
 <br>
 Make sure to execute the script from the subsystem.
 </details></div></blockquote>
-<p>Make sure that Jira, Bitbucket and Bamboo have finished starting up.</p>
 <p>Execute the shell script <code class="docutils literal notranslate"><span class="pre">atlassian-setup.sh</span></code> in the
 <code class="docutils literal notranslate"><span class="pre">src/main/docker</span></code> directory (e.g. with
 <code class="docutils literal notranslate"><span class="pre">src/main/docker/./atlassian-setup.sh</span></code>). This script creates
-groups, users and disabled application links between the 3 applications.</p>
+groups, users and assigns the user to their respective group.
+In addition, it configures disabled application links between the 3 applications.</p>
 </li>
 <li><p>Enable the created <a class="reference external" href="https://confluence.atlassian.com/doc/linking-to-another-application-360677690.html">application
 links</a>
@@ -242,39 +243,51 @@ Bitbucket → Bamboo URl to</strong> <code class="docutils literal notranslate">
 <code class="docutils literal notranslate"><span class="pre">http://localhost:8085</span></code> <strong>.</strong></p>
 <blockquote>
 <div><p><strong>Bamboo:</strong></p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <img alt="../../../_images/bamboo_bitbucket_applicationLink.png" src="../../../_images/bamboo_bitbucket_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bamboo → Bitbucket</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id2">
+<figcaption>
+<p><span class="caption-text">Bamboo → Bitbucket</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
 <img alt="../../../_images/bamboo_jira_applicationLink.png" src="../../../_images/bamboo_jira_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bamboo → Jira</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Bamboo → Jira</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Bitbucket:</strong></p>
-<div class="figure align-center" id="id3">
+<figure class="align-center" id="id3">
 <img alt="../../../_images/bitbucket_bamboo_applicationLink.png" src="../../../_images/bitbucket_bamboo_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bitbucket → Bamboo</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id4">
+<figcaption>
+<p><span class="caption-text">Bitbucket → Bamboo</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
 <img alt="../../../_images/bitbucket_jira_applicationLink.png" src="../../../_images/bitbucket_jira_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bitbucket → Jira</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Bitbucket → Jira</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Jira:</strong></p>
-<div class="figure align-center" id="id5">
+<figure class="align-center" id="id5">
 <img alt="../../../_images/jira_bamboo_applicationLink.png" src="../../../_images/jira_bamboo_applicationLink.png" />
-<p class="caption"><span class="caption-text">Jira → Bamboo</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id6">
+<figcaption>
+<p><span class="caption-text">Jira → Bamboo</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
 <img alt="../../../_images/jira_bitbucket_applicationLink.png" src="../../../_images/jira_bitbucket_applicationLink.png" />
-<p class="caption"><span class="caption-text">Jira → Bitbucket</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jira → Bitbucket</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </div></blockquote>
 </li>
 </ul>
 </li>
-<li><p>The script <em>(step 3)</em> has already created users and groups but you need to
-manually assign the users into their respective group in Jira. In our
-test setup, users 1-5 are students, 6-10 are tutors, 11-15 are
+<li><p>The script <em>(step 3)</em> has already created the required users and assigned them to their respective group in Jira.
+Now, make sure that they are assigned correctly according to the following test setup:
+users 1-5 are students, 6-10 are tutors, 11-15 are
 editors and 16-20 are instructors. The usernames are artemis_test_user_{1-20}
 and the password is again the username. When you create a course in artemis
 you have to manually choose the created groups (students, tutors, editors,
@@ -294,13 +307,13 @@ IP-address <code class="docutils literal notranslate"><span class="pre">0.0.0.0/
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default">
+<tr class="row-odd"><td><figure class="align-default">
 <img alt="../../../_images/jira_add_application_bitbucket.png" src="../../../_images/jira_add_application_bitbucket.png" />
-</div>
+</figure>
 </td>
-<td><div class="figure align-default">
+<td><figure class="align-default">
 <img alt="../../../_images/jira_add_application_bamboo.png" src="../../../_images/jira_add_application_bamboo.png" />
-</div>
+</figure>
 </td>
 </tr>
 </tbody>
@@ -321,26 +334,32 @@ groups should now be available.</p></li>
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default" id="id7">
+<tr class="row-odd"><td><figure class="align-default" id="id7">
 <img alt="../../../_images/user_directories_bitbucket.png" src="../../../_images/user_directories_bitbucket.png" />
-<p class="caption"><span class="caption-text">Adding Crowd Server in <strong>Bitbucket</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Adding Crowd Server in <strong>Bitbucket</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </td>
-<td><div class="figure align-default" id="id8">
+<td><figure class="align-default" id="id8">
 <img alt="../../../_images/user_directories_bamboo.png" src="../../../_images/user_directories_bamboo.png" />
-<p class="caption"><span class="caption-text">Adding Crowd Server in <strong>Bamboo</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Adding Crowd Server in <strong>Bamboo</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
 </li>
+<li><p>Give the test users User access on Bitbucket: Configure → Global permissions</p></li>
 <li><p>In Bamboo create a global variable named
 SERVER_PLUGIN_SECRET_PASSWORD, the value of this variable will be used
 as the secret. The value of this variable should be then stored in
 <code class="docutils literal notranslate"><span class="pre">src/main/resources/config/application-artemis.yml</span></code> as the value of
-<code class="docutils literal notranslate"><span class="pre">artemis-authentication-token-value</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">artemis-authentication-token-value</span></code>.
+You can create a global variable from settings on Bamboo.</p></li>
 <li><p>Download the
 <a class="reference external" href="https://github.com/ls1intum/bamboo-server-notification-plugin/releases">bamboo-server-notification-plugin</a>
 and add it to bamboo. Go to Bamboo → Manage apps → Upload app → select
@@ -354,6 +373,7 @@ Capability type <code class="docutils literal notranslate"><span class="pre">Exe
 as JDK label → insert <code class="docutils literal notranslate"><span class="pre">/usr/lib/jvm/java-17-oracle</span></code> as Java home.</p></li>
 </ul>
 </li>
+<li><p>Create a Bamboo agent. Configure → Agents → Add local agent</p></li>
 <li><p>Generate a personal access token</p>
 <p>While username and password can still be used as a fallback, this option is already marked as deprecated and will
 be removed in the future.</p>
@@ -362,9 +382,9 @@ be removed in the future.</p>
 <ul>
 <li><p>Log in as the admin user and go to Bamboo -&gt; Profile (top right corner) -&gt; Personal access tokens -&gt; Create token</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/bamboo-create-token.png" src="../../../_images/bamboo-create-token.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Insert the generated token into the file <code class="docutils literal notranslate"><span class="pre">application-artemis.yml</span></code> in the section <code class="docutils literal notranslate"><span class="pre">continuous-integration</span></code>:</p></li>
@@ -383,9 +403,9 @@ be removed in the future.</p>
 <div><ul>
 <li><p>Log in as the admin user and go to Bitbucket -&gt; View Profile (top right corner) -&gt; Manage account -&gt; Personal access tokens -&gt; Create token</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/bitbucket-create-token.png" src="../../../_images/bitbucket-create-token.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Insert the generated token into the file <code class="docutils literal notranslate"><span class="pre">application-artemis.yml</span></code> in the section <code class="docutils literal notranslate"><span class="pre">version-control</span></code>:</p></li>
@@ -398,24 +418,6 @@ be removed in the future.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-<li><dl>
-<dt>Disable XSRF checking</dt><dd><p>Although XSRF checking is highly recommended, we currently have to disable it as Artemis does not yet support
-sending the required headers.</p>
-<ul>
-<li><p>Log in as the admin user go to Bamboo -&gt; Overview -&gt; Security Settings</p>
-<blockquote>
-<div><p>Edit the settings and disable XSRF checking:</p>
-<blockquote>
-<div><div class="figure align-center">
-<img alt="../../../_images/bamboo_xsrf_disable.png" src="../../../_images/bamboo_xsrf_disable.png" />
-</div>
-</div></blockquote>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
 </li>
 <li><p>Add a SSH key for the admin user</p>
 <blockquote>
@@ -434,14 +436,16 @@ Open the public key file (usually called <code class="docutils literal notransla
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="configure-artemis">
-<h2><a class="toc-backref" href="#id11">Configure Artemis</a><a class="headerlink" href="#configure-artemis" title="Permalink to this headline"></a></h2>
+</section>
+<section id="configure-artemis">
+<h2><a class="toc-backref" href="#id11">Configure Artemis</a><a class="headerlink" href="#configure-artemis" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">src/main/resources/config/application-artemis.yml</span></code></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repo-clone-path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./repos/</span>
 <span class="nt">repo-download-clone-path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./repos-download/</span>
-<span class="nt">encryption-password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">artemis-encrypt</span>   <span class="c1"># arbitrary password for encrypting database values</span>
+<span class="nt">encryption-password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">artemis-encrypt</span>         <span class="c1"># LEGACY: arbitrary password for encrypting database values</span>
+<span class="nt">bcrypt-salt-rounds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">11</span>   <span class="c1"># The number of salt rounds for the bcrypt password hashing. Lower numbers make it faster but more unsecure and vice versa.</span>
+                         <span class="c1"># Please use the bcrypt benchmark tool to determine the best number of rounds for your system. https://github.com/ls1intum/bcrypt-Benchmark</span>
 <span class="nt">user-management</span><span class="p">:</span>
     <span class="nt">use-external</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
     <span class="nt">external</span><span class="p">:</span>
@@ -487,35 +491,35 @@ e.g.:</p>
 </pre></div>
 </div>
 <p>Please read <a class="reference internal" href="../"><span class="doc">Setup Guide</span></a> for more details.</p>
-</div>
-<div class="section" id="how-to-verify-the-connection-works">
-<h2><a class="toc-backref" href="#id12">How to verify the connection works?</a><a class="headerlink" href="#how-to-verify-the-connection-works" title="Permalink to this headline"></a></h2>
-<div class="section" id="artemis-jira">
-<h3>Artemis → Jira<a class="headerlink" href="#artemis-jira" title="Permalink to this headline"></a></h3>
+</section>
+<section id="how-to-verify-the-connection-works">
+<h2><a class="toc-backref" href="#id12">How to verify the connection works?</a><a class="headerlink" href="#how-to-verify-the-connection-works" title="Permalink to this heading"></a></h2>
+<section id="artemis-jira">
+<h3>Artemis → Jira<a class="headerlink" href="#artemis-jira" title="Permalink to this heading"></a></h3>
 <p>You can login to Artemis with the admin user you created in Jira</p>
-</div>
-<div class="section" id="artemis-bitbucket">
-<h3>Artemis → Bitbucket<a class="headerlink" href="#artemis-bitbucket" title="Permalink to this headline"></a></h3>
+</section>
+<section id="artemis-bitbucket">
+<h3>Artemis → Bitbucket<a class="headerlink" href="#artemis-bitbucket" title="Permalink to this heading"></a></h3>
 <p>You can create a programming exercise</p>
-</div>
-<div class="section" id="artemis-bamboo">
-<h3>Artemis → Bamboo<a class="headerlink" href="#artemis-bamboo" title="Permalink to this headline"></a></h3>
+</section>
+<section id="artemis-bamboo">
+<h3>Artemis → Bamboo<a class="headerlink" href="#artemis-bamboo" title="Permalink to this heading"></a></h3>
 <p>You can create a programming exercise</p>
-</div>
-<div class="section" id="bitbucket-bamboo">
-<h3>Bitbucket → Bamboo<a class="headerlink" href="#bitbucket-bamboo" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bitbucket-bamboo">
+<h3>Bitbucket → Bamboo<a class="headerlink" href="#bitbucket-bamboo" title="Permalink to this heading"></a></h3>
 <p>The build of the students repository gets started after pushing to it</p>
-</div>
-<div class="section" id="bitbucket-artemis">
-<h3>Bitbucket → Artemis<a class="headerlink" href="#bitbucket-artemis" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bitbucket-artemis">
+<h3>Bitbucket → Artemis<a class="headerlink" href="#bitbucket-artemis" title="Permalink to this heading"></a></h3>
 <p>When using the code editor, after clicking on <em>Submit</em>, the text <em>Building and testing…</em> should appear.</p>
-</div>
-<div class="section" id="bamboo-artemis">
-<h3>Bamboo → Artemis<a class="headerlink" href="#bamboo-artemis" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bamboo-artemis">
+<h3>Bamboo → Artemis<a class="headerlink" href="#bamboo-artemis" title="Permalink to this heading"></a></h3>
 <p>The build result is displayed in the code editor.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

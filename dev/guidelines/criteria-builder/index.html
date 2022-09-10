@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criteria Builder &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Development Process (How to Merge Changes)" href="../development-process/" />
+    <link rel="prev" title="Database Relationships" href="../database/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../setup/">Setup Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Coding and design guidelines</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../server/">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client/">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-design/">Client Theming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/">Database Relationships</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Criteria Builder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">1. Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-the-query">2. Generating the query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations">3. Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#joins">4. Joins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sub-queries">5. Sub-Queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">6. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limitations">7. Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-links">8. Additional links</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../development-process/">Development Process (How to Merge Changes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">Coding and design guidelines</a> &raquo;</li>
+      <li>Criteria Builder</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/dev/guidelines/criteria-builder.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="criteria-builder">
+<h1>Criteria Builder<a class="headerlink" href="#criteria-builder" title="Permalink to this heading"></a></h1>
+<section id="requirements">
+<h2>1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>In order to use Criteria Builder and benefit from Specifications, we need to adjust the Repository.</p>
+<ol class="arabic">
+<li><p><strong>Metamodel:</strong> The metamodel is used to refer to the columns of a table, in an object-oriented way. For this, each entity needs to have a corresponding metamodel class. (Artemis already fulfills this requirement)</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Generated</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor&quot;</span><span class="p">)</span>
+<span class="nd">@StaticMetamodel</span><span class="p">(</span><span class="n">User</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">User_</span> <span class="kd">extends</span> <span class="n">de</span><span class="p">.</span><span class="na">tum</span><span class="p">.</span><span class="na">in</span><span class="p">.</span><span class="na">www1</span><span class="p">.</span><span class="na">artemis</span><span class="p">.</span><span class="na">domain</span><span class="p">.</span><span class="na">AbstractAuditingEntity_</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">lastName</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">Instant</span><span class="o">&gt;</span> <span class="n">resetDate</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">ZonedDateTime</span><span class="o">&gt;</span> <span class="n">hideNotificationsUntil</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SetAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">groups</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SetAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">GuidedTourSetting</span><span class="o">&gt;</span> <span class="n">guidedTourSettings</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">login</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">activationKey</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SingularAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">resetKey</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">SetAttribute</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">Authority</span><span class="o">&gt;</span> <span class="n">authorities</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>JpaSpecificationExecutor:</strong> To execute Specifications and generate SQL statements, we need to extend the JpaSpecificationExecutor interface in our Spring Data JPA Repository.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">Long</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">JpaSpecificationExecutor</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>(Optional) Show queries:</strong> To ease debugging, generated queries can be displayed by enabling the output of executed SQL probes.</p>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jpa</span><span class="p">:</span>
+    <span class="nt">database-platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">org.hibernate.dialect.MySQL8Dialect</span>
+    <span class="nt">database</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MYSQL</span>
+    <span class="nt">show-sql</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="generating-the-query">
+<h2>2. Generating the query<a class="headerlink" href="#generating-the-query" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Query Generation:</strong> In most occasions, it is sufficient to execute any one of the following methods:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="p">(</span><span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">spec</span><span class="p">);</span>
+
+<span class="n">Page</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="p">(</span><span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">spec</span><span class="p">,</span> <span class="n">Pageable</span> <span class="n">pageable</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="p">(</span><span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">spec</span><span class="p">,</span> <span class="n">Sort</span> <span class="n">sort</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Defining the initial Specification:</strong> To generate a query with multiple Specifications, we can use the <code class="docutils literal notranslate"><span class="pre">and()</span></code> method for concatenation. However, the first Specification must always be called via the <code class="docutils literal notranslate"><span class="pre">where()</span></code> method as a rule.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">specification</span> <span class="o">=</span> <span class="n">Specification</span><span class="p">.</span><span class="na">where</span><span class="p">(</span><span class="n">getFirstSpecification</span><span class="p">()).</span><span class="na">and</span><span class="p">(</span><span class="n">getSecondSpecification</span><span class="p">()).</span><span class="na">and</span><span class="p">(</span><span class="n">getThirdSpecification</span><span class="p">())...</span><span class="na">and</span><span class="p">(</span><span class="n">getNthSpecification</span><span class="p">());</span>
+<span class="k">return</span> <span class="n">findAll</span><span class="p">(</span><span class="n">specification</span><span class="p">,</span> <span class="n">sort</span><span class="o">/</span><span class="n">pageable</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Defining Specifications:</strong> A specification is a functional interface with a single method. This method has three parameters - a root, a query and a criteria builder. You don’t need to specify these arguments manually because they are provided during chaining.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Specification</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">Predicate</span> <span class="nf">toPredicate</span><span class="p">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">root</span><span class="p">,</span> <span class="n">CriteriaQuery</span> <span class="n">query</span><span class="p">,</span> <span class="n">CriteriaBuilder</span> <span class="n">cb</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we can create Specifications. We can achieve this in two ways:</p>
+<ul>
+<li><p>Anonymous <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Specification&lt;User&gt;()</span></code>:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">getAllUsersMatchingEmptyCourses</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">Predicate</span> <span class="nf">toPredicate</span><span class="p">(</span><span class="n">Root</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">root</span><span class="p">,</span> <span class="n">CriteriaQuery</span><span class="o">&lt;?&gt;</span> <span class="n">query</span><span class="p">,</span> <span class="n">CriteriaBuilder</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">GROUPS</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Lambda expression (preferred version):</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">getAllUsersMatchingEmptyCourses</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">GROUPS</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="operations">
+<h2>3. Operations<a class="headerlink" href="#operations" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><strong>AND:</strong> We can perform the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation on an arbitrary number of predicates via the <code class="docutils literal notranslate"><span class="pre">criteriaBuilder</span></code> object, which results in a new <code class="docutils literal notranslate"><span class="pre">Predicate</span></code>.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="n">Predicate</span> <span class="n">one</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+    <span class="n">Predicate</span> <span class="n">two</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">notEqual</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="p">...);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>OR:</strong> We can perform the <code class="docutils literal notranslate"><span class="pre">or</span></code> operation on an arbitrary number of predicates via the <code class="docutils literal notranslate"><span class="pre">criteriaBuilder</span></code> object, which results in a new <code class="docutils literal notranslate"><span class="pre">Predicate</span></code>.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="n">Predicate</span> <span class="n">one</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+    <span class="n">Predicate</span> <span class="n">two</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">notEqual</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">or</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="p">...);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>EQUAL / NOT EQUAL:</strong></p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="n">Predicate</span> <span class="n">one</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">equal</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">IS_INTERNAL</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="n">Predicate</span> <span class="n">two</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">notEqual</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">ACTIVATED</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="p">...);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>NOT:</strong></p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="n">Predicate</span> <span class="n">predicate</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">subQuery</span><span class="p">).</span><span class="na">not</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">predicate</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>IN:</strong> To check if the collection contains a value.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="n">Predicate</span> <span class="n">in</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">in</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">ID</span><span class="p">)).</span><span class="na">value</span><span class="p">(</span><span class="n">ids</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">in</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="joins">
+<h2>4. Joins<a class="headerlink" href="#joins" title="Permalink to this heading"></a></h2>
+<p>Different joins are available (e.g. Join, ListJoin, SetJoin, CollectionJoin, …) - please choose the right one.</p>
+<ul>
+<li><p>If we want to join from X to Y, we need to define the column and the join type. Please mind that when the join type is not specified an Inner Join is made by default.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Join</span><span class="o">&lt;</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">&gt;</span> <span class="n">join</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="n">X_</span><span class="p">.</span><span class="na">COLUMN</span><span class="p">,</span> <span class="n">JoinType</span><span class="p">.</span><span class="na">LEFT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>We can define custom on clauses to specify the join condition.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Join</span><span class="o">&lt;</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">&gt;</span> <span class="n">join</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="n">X_</span><span class="p">.</span><span class="na">COLUMN</span><span class="p">,</span> <span class="n">JoinType</span><span class="p">.</span><span class="na">LEFT</span><span class="p">);</span>
+<span class="n">join</span><span class="p">.</span><span class="na">on</span><span class="p">(</span><span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">in</span><span class="p">(</span><span class="n">join</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">Y_</span><span class="p">.</span><span class="na">NAME</span><span class="p">)).</span><span class="na">value</span><span class="p">(</span><span class="n">names</span><span class="p">));</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>We can concatenate joins.</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Join</span><span class="o">&lt;</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="o">&gt;</span> <span class="n">join</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="n">X_</span><span class="p">.</span><span class="na">COLUMN</span><span class="p">,</span> <span class="n">JoinType</span><span class="p">.</span><span class="na">LEFT</span><span class="p">).</span><span class="na">join</span><span class="p">(</span><span class="n">Y_</span><span class="p">.</span><span class="na">COLUMN</span><span class="p">,</span> <span class="n">JoinType</span><span class="p">.</span><span class="na">LEFT</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="sub-queries">
+<h2>5. Sub-Queries<a class="headerlink" href="#sub-queries" title="Permalink to this heading"></a></h2>
+<p>Sub-queries are usually fine unless they are dependent sub-queries (also known as <a class="reference external" href="https://en.wikipedia.org/wiki/Correlated_subquery">correlated</a> sub queries).</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Dependent Sub-Query:</strong></dt><dd><p>In an SQL database query, a correlated sub-query is a sub-query (a query nested inside another query) that uses values from the outer query. But with a dependent sub-query you might run into performance problems because a dependent sub-query typically needs to be run once for each row in the outer query, e.g. if your outer query has 1000 rows, the sub-query will be run 1000 times.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Independent Sub-Query:</strong></dt><dd><p>An independent sub-query is a sub-query that can be run on its own, without the main (sub-)query. Therefore, an independent sub-query typically only needs to be evaluated once.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>You can find additional information on dependent sub-queries and how to identify them <a class="reference external" href="https://stackoverflow.com/questions/4799820/when-to-use-sql-sub-queries-versus-a-standard-join/4799847#4799847">here</a>.</p>
+</section>
+<section id="examples">
+<h2>6. Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Specification that matches the specified string:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">getSearchTermSpecification</span><span class="p">(</span><span class="n">String</span> <span class="n">searchTerm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">extendedSearchTerm</span> <span class="o">=</span> <span class="s">&quot;%&quot;</span> <span class="o">+</span> <span class="n">searchTerm</span> <span class="o">+</span> <span class="s">&quot;%&quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">columns</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="n">User_</span><span class="p">.</span><span class="na">LOGIN</span><span class="p">,</span> <span class="n">User_</span><span class="p">.</span><span class="na">EMAIL</span><span class="p">,</span> <span class="n">User_</span><span class="p">.</span><span class="na">FIRST_NAME</span><span class="p">,</span> <span class="n">User_</span><span class="p">.</span><span class="na">LAST_NAME</span> <span class="p">};</span>
+        <span class="n">Predicate</span><span class="o">[]</span> <span class="n">predicates</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">columns</span><span class="p">).</span><span class="na">map</span><span class="p">((</span><span class="n">column</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">like</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">column</span><span class="p">),</span> <span class="n">extendedSearchTerm</span><span class="p">)).</span><span class="na">toArray</span><span class="p">(</span><span class="n">Predicate</span><span class="o">[]</span><span class="p">::</span><span class="k">new</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">or</span><span class="p">(</span><span class="n">predicates</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="k">user</span> <span class="k">FROM</span> <span class="n">jhi_user</span> <span class="k">user</span>
+<span class="k">WHERE</span> <span class="k">user</span><span class="p">.</span><span class="n">login</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">email</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">first_name</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">last_name</span> <span class="k">LIKE</span> <span class="o">?</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span> <span class="k">ASC</span> <span class="k">limit</span> <span class="o">?</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Specification that matches all selected courses:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">getAllUsersMatchingCourses</span><span class="p">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">courseIds</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">Root</span><span class="o">&lt;</span><span class="n">Course</span><span class="o">&gt;</span> <span class="n">courseRoot</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">Course</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+        <span class="n">Join</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">group</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">GROUPS</span><span class="p">,</span> <span class="n">JoinType</span><span class="p">.</span><span class="na">LEFT</span><span class="p">);</span>
+
+        <span class="c1">// Select all possible group types</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">columns</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="n">Course_</span><span class="p">.</span><span class="na">STUDENT_GROUP_NAME</span><span class="p">,</span> <span class="n">Course_</span><span class="p">.</span><span class="na">TEACHING_ASSISTANT_GROUP_NAME</span><span class="p">,</span> <span class="n">Course_</span><span class="p">.</span><span class="na">EDITOR_GROUP_NAME</span><span class="p">,</span> <span class="n">Course_</span><span class="p">.</span><span class="na">INSTRUCTOR_GROUP_NAME</span> <span class="p">};</span>
+        <span class="n">Predicate</span><span class="o">[]</span> <span class="n">predicates</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">columns</span><span class="p">).</span><span class="na">map</span><span class="p">((</span><span class="n">column</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">in</span><span class="p">(</span><span class="n">courseRoot</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">column</span><span class="p">)).</span><span class="na">value</span><span class="p">(</span><span class="n">group</span><span class="p">)).</span><span class="na">toArray</span><span class="p">(</span><span class="n">Predicate</span><span class="o">[]</span><span class="p">::</span><span class="k">new</span><span class="p">);</span>
+
+        <span class="c1">// The course needs to be one of the selected</span>
+        <span class="n">Predicate</span> <span class="n">inCourse</span> <span class="o">=</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">in</span><span class="p">(</span><span class="n">courseRoot</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">Course_</span><span class="p">.</span><span class="na">ID</span><span class="p">)).</span><span class="na">value</span><span class="p">(</span><span class="n">courseIds</span><span class="p">);</span>
+
+        <span class="n">group</span><span class="p">.</span><span class="na">on</span><span class="p">(</span><span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">or</span><span class="p">(</span><span class="n">predicates</span><span class="p">));</span>
+
+        <span class="n">query</span><span class="p">.</span><span class="na">groupBy</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">User_</span><span class="p">.</span><span class="na">ID</span><span class="p">)).</span><span class="na">having</span><span class="p">(</span><span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">equal</span><span class="p">(</span><span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="n">group</span><span class="p">),</span> <span class="n">courseIds</span><span class="p">.</span><span class="na">size</span><span class="p">()));</span>
+
+            <span class="k">return</span> <span class="n">criteriaBuilder</span><span class="p">.</span><span class="na">in</span><span class="p">(</span><span class="n">courseRoot</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">Course_</span><span class="p">.</span><span class="na">ID</span><span class="p">)).</span><span class="na">value</span><span class="p">(</span><span class="n">courseIds</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="k">user</span> <span class="k">FROM</span> <span class="n">jhi_user</span> <span class="k">user</span>
+<span class="k">CROSS</span> <span class="k">JOIN</span> <span class="n">course</span> <span class="n">course</span>
+<span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">user_groups</span> <span class="n">groups</span> <span class="k">ON</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">groups</span><span class="p">.</span><span class="n">user_id</span>
+<span class="k">AND</span> <span class="p">(</span><span class="n">course</span><span class="p">.</span><span class="n">student_group_name</span> <span class="k">IN</span> <span class="p">(</span> <span class="n">groups</span><span class="p">.</span><span class="o">`</span><span class="n">groups</span><span class="o">`</span> <span class="p">)</span>
+    <span class="k">OR</span> <span class="n">course</span><span class="p">.</span><span class="n">teaching_assistant_group_name</span> <span class="k">IN</span> <span class="p">(</span> <span class="n">groups</span><span class="p">.</span><span class="o">`</span><span class="n">groups</span><span class="o">`</span> <span class="p">)</span>
+    <span class="k">OR</span> <span class="n">course</span><span class="p">.</span><span class="n">editor_group_name</span> <span class="k">IN</span> <span class="p">(</span> <span class="n">groups</span><span class="p">.</span><span class="o">`</span><span class="n">groups</span><span class="o">`</span> <span class="p">)</span>
+    <span class="k">OR</span> <span class="n">course</span><span class="p">.</span><span class="n">instructor_group_name</span> <span class="k">IN</span> <span class="p">(</span> <span class="n">groups</span><span class="p">.</span><span class="o">`</span><span class="n">groups</span><span class="o">`</span> <span class="p">)</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="k">user</span><span class="p">.</span><span class="n">login</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">email</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">first_name</span> <span class="k">LIKE</span> <span class="o">?</span>
+    <span class="k">OR</span> <span class="k">user</span><span class="p">.</span><span class="n">last_name</span> <span class="k">LIKE</span> <span class="o">?</span><span class="p">)</span>
+<span class="k">AND</span> <span class="p">(</span> <span class="n">course</span><span class="p">.</span><span class="n">id</span> <span class="k">IN</span> <span class="p">(</span> <span class="o">?</span> <span class="p">)</span> <span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span>
+<span class="k">HAVING</span> <span class="k">Count</span><span class="p">(</span><span class="n">groups</span><span class="p">.</span><span class="o">`</span><span class="n">groups</span><span class="o">`</span><span class="p">)</span> <span class="o">=</span> <span class="o">?</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span> <span class="k">ASC</span>
+<span class="k">LIMIT</span> <span class="o">?</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Specification to get distinct results:</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Specification</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">distinct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">criteriaBuilder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">query</span><span class="p">.</span><span class="na">distinct</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="p">...</span>
+</pre></div>
+</div>
+<p>We can simply return <code class="docutils literal notranslate"><span class="pre">null</span></code>, since specifications/predicates that are <code class="docutils literal notranslate"><span class="pre">null</span></code> are ignored when combining multiple specifications (e.g., <code class="docutils literal notranslate"><span class="pre">specification.and(otherSpecification)</span></code>) or when constructing a predicate from it.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="limitations">
+<h2>7. Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Executing simple queries becomes more complex — but reusable.</p></li>
+<li><p>Multiple “group by” are not combined but overwritten → you need a specification that combines them.</p></li>
+<li><p>Pagination feature of Spring Data JPA does not support the use of specifications with “group by”. See <a class="reference external" href="https://github.com/spring-projects/spring-data-jpa/issues/2361">issue</a>.</p></li>
+</ul>
+</section>
+<section id="additional-links">
+<h2>8. Additional links<a class="headerlink" href="#additional-links" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl">https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl</a></p></li>
+<li><p><a class="reference external" href="https://www.baeldung.com/hibernate-criteria-queries">https://www.baeldung.com/hibernate-criteria-queries</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/criteria/CriteriaBuilder.html">https://docs.oracle.com/javaee/7/api/javax/persistence/criteria/CriteriaBuilder.html</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../database/" class="btn btn-neutral float-left" title="Database Relationships" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../development-process/" class="btn btn-neutral float-right" title="Development Process (How to Merge Changes)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

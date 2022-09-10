@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customizing Courses &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="Scaling" href="../../scaling/" />
+    <link rel="prev" title="Grading" href="../../grading/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customizing Courses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-courses">Creating courses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-courses">Managing courses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
+      <li>Customizing Courses</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/courses/customizable.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="customizing-courses">
+<h1>Customizing Courses<a class="headerlink" href="#customizing-courses" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#creating-courses" id="id5">Creating courses</a></p></li>
+<li><p><a class="reference internal" href="#managing-courses" id="id6">Managing courses</a></p></li>
+</ul>
+</div>
+<p>Courses contain <a class="reference internal" href="../../exercises/#exercises"><span class="std std-ref">exercises</span></a>,  <a class="reference internal" href="../../exam_mode/#exams"><span class="std std-ref">exams</span></a> and lectures.
+Different roles can be attached to different sets of course participants: Instructors, Editors, Tutors and Users.
+You can find a detailed listing of the different roles and their corresponding permissions <a class="reference internal" href="../../../admin/accessRights/#admin-access-rights"><span class="std std-ref">here</span></a>.</p>
+<section id="creating-courses">
+<h2><a class="toc-backref" href="#id5">Creating courses</a><a class="headerlink" href="#creating-courses" title="Permalink to this heading"></a></h2>
+<p>Administrators can create new courses by clicking on <img alt="course_management" src="../../../_images/course_management.png" /> in the header and then clicking on <img alt="course_create" src="../../../_images/course_create.png" />.</p>
+<p>Administrators can then specify options in the creation form, Instructors can later change these values:</p>
+<ul class="simple">
+<li><p><strong>Title</strong>: Name of the course that is shown to users e.g. in the <img alt="course_overview" src="../../../_images/course_overview.png" />. Can be changed later.</p></li>
+<li><p><strong>Short Name</strong>: Unique identifier of the course. Can <strong>not</strong> be changed later as it is included in resources of external systems such as build plans.</p></li>
+<li><p><strong>Color</strong>: Color of the course that will be used e.g. in the <img alt="course_overview" src="../../../_images/course_overview.png" />.</p></li>
+<li><p><strong>Course Description</strong>: Description of the course that will e.g. be shown in the Course Registration table and in the header of the course (once a user clicks on the course in their dashboard).</p></li>
+<li><p><strong>Course Organizations</strong>: Users and Courses can be grouped into different organizations (e.g. based on the email-address of users). Users will then only see courses from their organizations, allowing multiple organizations to use the same Artemis environment without interfering with each other.
+If no course organization is set, all users can interact with the course.</p></li>
+<li><p><strong>Start/End</strong>: Start and End Date of the course. Users can only self-register to a course between the Start and End Date.</p></li>
+<li><p><strong>Test Course</strong>: Whether this course should be used for testing. Upcoming exams and exercises within Test Courses are not displayed to users.</p></li>
+<li><p><strong>Semester</strong>: The semester in which the course is conducted. Courses are grouped by semesters to simplify the search in Artemis environments with a large number of courses.</p></li>
+<li><p><strong>Maximum number of points for course</strong>: This number is used for the grading key calculation. Updating the maximum number will recalculate the grading key, if it has been set up before.</p></li>
+<li><p><strong>Amount of decimal places used for calculating the scores</strong>: Specify the granularity for score calculations. You might have to increase this value if you create exercises with a small number of maximum points and a large number of tests.</p></li>
+<li><p><strong>Default Programming Language</strong>: The programming language that should be preselected when a new programming exercise is created in this course.</p></li>
+<li><p><strong>Customize group names</strong>: Allows specifying custom group names that should be used in external user management systems. Default group names (based on the course short name) will be used if not specified. <strong>Note</strong>: Only administrators can change this setting. Instructors can not change it.</p></li>
+<li><p><strong>Enable complaints</strong>: Whether complaints should be enabled in this course. Details regarding complaints can be found <a class="reference internal" href="../../exercises/assessment/#exercise-complaints"><span class="std std-ref">here</span></a>.</p></li>
+<li><p><strong>Enable more feedback requests</strong>: Whether more feedback requests should be enabled in this course. Details regarding more feedback requests can be found <a class="reference internal" href="../../exercises/assessment/#exercise-more-feedback-request"><span class="std std-ref">here</span></a>.</p></li>
+<li><p><strong>Enable postings by students</strong>: Whether the posting sections should be enabled for lectures and exercises. More details regarding this can be found <a class="reference internal" href="../../communication/#communication"><span class="std std-ref">here</span></a>.</p></li>
+<li><p><strong>Online Course</strong>: Whether this course should be part of an external online course using the LTI interface (e.g. on edX). This requires additional setup by administrators. <strong>Note:</strong> Online Course and Student Course Registration Enabled are mutually exclusive.</p></li>
+<li><p><strong>Student Course Registration Enabled</strong>: Whether students should be able to register themselves. If enabled, students can register for the course by clicking <img alt="course_register" src="../../../_images/course_register.png" /> in their <img alt="course_overview" src="../../../_images/course_overview.png" />. An optional confirmation message can be specified, it will be shown to students during the registration and can be used e.g. to inform students about examination rules. <strong>Note:</strong> Online Course and Student Course Registration Enabled are mutually exclusive.</p></li>
+<li><p><strong>Presentation Score</strong>: Whether students have to hold presentations in this course, e.g. to be eligible for an exam bonus. The required minimum number of presentations can be defined if this option is enabled. Note that you can define for every exercise whether it should be eligible for the presentation score within the exercise settings.</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<img alt="Course Settings" src="../../../_images/course_settings.png" />
+<figcaption>
+<p><span class="caption-text">Course Settings</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="managing-courses">
+<h2><a class="toc-backref" href="#id6">Managing courses</a><a class="headerlink" href="#managing-courses" title="Permalink to this heading"></a></h2>
+<p>After a course has been created, it can be accessed within the <img alt="course_management" src="../../../_images/course_management.png" />. Courses are grouped by the semesters (or in the <cite>Semester: Unset</cite> group if no semester is specified). Test Courses are also in a separate group.</p>
+<figure class="align-center" id="id2">
+<img alt="Course Overview" src="../../../_images/course_overview1.png" />
+<figcaption>
+<p><span class="caption-text">Course Overview</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="Course Header" src="../../../_images/course_header.png" />
+<figcaption>
+<p><span class="caption-text">Course Header</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking on the course header opens the course management and allows to <img alt="course_edit" src="../../../_images/course_edit.png" /> or <img alt="course_delete" src="../../../_images/course_delete.png" /> the course and shows statistics as well as other functionality.</p>
+<p>Students, Tutors, Editors and Instructors can be added to the course by clicking on the corresponding group name in the <cite>Course Details</cite>.</p>
+<figure class="align-center" id="id4">
+<img alt="Course Management" src="../../../_images/course_management1.png" />
+<figcaption>
+<p><span class="caption-text">Course Management</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../grading/" class="btn btn-neutral float-left" title="Grading" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../scaling/" class="btn btn-neutral float-right" title="Scaling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

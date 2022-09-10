@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Access Rights &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
     <link rel="next" title="Troubleshooting" href="../troubleshooting/" />
-    <link rel="prev" title="User Registration" href="../registration/" /> 
+    <link rel="prev" title="Shibboleth/SAML2 Login &amp; Registration" href="../saml2-shibboleth/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -50,14 +61,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Access Rights</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#navigation">Navigation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#course">Course</a></li>
@@ -72,6 +85,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -98,8 +112,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="access-rights">
-<h1>Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this headline"></a></h1>
+  <section id="access-rights">
+<span id="admin-access-rights"></span><h1>Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this heading"></a></h1>
 <p>Artemis distinguishes between six different roles: ADMIN, INSTRUCTOR, EDITOR, TA (Teaching Assistant), USER and ANONYMOUS.
 The roles are sorted in descending order. An INSTRUCTOR has at least all the permissions that an EDITOR has.
 An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
@@ -113,8 +127,8 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </ul>
 <p>When changing the access rights of a user, the respective user must logoff and then logon again for the changes to take effect.</p>
 <p>In the following, the respective permissions illustrated. If a subordinated role has all permissions or a role does not have any access rights, it is not explicitly displayed.</p>
-<div class="section" id="navigation">
-<h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline"></a></h2>
+<section id="navigation">
+<h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 29%" />
@@ -176,9 +190,9 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="course">
-<h2>Course<a class="headerlink" href="#course" title="Permalink to this headline"></a></h2>
+</section>
+<section id="course">
+<h2>Course<a class="headerlink" href="#course" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 42%" />
@@ -229,18 +243,18 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
-<div class="section" id="general-functionality">
-<h3>General Functionality<a class="headerlink" href="#general-functionality" title="Permalink to this headline"></a></h3>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h2>
+<section id="general-functionality">
+<h3>General Functionality<a class="headerlink" href="#general-functionality" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 34%" />
-<col style="width: 16%" />
-<col style="width: 11%" />
-<col style="width: 27%" />
-<col style="width: 12%" />
+<col style="width: 43%" />
+<col style="width: 14%" />
+<col style="width: 9%" />
+<col style="width: 23%" />
+<col style="width: 10%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td></td>
@@ -303,6 +317,18 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 <td></td>
 <td></td>
 </tr>
+<tr class="row-odd"><td><p>Create / Update Example Submissions</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>View / Assess Example Submissions</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p>Check Plagiarism</p></td>
 <td><p>✔</p></td>
 <td><p>✔</p></td>
@@ -329,9 +355,9 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="programming-exercises">
-<h3>Programming Exercises<a class="headerlink" href="#programming-exercises" title="Permalink to this headline"></a></h3>
+</section>
+<section id="programming-exercises">
+<h3>Programming Exercises<a class="headerlink" href="#programming-exercises" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 44%" />
@@ -452,9 +478,9 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="quiz-exercises">
-<h3>Quiz Exercises<a class="headerlink" href="#quiz-exercises" title="Permalink to this headline"></a></h3>
+</section>
+<section id="quiz-exercises">
+<h3>Quiz Exercises<a class="headerlink" href="#quiz-exercises" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 37%" />
@@ -515,10 +541,10 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="lectures">
-<h2>Lectures<a class="headerlink" href="#lectures" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="lectures">
+<h2>Lectures<a class="headerlink" href="#lectures" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -579,9 +605,9 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="exam">
-<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this headline"></a></h2>
+</section>
+<section id="exam">
+<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 37%" />
@@ -610,32 +636,12 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 <td><p>✔</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Delete Exercise Group</p></td>
+<tr class="row-odd"><td><p>Import Exercise Group</p></td>
+<td><p>✔</p></td>
 <td><p>✔</p></td>
 <td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>Exam Checklist</p></td>
-<td><p>✔</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Scores</p></td>
-<td><p>✔</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Test Run</p></td>
-<td><p>✔</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Student Exams</p></td>
-<td><p>✔</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Students</p></td>
+<tr class="row-even"><td><p>Delete Exercise Group</p></td>
 <td><p>✔</p></td>
 <td></td>
 <td></td>
@@ -645,26 +651,56 @@ An ADMIN has no restrictions, while an ANONYMOUS has hardly any rights.</p>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Archive Exam</p></td>
+<tr class="row-even"><td><p>Import Exam</p></td>
 <td><p>✔</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Delete Exam</p></td>
+<tr class="row-odd"><td><p>Archive Exam</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Delete Exam</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Exam Checklist</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Scores</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Test Run</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Student Exams</p></td>
+<td><p>✔</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Students</p></td>
 <td><p>✔</p></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../registration/" class="btn btn-neutral float-left" title="User Registration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../saml2-shibboleth/" class="btn btn-neutral float-left" title="Shibboleth/SAML2 Login &amp; Registration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

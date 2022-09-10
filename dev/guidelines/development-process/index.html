@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Development Process (How to Merge Changes) &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <link rel="next" title="Inclusive, Diversity-Sensitive, and Appreciative Language" href="../language-guidelines/" />
-    <link rel="prev" title="Database Relationships" href="../database/" /> 
+    <link rel="prev" title="Criteria Builder" href="../criteria-builder/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -50,7 +61,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../server/">Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client/">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client-design/">Client Theming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/">Database Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../criteria-builder/">Criteria Builder</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Development Process (How to Merge Changes)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#naming-conventions-for-github-pull-requests">Naming Conventions for GitHub Pull Requests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#steps-to-create-and-merge-a-pull-request">Steps to Create and Merge a Pull Request</a><ul>
@@ -62,6 +75,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#merge">5. Merge</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#stale-bot">Stale Bot</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
@@ -70,16 +84,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -107,8 +124,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="development-process-how-to-merge-changes">
-<h1>Development Process (How to Merge Changes)<a class="headerlink" href="#development-process-how-to-merge-changes" title="Permalink to this headline"></a></h1>
+  <section id="development-process-how-to-merge-changes">
+<h1>Development Process (How to Merge Changes)<a class="headerlink" href="#development-process-how-to-merge-changes" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
@@ -123,15 +140,16 @@
 <li><p><a class="reference internal" href="#merge" id="id10">5. Merge</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#stale-bot" id="id11">Stale Bot</a></p></li>
 </ul>
 </div>
-<div class="section" id="naming-conventions-for-github-pull-requests">
-<h2><a class="toc-backref" href="#id3">Naming Conventions for GitHub Pull Requests</a><a class="headerlink" href="#naming-conventions-for-github-pull-requests" title="Permalink to this headline"></a></h2>
+<section id="naming-conventions-for-github-pull-requests">
+<h2><a class="toc-backref" href="#id3">Naming Conventions for GitHub Pull Requests</a><a class="headerlink" href="#naming-conventions-for-github-pull-requests" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>The first term is a main feature of Artemis and is using code highlighting, e.g.  “<code class="docutils literal notranslate"><span class="pre">Programming</span> <span class="pre">exercises</span></code>:”.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Possible feature tags are: <code class="docutils literal notranslate"><span class="pre">Programming</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Modeling</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Quiz</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">upload</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Lectures</span></code>, <code class="docutils literal notranslate"><span class="pre">Exam</span> <span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">Assessments</span></code>, <code class="docutils literal notranslate"><span class="pre">Discussion</span></code>, <code class="docutils literal notranslate"><span class="pre">Notifications</span></code>. More tags are possible if they make sense.</p></li>
+<li><p>Possible feature tags are: <code class="docutils literal notranslate"><span class="pre">Programming</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Modeling</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Quiz</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">upload</span> <span class="pre">exercises</span></code>, <code class="docutils literal notranslate"><span class="pre">Lectures</span></code>, <code class="docutils literal notranslate"><span class="pre">Exam</span> <span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">Assessment</span></code>, <code class="docutils literal notranslate"><span class="pre">Communication</span></code>, <code class="docutils literal notranslate"><span class="pre">Notifications</span></code>. More tags are possible if they make sense.</p></li>
 <li><p>If no feature makes sense, and it is a pure development or test improvement, we use the term “<code class="docutils literal notranslate"><span class="pre">Development</span></code>:”. More tags are also possible if they make sense.</p></li>
 <li><p>Everything else belongs to the <code class="docutils literal notranslate"><span class="pre">General</span></code> category.</p></li>
 </ol>
@@ -156,43 +174,43 @@
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="steps-to-create-and-merge-a-pull-request">
-<h2><a class="toc-backref" href="#id4">Steps to Create and Merge a Pull Request</a><a class="headerlink" href="#steps-to-create-and-merge-a-pull-request" title="Permalink to this headline"></a></h2>
-<div class="section" id="precondition-only-developer">
-<h3><a class="toc-backref" href="#id5">0. Precondition -&gt; only Developer</a><a class="headerlink" href="#precondition-only-developer" title="Permalink to this headline"></a></h3>
+</section>
+<section id="steps-to-create-and-merge-a-pull-request">
+<h2><a class="toc-backref" href="#id4">Steps to Create and Merge a Pull Request</a><a class="headerlink" href="#steps-to-create-and-merge-a-pull-request" title="Permalink to this heading"></a></h2>
+<section id="precondition-only-developer">
+<h3><a class="toc-backref" href="#id5">0. Precondition -&gt; only Developer</a><a class="headerlink" href="#precondition-only-developer" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Limit yourself to one functionality per pull request.</p></li>
 <li><p>Split up your task in multiple branches &amp; pull requests if necessary.</p></li>
 <li><p><a class="reference external" href="https://speakerdeck.com/lemiorhan/10-git-anti-patterns-you-should-be-aware-of">Commit Early, Commit Often, Perfect Later, Publish Once.</a></p></li>
 </ul>
-</div>
-<div class="section" id="start-implementation-only-developer">
-<h3><a class="toc-backref" href="#id6">1. Start Implementation -&gt; only Developer</a><a class="headerlink" href="#start-implementation-only-developer" title="Permalink to this headline"></a></h3>
+</section>
+<section id="start-implementation-only-developer">
+<h3><a class="toc-backref" href="#id6">1. Start Implementation -&gt; only Developer</a><a class="headerlink" href="#start-implementation-only-developer" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">Open a draft pull request.</a> This allows for code related questions and discussions.</p></li>
 </ul>
-</div>
-<div class="section" id="implementation-is-done-only-developer">
-<h3><a class="toc-backref" href="#id7">2. Implementation is “done” -&gt; only Developer</a><a class="headerlink" href="#implementation-is-done-only-developer" title="Permalink to this headline"></a></h3>
+</section>
+<section id="implementation-is-done-only-developer">
+<h3><a class="toc-backref" href="#id7">2. Implementation is “done” -&gt; only Developer</a><a class="headerlink" href="#implementation-is-done-only-developer" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Make sure all steps in the <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/.github/PULL_REQUEST_TEMPLATE.md">Checklist</a> are completed.</p></li>
 <li><p>Add or update the “Steps for Testing” in the description of your pull request.</p></li>
 <li><p>Make sure that the changes in the pull request are only the ones necessary.</p></li>
 <li><p>Mark the pull request as <a class="reference external" href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-stage-of-a-pull-request">ready for review.</a></p></li>
 </ul>
-</div>
-<div class="section" id="review">
-<h3><a class="toc-backref" href="#id8">3. Review</a><a class="headerlink" href="#review" title="Permalink to this headline"></a></h3>
-<div class="section" id="developer">
-<h4>Developer<a class="headerlink" href="#developer" title="Permalink to this headline"></a></h4>
+</section>
+<section id="review">
+<h3><a class="toc-backref" href="#id8">3. Review</a><a class="headerlink" href="#review" title="Permalink to this heading"></a></h3>
+<section id="developer">
+<h4>Developer<a class="headerlink" href="#developer" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Organize or join a testing session. Especially for large pull requests this makes testing a lot easier.</p></li>
 <li><p>Actively look for reviews. Do not just open the pull request and wait.</p></li>
 </ul>
-</div>
-<div class="section" id="reviewer">
-<h4>Reviewer<a class="headerlink" href="#reviewer" title="Permalink to this headline"></a></h4>
+</section>
+<section id="reviewer">
+<h4>Reviewer<a class="headerlink" href="#reviewer" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Perform the “Steps for Testing” and verify that the new functionality is working as expected.</p></li>
 <li><p>Verify that related functionality is still working as expected.</p></li>
@@ -214,12 +232,12 @@
 </dl>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="respond-to-review">
-<h3><a class="toc-backref" href="#id9">4. Respond to review</a><a class="headerlink" href="#respond-to-review" title="Permalink to this headline"></a></h3>
-<div class="section" id="id1">
-<h4>Developer<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
+</section>
+</section>
+<section id="respond-to-review">
+<h3><a class="toc-backref" href="#id9">4. Respond to review</a><a class="headerlink" href="#respond-to-review" title="Permalink to this heading"></a></h3>
+<section id="id1">
+<h4>Developer<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Use the pull request to discuss comments or ask questions.</p></li>
 <li><p>Update your code where necessary.</p></li>
@@ -228,30 +246,41 @@
 <li><p>Notify the reviewer(s) once your revised version is ready for the next review.</p></li>
 <li><p>Comment on “inline comments” (e.g. “Done”).</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h4>Reviewer<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h4>
+</section>
+<section id="id2">
+<h4>Reviewer<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Respond to questions raised by the reviewer.</p></li>
 <li><p>Mark conversations as resolved if the change is sufficient.</p></li>
 </ul>
-</div>
-<div class="section" id="iterate-steps-3-4-until-ready-for-merge-all-reviewers-approve-thumbs-up">
-<h4>Iterate steps 3 &amp; 4 until ready for merge (all reviewers approve (thumbs up))<a class="headerlink" href="#iterate-steps-3-4-until-ready-for-merge-all-reviewers-approve-thumbs-up" title="Permalink to this headline"></a></h4>
-</div>
-</div>
-<div class="section" id="merge">
-<h3><a class="toc-backref" href="#id10">5. Merge</a><a class="headerlink" href="#merge" title="Permalink to this headline"></a></h3>
+</section>
+<section id="iterate-steps-3-4-until-ready-for-merge-all-reviewers-approve-thumbs-up">
+<h4>Iterate steps 3 &amp; 4 until ready for merge (all reviewers approve (thumbs up))<a class="headerlink" href="#iterate-steps-3-4-until-ready-for-merge-all-reviewers-approve-thumbs-up" title="Permalink to this heading"></a></h4>
+</section>
+</section>
+<section id="merge">
+<h3><a class="toc-backref" href="#id10">5. Merge</a><a class="headerlink" href="#merge" title="Permalink to this heading"></a></h3>
 <p>A project maintainer merges your changes into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="stale-bot">
+<h2><a class="toc-backref" href="#id11">Stale Bot</a><a class="headerlink" href="#stale-bot" title="Permalink to this heading"></a></h2>
+<p>If the pull request doesn’t have any activity for at least 7 days, the stale bot will mark the PR as <cite>stale</cite>.
+The <cite>stale</cite> status can simply be removed by adding a comment or a commit to the PR.
+After the PR is marked as <cite>stale</cite>, the bot waits another 14 days until the PR will be closed (21 days in total).
+Adding activity to the PR will remove the <cite>stale</cite> label again and reset the stale timer.
+To prevent the bot from adding the <cite>stale</cite> label to the PR in the first place, the <cite>no-stale</cite> label can be used.
+This label should only be utilized if the PR is blocked by another PR or the PR needs help from another developer.</p>
+<p>A full documentation on this bit can be found here:
+<a class="reference external" href="https://github.com/actions/stale">https://github.com/actions/stale</a></p>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../database/" class="btn btn-neutral float-left" title="Database Relationships" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../criteria-builder/" class="btn btn-neutral float-left" title="Criteria Builder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../language-guidelines/" class="btn btn-neutral float-right" title="Inclusive, Diversity-Sensitive, and Appreciative Language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

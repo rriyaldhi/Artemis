@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Analytics &mdash; Artemis  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Notifications" href="../notifications/" />
+    <link rel="prev" title="Plagiarism checks" href="../plagiarism-check/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../" class="icon icon-home"> Artemis
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Learning Analytics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-analytics-for-students">Learning Analytics for Students</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overall-points">Overall Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-in-exercises">Performance in Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#points-per-exercise">Points per Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#learning-goal-statistics">Learning Goal Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-analytics-for-instructors">Learning Analytics for Instructors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-statistics">Course Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercise-statistics">Exercise Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Learning Goal Statistics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-support/">Markdown Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/setup/">Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guidelines/">Coding and design guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Artemis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>Learning Analytics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/learning-analytics.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="learning-analytics">
+<span id="id1"></span><h1>Learning Analytics<a class="headerlink" href="#learning-analytics" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id4">Overview</a></p></li>
+<li><p><a class="reference internal" href="#learning-analytics-for-students" id="id5">Learning Analytics for Students</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overall-points" id="id6">Overall Points</a></p></li>
+<li><p><a class="reference internal" href="#performance-in-exercises" id="id7">Performance in Exercises</a></p></li>
+<li><p><a class="reference internal" href="#points-per-exercise" id="id8">Points per Exercise</a></p></li>
+<li><p><a class="reference internal" href="#learning-goal-statistics" id="id9">Learning Goal Statistics</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#learning-analytics-for-instructors" id="id10">Learning Analytics for Instructors</a></p>
+<ul>
+<li><p><a class="reference internal" href="#course-statistics" id="id11">Course Statistics</a></p></li>
+<li><p><a class="reference internal" href="#exercise-statistics" id="id12">Exercise Statistics</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id13">Learning Goal Statistics</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id4">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Artemis integrates different statistics for students to compare themselves to the course average.
+It allows instructors to evaluate the average student performance based on exercises and learning goals.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To preserve the individual’s data privacy, Artemis calculates the data on the fly and only shows aggregated data to instructors so that it’s not possible to track an individual student within the learning analytics modules.</p>
+</div>
+</section>
+<section id="learning-analytics-for-students">
+<h2><a class="toc-backref" href="#id5">Learning Analytics for Students</a><a class="headerlink" href="#learning-analytics-for-students" title="Permalink to this heading"></a></h2>
+<p>Students can access their individual learning analytics for a specific course by navigating to the course’s <code class="docutils literal notranslate"><span class="pre">Statistics</span></code> page.</p>
+<p><a class="reference internal" href="../../_images/students-statistics.png"><img alt="students-statistics" src="../../_images/students-statistics.png" style="width: 1000px;" /></a></p>
+<section id="overall-points">
+<h3><a class="toc-backref" href="#id6">Overall Points</a><a class="headerlink" href="#overall-points" title="Permalink to this heading"></a></h3>
+<p>A donut diagram shows students their overall achieved points in the course.</p>
+<p><a class="reference internal" href="../../_images/students-overall-points.png"><img alt="students-overall-points" src="../../_images/students-overall-points.png" style="width: 1000px;" /></a></p>
+</section>
+<section id="performance-in-exercises">
+<h3><a class="toc-backref" href="#id7">Performance in Exercises</a><a class="headerlink" href="#performance-in-exercises" title="Permalink to this heading"></a></h3>
+<p>Students can compare their scores to the best overall score as well as the average score for each individual exercise with the help of a line chart.</p>
+<p><a class="reference internal" href="../../_images/students-performance-in-exercises.png"><img alt="students-performance-in-exercises" src="../../_images/students-performance-in-exercises.png" style="width: 1000px;" /></a></p>
+</section>
+<section id="points-per-exercise">
+<h3><a class="toc-backref" href="#id8">Points per Exercise</a><a class="headerlink" href="#points-per-exercise" title="Permalink to this heading"></a></h3>
+<p>To get a quick overview about the achieved points per exercise, a bar chart shows the achieved points of the student for every exercise grouped by the exercise type.</p>
+<p><a class="reference internal" href="../../_images/students-points-per-exercise.png"><img alt="students-points-per-exercise" src="../../_images/students-points-per-exercise.png" style="width: 1000px;" /></a></p>
+</section>
+<section id="learning-goal-statistics">
+<h3><a class="toc-backref" href="#id9">Learning Goal Statistics</a><a class="headerlink" href="#learning-goal-statistics" title="Permalink to this heading"></a></h3>
+<p>In case learning goals are defined and connected to different lecture units, students can get an overview of their progress for the different learning goals on the learning goals page.</p>
+<p><a class="reference internal" href="../../_images/students-learning-goals-statistics.png"><img alt="students-learning-goals-statistics" src="../../_images/students-learning-goals-statistics.png" style="width: 1000px;" /></a></p>
+<p>When clicking on a learning goal, a modal opens and shows detailed statistics about the learning goal and the students progress in the associated lecture unit(s).</p>
+<p><a class="reference internal" href="../../_images/students-learning-goals-statistics-detail.png"><img alt="students-learning-goals-statistics-detail" src="../../_images/students-learning-goals-statistics-detail.png" style="width: 600px;" /></a></p>
+</section>
+</section>
+<section id="learning-analytics-for-instructors">
+<h2><a class="toc-backref" href="#id10">Learning Analytics for Instructors</a><a class="headerlink" href="#learning-analytics-for-instructors" title="Permalink to this heading"></a></h2>
+<p>Artemis provides instructors with several different learning analytics, which are detailed in this section.
+Key statistics such as the number of total assessments or the average student score are already displayed on the course’s main page.</p>
+<p><a class="reference internal" href="../../_images/instructors-basic-statistics.png"><img alt="instructors-basic-statistics" src="../../_images/instructors-basic-statistics.png" style="width: 1000px;" /></a></p>
+<section id="course-statistics">
+<span id="id2"></span><h3><a class="toc-backref" href="#id11">Course Statistics</a><a class="headerlink" href="#course-statistics" title="Permalink to this heading"></a></h3>
+<p>More detailed as well as additional course statistics can be inspected by instructors when navigating to the course’s <code class="docutils literal notranslate"><span class="pre">Statistics</span></code> page.</p>
+<p><a class="reference internal" href="../../_images/instructors-course-statistics-button.png"><img alt="instructors-course-statistics-button" src="../../_images/instructors-course-statistics-button.png" style="width: 1000px;" /></a></p>
+<p>On this page instructors can explore and evaluate all available course statistics such as the average points, number of submissions, number of active users, and much more.
+All the statistics can be generated for different time frames.</p>
+<p><a class="reference internal" href="../../_images/instructors-course-statistics.png"><img alt="instructors-course-statistics" src="../../_images/instructors-course-statistics.png" style="width: 1000px;" /></a></p>
+</section>
+<section id="exercise-statistics">
+<h3><a class="toc-backref" href="#id12">Exercise Statistics</a><a class="headerlink" href="#exercise-statistics" title="Permalink to this heading"></a></h3>
+<p>Similar to course statistics instructors can have an overview of different learning metrics such as the average score or the participation rate for a specific exercise.
+To get to this view, instructors can either click on one of the average score bars of the <a class="reference internal" href="#course-statistics"><span class="std std-ref">Course Statistics</span></a> or click on the <code class="docutils literal notranslate"><span class="pre">Statistics</span></code> button that is displayed on each exercise overview page.</p>
+<p><a class="reference internal" href="../../_images/instructors-exercise-statistics.png"><img alt="instructors-exercise-statistics" src="../../_images/instructors-exercise-statistics.png" style="width: 1000px;" /></a></p>
+</section>
+<section id="id3">
+<h3><a class="toc-backref" href="#id13">Learning Goal Statistics</a><a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>In case learning goals are defined and connected to different lecture units, the progress of the learning goals is shown on the learning goals management page.</p>
+<p><a class="reference internal" href="../../_images/instructors-learning-goals-statistics.png"><img alt="instructors-learning-goals-statistics" src="../../_images/instructors-learning-goals-statistics.png" style="width: 1000px;" /></a></p>
+<p>When clicking on a learning goal, a modal opens and shows detailed statistics about the learning goal and its associated lecture unit(s).</p>
+<p><a class="reference internal" href="../../_images/instructors-learning-goals-statistics-detail.png"><img alt="instructors-learning-goals-statistics-detail" src="../../_images/instructors-learning-goals-statistics-detail.png" style="width: 600px;" /></a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../plagiarism-check/" class="btn btn-neutral float-left" title="Plagiarism checks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../notifications/" class="btn btn-neutral float-right" title="Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Technical University of Munich, Chair for Applied Software Engineering.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

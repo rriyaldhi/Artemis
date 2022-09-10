@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Structural Migration with Liquibase &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -59,16 +70,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -96,36 +110,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="structural-migration-with-liquibase">
-<h1>Structural Migration with Liquibase<a class="headerlink" href="#structural-migration-with-liquibase" title="Permalink to this headline"></a></h1>
+  <section id="structural-migration-with-liquibase">
+<h1>Structural Migration with Liquibase<a class="headerlink" href="#structural-migration-with-liquibase" title="Permalink to this heading"></a></h1>
 <p>To prevent accidental irreversible database modifications, we use <a class="reference external" href="https://docs.liquibase.com/home.html">Liquibase</a> to prepare changes when developing that can be confirmed in the review process.</p>
-<div class="section" id="gradle">
-<h2>1. Gradle<a class="headerlink" href="#gradle" title="Permalink to this headline"></a></h2>
+<section id="gradle">
+<h2>1. Gradle<a class="headerlink" href="#gradle" title="Permalink to this heading"></a></h2>
 <p>We offer two Gradle commands with Liquibase:</p>
 <ul class="simple">
 <li><p><cite>liquibaseClearChecksums</cite>: Use this whenever Liquibase detects inconsistencies between the database changelog and the XML changelog</p></li>
 <li><p><cite>liquibaseDiffChangeLog</cite>: Generates a new changelog from the current database state. The command appears to not work for all operating systems, and you might have to add a changelog manually.</p></li>
 </ul>
-</div>
-<div class="section" id="changelog">
-<h2>2. Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h2>
+</section>
+<section id="changelog">
+<h2>2. Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h2>
 <p>The changelog manifest lies in <code class="code docutils literal notranslate"><span class="pre">src/main/resources/config/liquibase/master.xml</span></code>, which imports all single changelog files. To create a new change, you have to do the following:</p>
 <ul class="simple">
 <li><p>Get the current time in the format <code class="code docutils literal notranslate"><span class="pre">YYYYMMDDHHmmss</span></code>.</p></li>
 <li><p>Create a new file in <code class="code docutils literal notranslate"><span class="pre">/changelog</span></code> named <code class="code docutils literal notranslate"><span class="pre">&lt;formatted-time&gt;_changelog.xml</span></code> and include this file at the bottom of the <code class="code docutils literal notranslate"><span class="pre">master.xml</span></code> as every other file.</p></li>
 <li><p>Add your changelog in your newly created file. Take other changes and the Liquibase documentation as inspiration</p></li>
 </ul>
-</div>
-<div class="section" id="development">
-<h2>3. Development<a class="headerlink" href="#development" title="Permalink to this headline"></a></h2>
+</section>
+<section id="development">
+<h2>3. Development<a class="headerlink" href="#development" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>All executed entries are saved in the table <code class="code docutils literal notranslate"><span class="pre">databasechangelog</span></code>. If you delete something, it gets executed again.</p></li>
 <li><p>Test your changes locally first, and only commit changes you are confident that work.</p></li>
 <li><p>Before deploying any database changes to a test server, ask for official permission from the project lead. If the changes don’t get approved, manual rollbacks can be necessary, which are avoidable.</p></li>
 <li><p>Make sure to add your name to the <code class="code docutils literal notranslate"><span class="pre">changeSet</span></code> in your file as well as your formatted time as the <code class="code docutils literal notranslate"><span class="pre">id</span></code>. Refer to other changes for further help.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coding and design guidelines &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -50,7 +61,9 @@
 <li class="toctree-l2"><a class="reference internal" href="server/">Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client/">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client-tests/">Client Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client-design/">Client Theming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/">Database Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/">Criteria Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development-process/">Development Process (How to Merge Changes)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
 </ul>
@@ -58,16 +71,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -94,8 +110,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="coding-and-design-guidelines">
-<h1>Coding and design guidelines<a class="headerlink" href="#coding-and-design-guidelines" title="Permalink to this headline"></a></h1>
+  <section id="coding-and-design-guidelines">
+<h1>Coding and design guidelines<a class="headerlink" href="#coding-and-design-guidelines" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Coding and design guidelines</span></p>
 <ul>
@@ -120,10 +136,12 @@
 <li class="toctree-l2"><a class="reference internal" href="server/#proper-annotation-of-sql-query-parameters">17. Proper annotation of SQL query parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server/#sql-statement-formatting">18. SQL statement formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server/#avoid-the-usage-of-sub-queries">19. Avoid the usage of Sub-queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server/#rest-endpoint-best-practices-for-authorization">20. REST endpoint best practices for authorization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server/#assert-using-the-most-specific-overload-method">21. Assert using the most specific overload method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server/#general-testing-tips">22. General Testing Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server/#avoid-using-mockbean">23. Avoid using &#64;MockBean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#criteria-builder">20. Criteria Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#rest-endpoint-best-practices-for-authorization">21. REST endpoint best practices for authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#assert-using-the-most-specific-overload-method">22. Assert using the most specific overload method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#general-testing-tips">23. General Testing Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#counting-database-query-calls-within-tests">24. Counting database query calls within tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/#avoid-using-mockbean">25. Avoid using &#64;MockBean</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="client/">Client</a><ul>
@@ -137,7 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="client/#strings">7. Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client/#buttons-and-links">8. Buttons and Links</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client/#icons-with-text">9. Icons with Text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="client/#style">10. Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client/#code-style">10. Code Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client/#preventing-memory-leaks">11. Preventing Memory Leaks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="client/#what-are-memory-leaks">What are memory leaks?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="client/#what-are-common-reasons-for-memory-leaks">What are common reasons for memory leaks?</a></li>
@@ -151,15 +169,33 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="client/#chart-instantiation">14. Chart Instantiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client/#responsive-layout">15. Responsive Layout</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="client-tests/">Client Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-design/">Client Theming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client-design/#color-usage">0. Color Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client-design/#theme-specific-global-styles">1. Theme-specific global styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client-design/#theme-service">2. Theme Service</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="database/">Database Relationships</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database/#retrieving-and-building-objects">1. Retrieving and Building Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/#relationships">2. Relationships</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database/#cascade-types">2. Cascade Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database/#cascade-types">3. Cascade Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/#best-practices">Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/#solutions-for-known-issues">Solutions for known issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="criteria-builder/">Criteria Builder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#requirements">1. Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#generating-the-query">2. Generating the query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#operations">3. Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#joins">4. Joins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#sub-queries">5. Sub-Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#examples">6. Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#limitations">7. Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="criteria-builder/#additional-links">8. Additional links</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development-process/">Development Process (How to Merge Changes)</a><ul>
@@ -173,6 +209,7 @@
 <li class="toctree-l3"><a class="reference internal" href="development-process/#merge">5. Merge</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="development-process/#stale-bot">Stale Bot</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a><ul>
@@ -184,7 +221,7 @@
 </li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

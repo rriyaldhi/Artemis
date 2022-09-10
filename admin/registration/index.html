@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User Registration &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Access Rights" href="../accessRights/" />
-    <link rel="prev" title="Builds and Dependency Management" href="../../dev/docker/" /> 
+    <link rel="next" title="Shibboleth/SAML2 Login &amp; Registration" href="../saml2-shibboleth/" />
+    <link rel="prev" title="Open-Source" href="../../dev/open-source/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -50,16 +61,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -86,8 +100,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="user-registration">
-<h1>User Registration<a class="headerlink" href="#user-registration" title="Permalink to this headline"></a></h1>
+  <section id="user-registration">
+<h1>User Registration<a class="headerlink" href="#user-registration" title="Permalink to this heading"></a></h1>
 <p>Artemis supports user registration. It has to be enabled in one <code class="docutils literal notranslate"><span class="pre">application-*.yml</span></code> file and can be customized.</p>
 <p>Example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">artemis</span><span class="p">:</span>
@@ -127,14 +141,14 @@ Upon registration, users receive an email to activate their account.</p>
 <p>You can find more information on how to configure the email server on the official
 <a class="reference external" href="https://www.jhipster.tech/tips/011_tip_configuring_email_in_jhipster.html">Jhipster</a>
 documentation.</p>
-</div>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../../dev/docker/" class="btn btn-neutral float-left" title="Builds and Dependency Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../accessRights/" class="btn btn-neutral float-right" title="Access Rights" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../dev/open-source/" class="btn btn-neutral float-left" title="Open-Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../saml2-shibboleth/" class="btn btn-neutral float-right" title="Shibboleth/SAML2 Login &amp; Registration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

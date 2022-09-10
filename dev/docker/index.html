@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Builds and Dependency Management &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,11 +14,12 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="User Registration" href="../../admin/registration/" />
+    <link rel="next" title="Cypress Bamboo Plans" href="../cypress/" />
     <link rel="prev" title="Test Servers" href="../testservers/" /> 
 </head>
 
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -50,7 +61,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testservers/">Test Servers</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Builds and Dependency Management</a><ul>
@@ -58,12 +68,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#steps-for-updating-the-dockerbuilds-used-in-artemis">Steps for Updating the DockerBuilds used in Artemis</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -90,10 +104,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="builds-and-dependency-management">
-<span id="docker"></span><h1>Builds and Dependency Management<a class="headerlink" href="#builds-and-dependency-management" title="Permalink to this headline"></a></h1>
-<div class="section" id="general-structure-of-programming-exercise-execution">
-<h2>General Structure of Programming Exercise Execution<a class="headerlink" href="#general-structure-of-programming-exercise-execution" title="Permalink to this headline"></a></h2>
+  <section id="builds-and-dependency-management">
+<span id="docker"></span><h1>Builds and Dependency Management<a class="headerlink" href="#builds-and-dependency-management" title="Permalink to this heading"></a></h1>
+<section id="general-structure-of-programming-exercise-execution">
+<h2>General Structure of Programming Exercise Execution<a class="headerlink" href="#general-structure-of-programming-exercise-execution" title="Permalink to this heading"></a></h2>
 <p>Artemis uses docker containers to run programming exercises. This ensures that the students’ code does not have direct access to the build agents’ hardware.
 To reduce the time required for each test run, these docker containers already include commonly used dependencies such as JUnit.</p>
 <p>There are currently docker containers for:</p>
@@ -102,14 +116,14 @@ To reduce the time required for each test run, these docker containers already i
 <li><p><a class="reference external" href="https://github.com/ls1intum/artemis-ocaml-docker">OCaml</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ls1intum/artemis-python-docker">Python</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ls1intum/artemis-c-docker">C</a></p></li>
-<li><p><a class="reference external" href="https://github.com/lukasstevens/docker-fpv-stack">Haskell</a> (external)</p></li>
+<li><p><a class="reference external" href="https://github.com/b-fein/artemis-haskell">Haskell</a> (external)</p></li>
 <li><p><a class="reference external" href="https://github.com/norio-nomura/docker-swiftlint">Swift</a> (external)</p></li>
 <li><p><a class="reference external" href="https://hub.docker.com/r/tizianleonhardt/era-artemis-assembler">Assembler</a> (external)</p></li>
 <li><p><a class="reference external" href="https://hub.docker.com/r/tizianleonhardt/era-artemis-vhdl">VHDL</a> (external)</p></li>
 </ul>
-</div>
-<div class="section" id="steps-for-updating-the-dockerbuilds-used-in-artemis">
-<h2>Steps for Updating the DockerBuilds used in Artemis<a class="headerlink" href="#steps-for-updating-the-dockerbuilds-used-in-artemis" title="Permalink to this headline"></a></h2>
+</section>
+<section id="steps-for-updating-the-dockerbuilds-used-in-artemis">
+<h2>Steps for Updating the DockerBuilds used in Artemis<a class="headerlink" href="#steps-for-updating-the-dockerbuilds-used-in-artemis" title="Permalink to this heading"></a></h2>
 <p>Updating can only be done with access to the account on Dockerhub. If you need access, contact <a class="reference external" href="mailto:krusche&#37;&#52;&#48;in&#46;tum&#46;de">Stephan Krusche</a>.</p>
 <ol class="arabic">
 <li><p>Update the dependencies via a pull request in the repository of the docker container. Each docker container has its own repository as listed above</p></li>
@@ -122,15 +136,15 @@ To reduce the time required for each test run, these docker containers already i
 <li><p>Wait for a successful build of “latest”</p></li>
 <li><div class="line-block">
 <div class="line">Click “Configure Automated Builds” and create a new build rule for a new tag, following the naming scheme:</div>
-<div class="line">“&lt;programming language&gt;&lt;Version of programming language&gt;-&lt;Upwards counting number&gt;”, for example “java16-3”</div>
+<div class="line">“&lt;programming language&gt;&lt;Version of programming language&gt;-&lt;Upwards counting number&gt;”, for example “java17-3”</div>
 </div>
 <ul class="simple">
 <li><p>The “Sourcetype” should be “Tag”</p></li>
 <li><p>This tag should be used as “Source Tag” and “Docker Tag”</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="Required steps for creating a new build" src="../../_images/new-docker-image-example.png" />
-</div>
+</figure>
 </li>
 <li><p>Go back to the repository of the docker container in GitHub and create a new Tag</p>
 <ul class="simple">
@@ -139,22 +153,22 @@ To reduce the time required for each test run, these docker containers already i
 </ul>
 </li>
 <li><p>Wait for the build in Dockerhub of the newly created Tag</p></li>
-<li><p>Change the docker image used in Artemis to the newly created tag: <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/java/de/tum/in/www1/artemis/service/connectors/ContinuousIntegrationService.java">ContinuousIntegrationService.java</a></p></li>
+<li><p>Change the docker image used in Artemis to the newly created tag: <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/resources/config/application.yml">application.yml</a></p></li>
 <li><p>If the used docker container should also be changed for already created exercises you have to change the build plan of that exercise</p>
 <ul class="simple">
 <li><p>Change the docker image used by following this path: Configure Buildplan &gt; Default Job &gt; Docker &gt; Docker Image</p></li>
 </ul>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../testservers/" class="btn btn-neutral float-left" title="Test Servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../admin/registration/" class="btn btn-neutral float-right" title="User Registration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../cypress/" class="btn btn-neutral float-right" title="Cypress Bamboo Plans" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modeling exercise &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -40,16 +42,38 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">Exercises</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../general/">General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assessment/">Assessment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming/">Programming Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quiz/">Quiz exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Modeling exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Modeling exercise</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-new-modeling-exercise">Create new modeling exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-modeling-exercise">Import Modeling Exercise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#result">Result</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exam Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#student-submission">Student Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assessment">Assessment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../team-exercises/">Team exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -58,16 +82,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -95,9 +122,263 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="modeling-exercise">
-<h1>Modeling exercise<a class="headerlink" href="#modeling-exercise" title="Permalink to this headline"></a></h1>
+  <section id="modeling-exercise">
+<h1>Modeling exercise<a class="headerlink" href="#modeling-exercise" title="Permalink to this heading"></a></h1>
+<div class="contents local topic" id="content-of-this-document">
+<p class="topic-title">Content of this document</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#setup" id="id2">Setup</a></p>
+<ul>
+<li><p><a class="reference internal" href="#create-new-modeling-exercise" id="id3">Create new modeling exercise</a></p></li>
+<li><p><a class="reference internal" href="#import-modeling-exercise" id="id4">Import Modeling Exercise</a></p></li>
+<li><p><a class="reference internal" href="#result" id="id5">Result</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#student-submission" id="id6">Student Submission</a></p></li>
+<li><p><a class="reference internal" href="#assessment" id="id7">Assessment</a></p></li>
+</ul>
 </div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Conducting a Modeling exercise consists of 3 steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Instructor prepares exercise:</strong> Creates and configures the modeling exercise in Artemis.</p></li>
+<li><p><strong>Student solves exercise:</strong> Student works on the exercise and submits the solution.</p></li>
+<li><p><strong>Tutors assesses submissions:</strong> Reviews the submitted exercises and creates results for the students.</p></li>
+</ol>
+</section>
+<section id="setup">
+<h2><a class="toc-backref" href="#id2">Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<p>The following sections describe the supported features and the process of creating a new modeling exercise.</p>
+<ul>
+<li><p>Open <img alt="course-management" src="../../../_images/course-management.png" />.</p></li>
+<li><p>Navigate into <strong>Exercises</strong> of your preferred course.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/course-management-course-dashboard-exercises.png" src="../../../_images/course-management-course-dashboard-exercises.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<section id="create-new-modeling-exercise">
+<h3><a class="toc-backref" href="#id3">Create new modeling exercise</a><a class="headerlink" href="#create-new-modeling-exercise" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Click on <strong>Create new modeling exercise</strong>.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/create-new-modeling-exercise.png" src="../../../_images/create-new-modeling-exercise.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<p>The following screenshot illustrates the first section of the form. It consists of:</p>
+<ul>
+<li><p><strong>Title</strong>: Title of an exercise.</p></li>
+<li><p><strong>Categories</strong>: Category of an exercise.</p></li>
+<li><p><strong>Difficulty</strong>: Difficulty of an exercise. (No level, Easy, Medium or Hard).</p></li>
+<li><p><strong>Mode</strong>: Solving mode of an exercise. <em>This cannot be changed afterwards</em> (Individual or Team).</p></li>
+<li><p><strong>Release Date</strong>: Date after which students can access the exercise.</p></li>
+<li><p><strong>Due Date</strong>: Date till when students can work on the exercise.</p></li>
+<li><p><strong>Assessment Due Date</strong>: Date after which students can view the feedback of the assessments from the instructors.</p></li>
+<li><p><strong>Inclusion in course score calculation</strong>: Option that determines whether or not to include exercise in course score calculation.</p></li>
+<li><p><strong>Points</strong>: Total points of an exercise.</p></li>
+<li><p><strong>Bonus Points</strong>: Bonus points of an exercise.</p></li>
+<li><p><strong>Diagram Type</strong>: Type of diagram that is used throughout an exercise.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/create-modeling-exercise-form-1.png" src="../../../_images/create-modeling-exercise-form-1.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fields marked with red are mandatory to be filled.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The field <strong>Diagram Type</strong> determines the components that students/instructors can use while working on the exercise.</p></li>
+<li><p>This option cannot be changed after creating the exercise.</p></li>
+<li><p>For example: If the instructor selects class diagram as its diagram type, users (instructors/students) will now only be able to use components of class diagrams throughout the exercise.</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/class-diagram-diagram-type.png" src="../../../_images/class-diagram-diagram-type.png" />
+</figure>
+</div></blockquote>
+</div>
+<p>The following screenshot illustrates the second section of the form. It consists of:</p>
+<ul>
+<li><p><strong>Enable automatic assessment suggestions</strong>: When enabled, Artemis tries to automatically suggest assessments for diagram elements based on previously graded submissions for this exercise.</p></li>
+<li><p><strong>Problem Statement</strong>: The task description of the exercise as seen by students.</p></li>
+<li><p><strong>Assessment Instructions</strong>: Instructions for instructors while assessing the submission.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/create-modeling-exercise-form-2.png" src="../../../_images/create-modeling-exercise-form-2.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not clear about any of the fields, you can access additional hints by hovering over the <img alt="hint" src="../../../_images/hint.png" /> icon for many of them.</p>
+<figure class="align-center">
+<img alt="../../../_images/create-modeling-exercise-form-hint.png" src="../../../_images/create-modeling-exercise-form-hint.png" />
+</figure>
+</div>
+<p>The following screenshot illustrates the last section of the form. It consists of:</p>
+<ul>
+<li><p><strong>Example Solution</strong>: Example solution of an exercise.</p></li>
+<li><p><strong>Example Solution Explanation</strong>: Explanation of the example solution.</p></li>
+<li><p><strong>Example Solution Publication Date</strong>: Date after which the example solution is accessible for students. If you leave this field empty, the solution will only be published to tutors.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/create-modeling-exercise-form-3.png" src="../../../_images/create-modeling-exercise-form-3.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<p>Once you are done defining the schema of an exercise, you can now create an exercise by clicking on <img alt="save" src="../../../_images/save1.png" /> button.
+You will then be redirected to <strong>Example Submissions for Assessment Training</strong> Page.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/example-submission-for-assessment-training.png" src="../../../_images/example-submission-for-assessment-training.png" />
+</figure>
+</div></blockquote>
+<p>In this page, you can either <em>Create Example Submission</em> or <em>Use as Example Submission</em> for Assessment Training.
+Example submissions can be used to assess the submissions of students semi-automatically.
+Artemis uses those submissions to automatically apply the known assessment comments to similar model elements in other submissions as well.</p>
+<ul class="simple">
+<li><p>Select <img alt="create-example-submission" src="../../../_images/create-example-submission.png" /> if you want to create an example submission from scratch.</p></li>
+<li><p>Alternatively, after the exercise already started, you can also use some submissions submitted by students as an example submission. For that, click on <img alt="use-as-example-submission" src="../../../_images/use-as-example-submission.png" />.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Artemis uses semi-automatic grading of modeling exercises using machine learning.
+You can hence train the model by selecting <em>Use in Assessment Training</em> checkbox while creating an example submission.</p>
+<figure class="align-center">
+<img alt="../../../_images/use-in-assessment-training.png" src="../../../_images/use-in-assessment-training.png" />
+</figure>
+</div>
+</section>
+<section id="import-modeling-exercise">
+<h3><a class="toc-backref" href="#id4">Import Modeling Exercise</a><a class="headerlink" href="#import-modeling-exercise" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Alternatively, you can also import modeling exercise from the existing one by clicking on <strong>Import Modeling Exercise</strong>.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/import-modeling-exercise.png" src="../../../_images/import-modeling-exercise.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>An import modal will prompt up, where you will have an option to select and import previous modeling exercises from the list by clicking on <img alt="import" src="../../../_images/import.png" /> button.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/import-modeling-exercise-modal.png" src="../../../_images/import-modeling-exercise-modal.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Once you import one of the exercise, you will then be redirected to a form which is similar to <em>Create new modeling exercise</em> form with all the fields filled from imported exercise. You can now modify the fields as per your necessity to create a new Modeling Exercise.</p></li>
+</ul>
+</section>
+<section id="result">
+<h3><a class="toc-backref" href="#id5">Result</a><a class="headerlink" href="#result" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/course-dashboard-exercise-modeling.png" src="../../../_images/course-dashboard-exercise-modeling.png" />
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p>Click the <a class="reference internal" href="../../../_images/edit1.png"><img alt="edit" src="../../../_images/edit1.png" style="width: 66.75px; height: 39.0px;" /></a> button of the modeling exercise and adapt the interactive problem statement. There you can also set release and due dates.</p></li>
+<li><p>Click the <img alt="scores" src="../../../_images/scores1.png" /> button to see the scores achieved by the students.</p></li>
+<li><p>Click the <img alt="participation" src="../../../_images/participation.png" /> button to see the list of students participated in the exercise.</p></li>
+<li><p>Click the <img alt="submission" src="../../../_images/submission.png" /> button to see the list of submission submitted by students.</p></li>
+<li><p>Click the <img alt="example-submission" src="../../../_images/example-submission.png" /> button to modify/add example submission of the exercise.</p></li>
+<li><p>Click the <img alt="delete" src="../../../_images/delete.png" /> button to delete the exercise.</p></li>
+<li><p>You can get an overview of the exercise by clicking on the title.</p></li>
+</ul>
+</section>
+</section>
+<section id="student-submission">
+<h2><a class="toc-backref" href="#id6">Student Submission</a><a class="headerlink" href="#student-submission" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>When the exercise is released students can work on the exercise.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/modeling-exercise-card-student-view.png" src="../../../_images/modeling-exercise-card-student-view.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>They can start the exercise by clicking the <img alt="start" src="../../../_images/start1.png" /> button.</p></li>
+<li><p>Once they start the exercise, they will now have the option to work on it in an online modeling editor by clicking on  the <img alt="open-modeling-editor" src="../../../_images/open-modeling-editor.png" /> button.</p></li>
+<li><p>The screenshot below depicts the online modeling exercise interface for students. They can read the Problem Statement, work on the online editor and also provide an explanation to their solutions, if needed.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/modeling-exercise-students-interface.png" src="../../../_images/modeling-exercise-students-interface.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="assessment">
+<h2><a class="toc-backref" href="#id7">Assessment</a><a class="headerlink" href="#assessment" title="Permalink to this heading"></a></h2>
+<p>When the due date is over you can assess the submissions.</p>
+<ul>
+<li><p>To assess the submissions, first click on Assessment Dashboard.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/assessment-dashboard.png" src="../../../_images/assessment-dashboard.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Then click on Submissions of the modeling exercise.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/exercise-dashboard.png" src="../../../_images/exercise-dashboard.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>You will then be redirected to <em>Submissions and Assessments</em> Page.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/submissions-dashboard.png" src="../../../_images/submissions-dashboard.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Click on <img alt="assess-submission" src="../../../_images/assess-submission.png" /> button of specific student. You will then be redirected to the assessment page where you will be able to assess submission of that student.</p></li>
+<li><p>You can now start assessing the elements of the model by double clicking it. Once you double click, you will get an assessment dialog where you can assign points, feedback and navigate through all other assessable components.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/assessment-modal.png" src="../../../_images/assessment-modal.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Alternatively, you can also assess the diagram by dragging and dropping assessment instructions from the <em>Assessment Instructions</em> section.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/assessment-instruction.png" src="../../../_images/assessment-instruction.png" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Feedback to the entire submission can also be added by clicking on the <img alt="add-new-feedback" src="../../../_images/add-new-feedback.png" /> button.</p>
+<blockquote>
+<div><figure class="align-center">
+<img alt="../../../_images/feedback-modal.png" src="../../../_images/feedback-modal.png" />
+</figure>
+</div></blockquote>
+</li>
+</ul>
+<p>Once you’re done assessing the solution, you can either:</p>
+<ul class="simple">
+<li><p>Click on <img alt="save" src="../../../_images/save1.png" /> to save the incomplete assessment so that you can continue it afterwards.</p></li>
+<li><p>Click on <img alt="submit" src="../../../_images/submit1.png" /> to submit the assessment.</p></li>
+<li><p>Click on <img alt="cancel" src="../../../_images/cancel.png" /> to cancel and release the lock of the assessment.</p></li>
+<li><p>Click on <img alt="exercise-dashboard-button" src="../../../_images/exercise-dashboard-button.png" /> to navigate to exercise dashboard page.</p></li>
+</ul>
+</section>
+</section>
 
 
            </div>

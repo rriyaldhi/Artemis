@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Orion &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Discussion" href="../discussion/" />
-    <link rel="prev" title="Students’ Guide" href="../exams/students_guide/" /> 
+    <link rel="next" title="Communication" href="../communication/" />
+    <link rel="prev" title="Live Statistics" href="../exams/live_statistics/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,7 +41,8 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exams</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Orion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
@@ -53,7 +56,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#assessment-in-orion">Assessment in Orion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -62,16 +73,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -98,8 +112,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="orion">
-<span id="id1"></span><h1>Orion<a class="headerlink" href="#orion" title="Permalink to this headline"></a></h1>
+  <section id="orion">
+<span id="id1"></span><h1>Orion<a class="headerlink" href="#orion" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
@@ -116,15 +130,15 @@
 <li><p><a class="reference internal" href="#assessment-in-orion" id="id10">Assessment in Orion</a></p></li>
 </ul>
 </div>
-<div class="section" id="overview">
-<h2><a class="toc-backref" href="#id3">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://github.com/ls1intum/Orion">Orion plugin</a> for <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a> supports students, teaching assistants (tutors), and instructors with the conduction of programming exercises. It integrates Artemis in IntelliJ and automates the download (clone) and upload (push) of exercises.</p>
-<div class="section" id="installation">
-<h3><a class="toc-backref" href="#id4">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline"></a></h3>
+<section id="installation">
+<h3><a class="toc-backref" href="#id4">Installation</a><a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
 <p>Orion is installed like every other plugin via IntelliJ’s marketplace. Alternatively, although usually not needed, it is possible to install builds directly from <a class="reference external" href="https://github.com/ls1intum/Orion">Orion’s GitHub repository</a>. The installation process is described in the <a class="reference external" href="https://github.com/ls1intum/Orion#testing-of-pull-requests">readme</a>.</p>
-</div>
-<div class="section" id="general-usage">
-<h3><a class="toc-backref" href="#id5">General Usage</a><a class="headerlink" href="#general-usage" title="Permalink to this headline"></a></h3>
+</section>
+<section id="general-usage">
+<h3><a class="toc-backref" href="#id5">General Usage</a><a class="headerlink" href="#general-usage" title="Permalink to this heading"></a></h3>
 <p>After installation, Orion provides a custom tool window at <em>View -&gt; Tool Windows -&gt; Artemis</em>. This window contains an integrated browser displaying Artemis.</p>
 <p>At the top of the tool window are the following buttons:</p>
 <ul>
@@ -141,9 +155,9 @@
 <p>If you opened this page in Orion, use the back button to return to Artemis.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="settings">
-<h3><a class="toc-backref" href="#id6">Settings</a><a class="headerlink" href="#settings" title="Permalink to this headline"></a></h3>
+</section>
+<section id="settings">
+<h3><a class="toc-backref" href="#id6">Settings</a><a class="headerlink" href="#settings" title="Permalink to this heading"></a></h3>
 <p>Orion’s settings are at <em>Settings -&gt; Tools -&gt; Orion</em>. The settings include:</p>
 <ul class="simple">
 <li><p>Artemis base url: Can be changed to switch to a specific Artemis instance. Defaults to <a class="reference external" href="https://artemis.ase.in.tum.de">https://artemis.ase.in.tum.de</a>. <strong>Important:</strong> The url must not end with a <code class="docutils literal notranslate"><span class="pre">/</span></code>, otherwise it does not work!</p></li>
@@ -152,45 +166,45 @@
 <li><p>Change user agent: The user agent is sent to Artemis to identify Orion. Usually, no changes are required.</p></li>
 <li><p>Restart the integrated browser: If Orion gets stuck, restarting the browser might solve the issue without restarting IntelliJ.</p></li>
 </ul>
-</div>
-<div class="section" id="problems">
-<h3><a class="toc-backref" href="#id7">Problems</a><a class="headerlink" href="#problems" title="Permalink to this headline"></a></h3>
+</section>
+<section id="problems">
+<h3><a class="toc-backref" href="#id7">Problems</a><a class="headerlink" href="#problems" title="Permalink to this heading"></a></h3>
 <p>Please report any issues on <a class="reference external" href="https://github.com/ls1intum/Orion">Orion’s GitHub repository</a>.</p>
-</div>
-</div>
-<div class="section" id="participation-in-orion">
-<h2><a class="toc-backref" href="#id8">Participation in Orion</a><a class="headerlink" href="#participation-in-orion" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="participation-in-orion">
+<h2><a class="toc-backref" href="#id8">Participation in Orion</a><a class="headerlink" href="#participation-in-orion" title="Permalink to this heading"></a></h2>
 <p>Students can participate in programming exercises via Orion by performing the following steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Navigate to the exercise using the integrated browser.</p></li>
 <li><p>After starting the exercise, click <img alt="open-in-intellij-button" src="../../_images/open-in-intellij-button.png" />.</p></li>
 <li><p>After cloning, the exercise can be solved in IntelliJ.</p></li>
-<li><p>To submit the changes, click <img alt="submit-button" src="../../_images/submit-button.png" />. This automatically commits and pushes the local changes and displays the result of the automatic tests in IntelliJ.</p></li>
+<li><p>To submit the changes, click <img alt="submit-button" src="../../_images/submit-button2.png" />. This automatically commits and pushes the local changes and displays the result of the automatic tests in IntelliJ.</p></li>
 </ol>
 </div></blockquote>
 <p>A Gif showcasing the usage for students:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="https://raw.githubusercontent.com/ls1intum/Orion/master/.github/media/orion_workflow.gif"><img alt="https://raw.githubusercontent.com/ls1intum/Orion/master/.github/media/orion_workflow.gif" class="align-center" src="https://raw.githubusercontent.com/ls1intum/Orion/master/.github/media/orion_workflow.gif" style="width: 100%;" /></a>
 </div></blockquote>
-</div>
-<div class="section" id="exercise-creation-in-orion">
-<h2><a class="toc-backref" href="#id9">Exercise Creation in Orion</a><a class="headerlink" href="#exercise-creation-in-orion" title="Permalink to this headline"></a></h2>
+</section>
+<section id="exercise-creation-in-orion">
+<h2><a class="toc-backref" href="#id9">Exercise Creation in Orion</a><a class="headerlink" href="#exercise-creation-in-orion" title="Permalink to this heading"></a></h2>
 <p>Instructors can set up programming exercises via Orion by performing the following steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>The exercise needs to be created as described at the <a class="reference external" href="https://artemis-platform.readthedocs.io/en/latest/user/exercises/programming/#exercise-creation">exercise creation</a> of programming exercises, step 1 and 2.</p></li>
+<li><p>The exercise needs to be created as described at the <a class="reference internal" href="../exercises/programming/#programming-exercise-creation"><span class="std std-ref">exercise creation</span></a> of programming exercises, step 1 and 2.</p></li>
 <li><p>After the creation, navigate to the instructor exercise overview using the integrated browser.</p></li>
 <li><p>Each programming exercise provides a button to edit the exercise in Orion <img alt="edit-in-intellij-button" src="../../_images/edit-in-intellij-button.png" />. The button is rightmost in the table and might require scrolling. Clicking it downloads the template, solution and test repository of the exercise.</p></li>
 <li><p>Edit the repository files in IntelliJ.</p></li>
-<li><p>To submit the changes, click <img alt="submit-button" src="../../_images/submit-button.png" />. This commits and pushes all local changes to their respective repository.</p></li>
+<li><p>To submit the changes, click <img alt="submit-button" src="../../_images/submit-button2.png" />. This commits and pushes all local changes to their respective repository.</p></li>
 <li><p>The integrated browser displays the editor to update the problem statement.</p></li>
 <li><p>To test the code locally, click <img alt="test-locally-button" src="../../_images/test-locally-button.png" />, which copies the tests with the local template or solution (whichever was selected) into a new folder and executes them locally.</p></li>
 </ol>
 </div></blockquote>
-</div>
-<div class="section" id="assessment-in-orion">
-<h2><a class="toc-backref" href="#id10">Assessment in Orion</a><a class="headerlink" href="#assessment-in-orion" title="Permalink to this headline"></a></h2>
+</section>
+<section id="assessment-in-orion">
+<h2><a class="toc-backref" href="#id10">Assessment in Orion</a><a class="headerlink" href="#assessment-in-orion" title="Permalink to this heading"></a></h2>
 <p>Tutors can assess programming exercises via Orion by performing the following steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -210,15 +224,15 @@
 <li><p>The integrated browser displays the problem statement, the assessment instructions, and the buttons to edit the general feedback.</p></li>
 </ol>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../exams/students_guide/" class="btn btn-neutral float-left" title="Students’ Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../discussion/" class="btn btn-neutral float-right" title="Discussion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../exams/live_statistics/" class="btn btn-neutral float-left" title="Live Statistics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../communication/" class="btn btn-neutral float-right" title="Communication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

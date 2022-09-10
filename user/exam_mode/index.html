@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exam Mode &mdash; Artemis  documentation</title>
+  <title>Exams &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,12 +14,13 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Instructors’ Guide" href="../exams/instructors_guide/" />
-    <link rel="prev" title="File Upload Exercise" href="../exercises/file-upload/" /> 
+    <link rel="next" title="Students’ Guide" href="../exams/students_guide/" />
+    <link rel="prev" title="Lectures" href="../lectures/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,13 +41,23 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Exam Mode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../exams/instructors_guide/">Instructors’ Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/">Lectures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../exams/students_guide/">Students’ Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/instructors_guide/">Instructors’ Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/">Live Statistics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -54,16 +66,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -80,7 +95,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
-      <li>Exam Mode</li>
+      <li>Exams</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/exam_mode.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -90,40 +105,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="exam-mode">
-<h1>Exam Mode<a class="headerlink" href="#exam-mode" title="Permalink to this headline"></a></h1>
+  <section id="exams">
+<span id="id1"></span><h1>Exams<a class="headerlink" href="#exams" title="Permalink to this heading"></a></h1>
 <p>Artemis now includes an online exam mode:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../exams/instructors_guide/">Instructors’ Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../exams/instructors_guide/#timeline-of-an-artemis-online-exam">Timeline of an Artemis Online Exam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#creation-and-configuration">1. <strong>Creation and Configuration</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#accessing-the-exam-management-page">1.1 Accessing the Exam Management Page</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#create-and-configure-exam">1.2 Create and Configure Exam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#exercise-groups">1.3 Exercise Groups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#add-exercises">1.4 Add Exercises</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#register-students">1.5 Register Students</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#manage-student-exams">1.6 Manage Student Exams</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#conducting-test-runs">1.7 Conducting Test Runs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#conduction">2. <strong>Conduction</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#assessment">3. <strong>Assessment</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#assess-student-exams">3.1 Assess Student Exams</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#assessment-with-second-correction-round">3.2 Assessment with Second Correction Round</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#plagiarism-detection">3.3 Plagiarism detection</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#publication-of-results">4. <strong>Publication of Results</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#exam-scores">4.1 Exam Scores</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#student-review">5. <strong>Student Review</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#complaint-assessment">6. <strong>Complaint Assessment</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../exams/students_guide/">Students’ Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../exams/students_guide/#general-information">General Information</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../exams/students_guide/#prerequisites">Prerequisites</a></li>
@@ -141,20 +127,74 @@
 <li class="toctree-l3"><a class="reference internal" href="../exams/students_guide/#participating-in-programming-exercises">Participating in Programming Exercises</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exams/students_guide/#end-screen">End Screen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exams/students_guide/#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/students_guide/#grades">Grades</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../exams/instructors_guide/">Instructors’ Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exams/instructors_guide/#timeline-of-an-artemis-online-exam">Timeline of an Artemis Online Exam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#creation-and-configuration">1. <strong>Creation and Configuration</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#accessing-the-exam-management-page">1.1 Accessing the Exam Management Page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#create-and-configure-exam">1.2 Create and Configure Exam</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../exams/instructors_guide/#exam-mode">1.2.1 Exam Mode</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../exams/instructors_guide/#create-exam">1.2.2 Create Exam</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../exams/instructors_guide/#import-exam">1.2.3 Import Exam</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#exercise-groups">1.3 Exercise Groups</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../exams/instructors_guide/#import-exercise-groups">1.3.1 Import Exercise Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#add-exercises">1.4 Add Exercises</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#register-students">1.5 Register Students</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#manage-student-exams">1.6 Manage Student Exams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#conducting-test-runs">1.7 Conducting Test Runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#exam-checklist">1.8 Exam Checklist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#live-statistics">1.9 Live Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#conduction">2. <strong>Conduction</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#assessment">3. <strong>Assessment</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#assess-student-exams">3.1 Assess Student Exams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#assessment-with-second-correction-round">3.2 Assessment with Second Correction Round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#plagiarism-detection">3.3 Plagiarism detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#grading-key">3.4 Grading Key</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#publication-of-results">4. <strong>Publication of Results</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../exams/instructors_guide/#exam-scores">4.1 Exam Scores</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#student-review">5. <strong>Student Review</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/instructors_guide/#complaint-assessment">6. <strong>Complaint Assessment</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exams/live_statistics/">Live Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#enable-disable">1. Enable/Disable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#navigate-to-the-dashboard">2. Navigate to the Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#live-statistics-header">3. Live Statistics Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#section-overview">4. Section: Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../exams/live_statistics/#exercises">4.1 Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exams/live_statistics/#activity-log">4.2 Activity log</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#section-exercises">5. Section: Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exams/live_statistics/#section-activity-log">6. Section: Activity log</a></li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../exercises/file-upload/" class="btn btn-neutral float-left" title="File Upload Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../exams/instructors_guide/" class="btn btn-neutral float-right" title="Instructors’ Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../lectures/" class="btn btn-neutral float-left" title="Lectures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../exams/students_guide/" class="btn btn-neutral float-right" title="Students’ Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

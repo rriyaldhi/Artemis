@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Instructors’ Guide &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,12 +14,13 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="Students’ Guide" href="../students_guide/" />
-    <link rel="prev" title="Exam Mode" href="../../exam_mode/" /> 
+    <link rel="next" title="Live Statistics" href="../live_statistics/" />
+    <link rel="prev" title="Students’ Guide" href="../students_guide/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,7 +41,9 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../exercises/">Exercises</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../exam_mode/">Exam Mode</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../exam_mode/">Exams</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../students_guide/">Students’ Guide</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Instructors’ Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#timeline-of-an-artemis-online-exam">Timeline of an Artemis Online Exam</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creation-and-configuration">1. <strong>Creation and Configuration</strong></a></li>
@@ -52,11 +56,19 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../students_guide/">Students’ Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../live_statistics/">Live Statistics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -65,16 +77,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -91,7 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../exam_mode/">Exam Mode</a> &raquo;</li>
+          <li><a href="../../exam_mode/">Exams</a> &raquo;</li>
       <li>Instructors’ Guide</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/exams/instructors_guide.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -102,19 +117,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="instructors-guide">
-<h1>Instructors’ Guide<a class="headerlink" href="#instructors-guide" title="Permalink to this headline"></a></h1>
+  <section id="instructors-guide">
+<h1>Instructors’ Guide<a class="headerlink" href="#instructors-guide" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#timeline-of-an-artemis-online-exam" id="id21">Timeline of an Artemis Online Exam</a></p>
+<li><p><a class="reference internal" href="#timeline-of-an-artemis-online-exam" id="id28">Timeline of an Artemis Online Exam</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creation-and-configuration" id="id22">1. <strong>Creation and Configuration</strong></a></p></li>
-<li><p><a class="reference internal" href="#conduction" id="id23">2. <strong>Conduction</strong></a></p></li>
-<li><p><a class="reference internal" href="#assessment" id="id24">3. <strong>Assessment</strong></a></p></li>
-<li><p><a class="reference internal" href="#publication-of-results" id="id25">4. <strong>Publication of Results</strong></a></p></li>
-<li><p><a class="reference internal" href="#student-review" id="id26">5. <strong>Student Review</strong></a></p></li>
-<li><p><a class="reference internal" href="#complaint-assessment" id="id27">6. <strong>Complaint Assessment</strong></a></p></li>
+<li><p><a class="reference internal" href="#creation-and-configuration" id="id29">1. <strong>Creation and Configuration</strong></a></p></li>
+<li><p><a class="reference internal" href="#conduction" id="id30">2. <strong>Conduction</strong></a></p></li>
+<li><p><a class="reference internal" href="#assessment" id="id31">3. <strong>Assessment</strong></a></p></li>
+<li><p><a class="reference internal" href="#publication-of-results" id="id32">4. <strong>Publication of Results</strong></a></p></li>
+<li><p><a class="reference internal" href="#student-review" id="id33">5. <strong>Student Review</strong></a></p></li>
+<li><p><a class="reference internal" href="#complaint-assessment" id="id34">6. <strong>Complaint Assessment</strong></a></p></li>
 </ul>
 </li>
 </ul>
@@ -122,51 +137,96 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="section" id="timeline-of-an-artemis-online-exam">
-<h2><a class="toc-backref" href="#id21">Timeline of an Artemis Online Exam</a><a class="headerlink" href="#timeline-of-an-artemis-online-exam" title="Permalink to this headline"></a></h2>
-<div class="figure align-center" id="id5">
+<section id="timeline-of-an-artemis-online-exam">
+<h2><a class="toc-backref" href="#id28">Timeline of an Artemis Online Exam</a><a class="headerlink" href="#timeline-of-an-artemis-online-exam" title="Permalink to this heading"></a></h2>
+<figure class="align-center" id="id6">
 <span id="timeline"></span><img alt="Timeline of an Artemis Exam" src="../../../_images/timeline.png" />
-<p class="caption"><span class="caption-text">Timeline of an Artemis Online Exam</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<figcaption>
+<p><span class="caption-text">Timeline of an Artemis Online Exam</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 <div class="legend">
 <blockquote>
 <div></div></blockquote>
 </div>
-</div>
-<div class="section" id="creation-and-configuration">
-<span id="exam-creation-and-configuration"></span><h3><a class="toc-backref" href="#id22">1. <strong>Creation and Configuration</strong></a><a class="headerlink" href="#creation-and-configuration" title="Permalink to this headline"></a></h3>
+</figcaption>
+</figure>
+<section id="creation-and-configuration">
+<span id="exam-creation-and-configuration"></span><h3><a class="toc-backref" href="#id29">1. <strong>Creation and Configuration</strong></a><a class="headerlink" href="#creation-and-configuration" title="Permalink to this heading"></a></h3>
 <p>During the exam creation and configuration, you can create your exam and configure it to fit your needs. Add exercises with different variants, register students, generate <a class="reference internal" href="#student-exams"><span class="std std-ref">student exams</span></a> and conduct test runs. For more information see <a class="reference internal" href="#create-and-configure-exam">1.2 Create and Configure Exam</a>.</p>
-<div class="section" id="accessing-the-exam-management-page">
-<h4>1.1 Accessing the Exam Management Page<a class="headerlink" href="#accessing-the-exam-management-page" title="Permalink to this headline"></a></h4>
+<section id="accessing-the-exam-management-page">
+<h4>1.1 Accessing the Exam Management Page<a class="headerlink" href="#accessing-the-exam-management-page" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Log in to Artemis with your account credentials.</p></li>
-<li><p>Click on <img alt="course_management" src="../../../_images/course_management.png" />.</p></li>
+<li><p>Click on <img alt="course_management" src="../../../_images/course_management2.png" />.</p></li>
 <li><p>Click on <img alt="exams" src="../../../_images/exams.png" /> for your course. It will open the <em>Exam Management Screen</em>.</p></li>
 <li><p>Here you have access to all the exams of your course. All aspects of the exam are managed from the management screen.</p></li>
 <li><p>You can create an exam by clicking on <img alt="create_new_exam" src="../../../_images/create_new_exam.png" />.</p></li>
 </ul>
-</div>
-<div class="section" id="create-and-configure-exam">
-<h4>1.2 Create and Configure Exam<a class="headerlink" href="#create-and-configure-exam" title="Permalink to this headline"></a></h4>
+</section>
+<section id="create-and-configure-exam">
+<span id="configure-exam"></span><h4>1.2 Create and Configure Exam<a class="headerlink" href="#create-and-configure-exam" title="Permalink to this heading"></a></h4>
+<section id="exam-mode">
+<h5>1.2.1 Exam Mode<a class="headerlink" href="#exam-mode" title="Permalink to this heading"></a></h5>
 <ul class="simple">
-<li><p>When you click on <img alt="create_new_exam" src="../../../_images/create_new_exam.png" /> you are presented with the <em>Create Exam</em> view. Here you can set the basic information such as <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">examiner</span></code> etc. The <a class="reference internal" href="#timeline"><span class="std std-ref">timeline of the exam</span></a> is defined by the dates: <code class="docutils literal notranslate"><span class="pre">visible</span> <span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">of</span> <span class="pre">working</span> <span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">of</span> <span class="pre">working</span> <span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">release</span> <span class="pre">date</span> <span class="pre">of</span> <span class="pre">results</span></code>, <code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">of</span> <span class="pre">student</span> <span class="pre">review</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">of</span> <span class="pre">student</span> <span class="pre">review</span></code>.</p></li>
+<li><p>Artemis supports two exam modes. The conduction of normal exams and test exams.</p></li>
+<li><p>The normal exam mode is suitable for conducting end-of-semester exams. Students can view and work on the exam between the configured working time. Afterwards you can perform a manual or automated evaluation of the students’ submissions. The results will be published on the specified date.</p></li>
+<li><p>Test exams provide you with the possibility to provide students with a practice opportunity for the end-of-semester exam. The main difference is that you choose a working window within which students can freely start the exam. Students then have the configured working time to complete the exam. After submitting, students immediately get the automated assessment for programming and quizzes. Manual correction of the submissions is not necessary.</p></li>
+</ul>
+</section>
+<section id="create-exam">
+<span id="id1"></span><h5>1.2.2 Create Exam<a class="headerlink" href="#create-exam" title="Permalink to this heading"></a></h5>
+<ul class="simple">
+<li><p>When you click on <img alt="create_new_exam" src="../../../_images/create_new_exam.png" /> you are presented with the <em>Create Exam</em> view. Here you can set the basic information such as <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">examiner</span></code> etc.</p></li>
+<li><p>You can choose between the exam and test exam mode.</p></li>
+<li><p>The <a class="reference internal" href="#timeline"><span class="std std-ref">timeline of the exam</span></a> is defined by the dates: <code class="docutils literal notranslate"><span class="pre">visible</span> <span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">of</span> <span class="pre">working</span> <span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">of</span> <span class="pre">working</span> <span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">release</span> <span class="pre">date</span> <span class="pre">of</span> <span class="pre">results</span></code>, <code class="docutils literal notranslate"><span class="pre">begin</span> <span class="pre">of</span> <span class="pre">student</span> <span class="pre">review</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">of</span> <span class="pre">student</span> <span class="pre">review</span></code>.</p></li>
 <li><p>The first three dates are mandatory when you create an exam. The rest can be set when required.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">grace</span> <span class="pre">period</span></code> defines the amount of time the students have at their disposal to hand in their exam after the <code class="docutils literal notranslate"><span class="pre">working</span> <span class="pre">time</span></code> is over. This is set to 3 minutes by default.</p></li>
 <li><p><span class="target" id="before-the-exam-s-assessment">Before the exam’s assessment</span> you can choose the <code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">correction</span> <span class="pre">rounds</span> <span class="pre">in</span> <span class="pre">exam</span></code>. If you want two tutors to assess a student’s exam subsequently, set the number to two here. This enables the <a class="reference internal" href="#second-correction-explanation"><span class="std std-ref">second correction</span></a>.</p></li>
-<li><p>You can also define the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">exercises</span></code> in the exam. You can leave this out initially, however it must be set before you can generate the <a class="reference internal" href="#student-exams"><span class="std std-ref">student exams</span></a>. For more information, see <a class="reference internal" href="#id1">1.3 Exercise Groups</a>.</p></li>
+<li><p>You can also define the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">exercises</span></code> in the exam. You can leave this out initially, however it must be set before you can generate the <a class="reference internal" href="#student-exams"><span class="std std-ref">student exams</span></a>. For more information, see <a class="reference internal" href="#id2">1.3 Exercise Groups</a>.</p></li>
 <li><p>Artemis will randomize the order of the exercises for each student if you activate <code class="docutils literal notranslate"><span class="pre">randomize</span> <span class="pre">order</span> <span class="pre">of</span> <span class="pre">exercise</span> <span class="pre">groups</span></code>.</p></li>
 <li><p>Finally, you can fill out the exam <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">text</span></code>. Artemis will present these texts to the students during the <a class="reference internal" href="#exam-conduction"><span class="std std-ref">exam conduction</span></a>, at the <em>Start-</em> and <em>End</em> page respectively.</p></li>
 </ul>
-<div class="figure align-center" id="id6">
+<figure class="align-center" id="id7">
 <img alt="Create and Configure" src="../../../_images/exam_configuration.png" />
-<p class="caption"><span class="caption-text">Create and Configure the Exam</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
-<div class="legend">
-<blockquote>
-<div></div></blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="exercise-groups">
-<span id="id1"></span><h4>1.3 Exercise Groups<a class="headerlink" href="#exercise-groups" title="Permalink to this headline"></a></h4>
+<figcaption>
+<p><span class="caption-text">Create and Configure the Exam</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<img alt="Exam Conduction" src="../../../_images/exam_conduction.png" />
+<figcaption>
+<p><span class="caption-text">Exam Conduction</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<img alt="Exam Exercises" src="../../../_images/exam_conduction.png" />
+<figcaption>
+<p><span class="caption-text">Exam Exercises</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="Exam Assessment and Student Review" src="../../../_images/exam_assessment.png" />
+<figcaption>
+<p><span class="caption-text">Exam Assessment and Student Review</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="import-exam">
+<h5>1.2.3 Import Exam<a class="headerlink" href="#import-exam" title="Permalink to this heading"></a></h5>
+<ul class="simple">
+<li><p>Instead of creating a new exam, you can import an existing exam by clicking on <img alt="import_exam" src="../../../_images/import_exam.png" /> from any of the courses you are an instructor in.</p></li>
+<li><p>Artemis displays a list of all available exams. To select one specific exam for the import, click on the <img alt="import_individual_exam" src="../../../_images/import_individual_exam.png" /> button.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="List with all exams available for import" src="../../../_images/exam_import_selection.png" />
+</figure>
+<ul class="simple">
+<li><p>You are now presented with the <em>Import Exam</em> view. All information except for the dates are copied from the exam you selected for the import. You can find more information regarding this view at the section <a class="reference internal" href="#create-exam"><span class="std std-ref">create exam</span></a>.</p></li>
+<li><p>Additionally, you can select or deselect exercises which are imported alongside the exam. You can find more information regarding the exercise import in the <a class="reference internal" href="#exercise-import"><span class="std std-ref">section regarding the exercise group import</span></a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="exercise-groups">
+<span id="id2"></span><h4>1.3 Exercise Groups<a class="headerlink" href="#exercise-groups" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Artemis exam mode allows you to define multiple exercise variants so that each student can receive a unique exam. Artemis achieves this through exercise groups. Exercise groups represent an individual exercise slot for each <a class="reference internal" href="#student-exams"><span class="std std-ref">student exam</span></a>. Within one exercise group you can define different exercises.</p></li>
 <li><p>Artemis selects one exercise per exercise group randomly, to generate the individual <a class="reference internal" href="#student-exams"><span class="std std-ref">student exams</span></a>.</p></li>
@@ -175,13 +235,47 @@
 <li><p>Non-mandatory exercise groups can be left out, if there are more exercise groups than the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">exercises</span></code> defined in the <a class="reference internal" href="#exam-creation-and-configuration"><span class="std std-ref">exam configuration</span></a>.</p></li>
 <li><p>By default, every exercise group is mandatory. You can set the <code class="docutils literal notranslate"><span class="pre">mandatory</span></code> flag when you add an exercise group initially, or later by clicking <img alt="edit" src="../../../_images/edit.png" /> on the exercise group.</p></li>
 </ul>
-<div class="figure align-center" id="id7">
+<figure class="align-center" id="id11">
 <img alt="Exercise Groups with different Exercise Variants" src="../../../_images/exercise_variants.png" />
-<p class="caption"><span class="caption-text">Exercise Groups with different Exercise Variants</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<figcaption>
+<p><span class="caption-text">Exercise Groups with different Exercise Variants</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="import-exercise-groups">
+<h5>1.3.1 Import Exercise Groups<a class="headerlink" href="#import-exercise-groups" title="Permalink to this heading"></a></h5>
+<ul class="simple">
+<li><p>Artemis exam mode allows you to import one or more exercise groups from an existing exam.</p></li>
+<li><p>The import process consists of two steps.</p></li>
+</ul>
+<p><strong>Step 1: Select Exam</strong></p>
+<ul class="simple">
+<li><p>When you click on <img alt="import_exercise_group" src="../../../_images/import_exercise_group.png" />, you can select one exam from which exercise group(s) should be imported.</p></li>
+<li><p>To select one exam, click on <img alt="select_exercise_group" src="../../../_images/select_exercise_group.png" />.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="First step in the process to import exercise group(s). You can select one exam, from which exercise group(s) should be imported" src="../../../_images/exercise_group_import_exam.png" />
+</figure>
+<p id="exercise-import"><strong>Step 2: Select Exercises and Exercise Groups</strong></p>
+<ul class="simple">
+<li><p>In the next step you can select or deselect exercises which should be imported alongside the exercise groups.</p></li>
+<li><p>You can also change the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">isMandatory</span></code> of an exercise group, as well as the <code class="docutils literal notranslate"><span class="pre">title</span></code> (and <code class="docutils literal notranslate"><span class="pre">short-name</span></code> for programming exercises) for the individual exercises.</p></li>
+<li><p>The title and short name of programming exercises must be unique. If you want to import an exercise group into the same course, you must change the title and short name before you can import the exercise group.</p></li>
+<li><p>After you have started the import by clicking on <img alt="import_exam" src="../../../_images/import_exam.png" />, Artemis checks if the title and short name of the selected programming exercise(s) are unique. If they are not unique, a warning is displayed and you have to change the corresponding title and short name.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Further changes to the individual exercises can be made after the import by editing the respective exercise.</p></li>
+<li><p>Programming exercises are imported using their initial configuration. This import functionality cannot be used for changing the submission policy, for activating / deactivating the static code analysis or for creating new build plans. In this case, please import the exercises individually into the exercise groups.</p></li>
+</ul>
 </div>
-</div>
-<div class="section" id="add-exercises">
-<h4>1.4 Add Exercises<a class="headerlink" href="#add-exercises" title="Permalink to this headline"></a></h4>
+<figure class="align-center">
+<img alt="Second step in the process to import exercise group(s). You can select or deselect individual exercises, which should be imported alongside the exercise group(s)." src="../../../_images/exercise_group_import_exercises.png" />
+</figure>
+</section>
+</section>
+<section id="add-exercises">
+<h4>1.4 Add Exercises<a class="headerlink" href="#add-exercises" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Exercise groups can contain multiple exercises. For every <a class="reference internal" href="#student-exams"><span class="std std-ref">student exam</span></a>, Artemis will randomly select one exercise per <a class="reference internal" href="#exercise-groups"><span class="std std-ref">exercise group</span></a>.</p></li>
 </ul>
@@ -192,10 +286,12 @@
 <ul class="simple">
 <li><p>To add exercises navigate to the <em>Exercise Groups</em> of the exam. On the header of each <a class="reference internal" href="#exercise-groups"><span class="std std-ref">exercise group</span></a> you will find the available exercise types. You can choose between <code class="docutils literal notranslate"><span class="pre">creating</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">exercise</span></code> or <code class="docutils literal notranslate"><span class="pre">importing</span> <span class="pre">an</span> <span class="pre">existing</span> <span class="pre">one</span></code> from your courses.</p></li>
 </ul>
-<div class="figure align-center" id="id8">
+<figure class="align-center" id="id12">
 <img alt="Add different Exercises" src="../../../_images/add_exercises.png" />
-<p class="caption"><span class="caption-text">Add different Exercises</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Add different Exercises</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>For exercise types <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">modeling</span></code> you can also define example submissions and example assessments to guide your assessor team.</p></li>
 <li><p>Assessors will review the example submissions and assessments in order to familiarise themselves with the exercise and assessment instructions, before they can assess the real submissions.</p></li>
@@ -223,14 +319,16 @@
 <p>If you hide all tests, the students will only be able to see if their submission compiles during the conduction. Set the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Tests</span> <span class="pre">once</span> <span class="pre">after</span> <span class="pre">Due</span> <span class="pre">Date</span></code> after the
 exam end date to achieve this effect.</p>
 </div>
-<div class="figure align-center" id="id9">
+<figure class="align-center" id="id13">
 <img alt="Configure Grading" src="../../../_images/configure_grading1.png" />
-<p class="caption"><span class="caption-text">Configure the Grading of a Programming Exercise</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Configure the Grading of a Programming Exercise</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </div></blockquote>
-</div>
-<div class="section" id="register-students">
-<h4>1.5 Register Students<a class="headerlink" href="#register-students" title="Permalink to this headline"></a></h4>
+</section>
+<section id="register-students">
+<h4>1.5 Register Students<a class="headerlink" href="#register-students" title="Permalink to this heading"></a></h4>
 <ul>
 <li><p>To register students to the exam, navigate from the exam management to the <em>Students</em> page. Artemis offers two options to register students. You can:</p>
 <blockquote>
@@ -249,13 +347,15 @@ exam end date to achieve this effect.</p>
 <ul class="simple">
 <li><p>You can also remove students from the exam. When you do so, you have the option to also delete their participations and submissions linked to the user’s <a class="reference internal" href="#student-exams"><span class="std std-ref">student exam</span></a>.</p></li>
 </ul>
-<div class="figure align-center" id="id10">
+<figure class="align-center" id="id14">
 <img alt="Register Students" src="../../../_images/add_students.png" />
-<p class="caption"><span class="caption-text">Register Students Page</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
-</div>
-</div>
-<div class="section" id="manage-student-exams">
-<span id="student-exams"></span><h4>1.6 Manage Student Exams<a class="headerlink" href="#manage-student-exams" title="Permalink to this headline"></a></h4>
+<figcaption>
+<p><span class="caption-text">Register Students Page</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="manage-student-exams">
+<span id="student-exams"></span><h4>1.6 Manage Student Exams<a class="headerlink" href="#manage-student-exams" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Student exams represent the exam of a student. It consists of an individual set of exercises based on the configured <a class="reference internal" href="#exercise-groups"><span class="std std-ref">exercise groups</span></a>.</p></li>
 <li><p>Student exams are managed via the <em>Student Exams</em> page.</p></li>
@@ -288,21 +388,27 @@ exam end date to achieve this effect.</p>
 <p class="admonition-title">Note</p>
 <p>Artemis locks and unlocks the student repositories automatically based on the individual exam start and end date. These buttons are typically not necessary unless something went wrong.</p>
 </div>
-<div class="figure align-center" id="id11">
+<figure class="align-center" id="id15">
 <img alt="Student Exam Page" src="../../../_images/student_exams.png" />
-<p class="caption"><span class="caption-text">Student Exam Page</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id12">
+<figcaption>
+<p><span class="caption-text">Student Exam Page</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id16">
 <img alt="Individual Working Time" src="../../../_images/individual_working_time.png" />
-<p class="caption"><span class="caption-text">Individual Working Time</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
-</div>
-</div>
-<div class="section" id="conducting-test-runs">
-<h4>1.7 Conducting Test Runs<a class="headerlink" href="#conducting-test-runs" title="Permalink to this headline"></a></h4>
-<div class="figure align-center" id="id13">
+<figcaption>
+<p><span class="caption-text">Individual Working Time</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="conducting-test-runs">
+<h4>1.7 Conducting Test Runs<a class="headerlink" href="#conducting-test-runs" title="Permalink to this heading"></a></h4>
+<figure class="align-center" id="id17">
 <img alt="Delete Test Run" src="../../../_images/test_run_management.png" />
-<p class="caption"><span class="caption-text">Test Run Management</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Test Run Management</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Test runs are designed to offer the instructors confidence that the <a class="reference internal" href="#exam-conduction"><span class="std std-ref">exam conduction</span></a> will run smoothly. They allow you to experience the exam from the student’s perspective. A test run is distinct from a <a class="reference internal" href="#student-exams"><span class="std std-ref">student exam</span></a> and is not taken into consideration during the calculation of the exam scores.</p></li>
 <li><p>You can manage your test runs from the <em>Test Run</em> page.</p></li>
@@ -312,18 +418,22 @@ exam end date to achieve this effect.</p>
 <p class="admonition-title">Note</p>
 <p>Exercise groups with no exercises are ignored.</p>
 </div>
-<div class="figure align-center" id="id14">
+<figure class="align-center" id="id18">
 <a class="reference internal image-reference" href="../../../_images/create_test_run1.png"><img alt="Create Test Run" src="../../../_images/create_test_run1.png" style="width: 319.5px; height: 456.5px;" /></a>
-<p class="caption"><span class="caption-text">Create test run popup with one exercise variant selected for each exercise group.</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Create test run popup with one exercise variant selected for each exercise group.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>When you start the test run, you conduct the exam similar to how a student would. You can create submissions for the different exercises and end the test run.</p></li>
 <li><p>An instructor can also assess his test run submissions. To do this, you must have completed at least one test run. To navigate to the assessment screen of the test runs click <img alt="assess_test_runs" src="../../../_images/assess_test_runs.png" />.</p></li>
 </ul>
-<div class="figure align-center" id="id15">
+<figure class="align-center" id="id19">
 <img alt="Conduct Test Run" src="../../../_images/test_run_conduction.png" />
-<p class="caption"><span class="caption-text">Test run conduction marked with the banner on the top left.</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Test run conduction marked with the banner on the top left.</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only the creator of the test run is able to assess his submissions.</p>
@@ -336,24 +446,55 @@ exam end date to achieve this effect.</p>
 <p class="admonition-title">Note</p>
 <p>You should delete test runs before the actual exam conduction takes place.</p>
 </div>
-</div>
-</div>
-<div class="section" id="conduction">
-<span id="exam-conduction"></span><h3><a class="toc-backref" href="#id23">2. <strong>Conduction</strong></a><a class="headerlink" href="#conduction" title="Permalink to this headline"></a></h3>
+</section>
+<section id="exam-checklist">
+<h4>1.8 Exam Checklist<a class="headerlink" href="#exam-checklist" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>After you create an exam, the exam checklist appears at the top of the exam’s detail page.</p></li>
+<li><p>The exam checklist helps you oversee and ensure every step of the exam is executed correctly.</p></li>
+<li><p>You can track the progress of the steps mentioned in this document and spot missed steps easily.</p></li>
+<li><p>Each row of the checklist includes the name of the task, description and short summary where it is applicable and the page column which navigates the instructors to the relevant action.</p></li>
+<li><p>Going through each task from the start until the current task and making sure the description column contains no warnings or errors can help instructors conduct the exam smoothly.</p></li>
+</ul>
+<figure class="align-center" id="id20">
+<img alt="Exam Checklist" src="../../../_images/exam_checklist.png" />
+<figcaption>
+<p><span class="caption-text">In Progress Exam Checklist</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The exam list page displays a more concise overview of the exam steps in the <code class="docutils literal notranslate"><span class="pre">Exam</span> <span class="pre">Status</span></code> column.</p></li>
+<li><p>You can glance over the preparation, conduction and correction status of the exams in the list.</p></li>
+</ul>
+<figure class="align-center" id="id21">
+<img alt="Exam Status Overview" src="../../../_images/exam_checklist_overview.png" />
+<figcaption>
+<p><span class="caption-text">Exam Status Overview</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="live-statistics">
+<h4>1.9 Live Statistics<a class="headerlink" href="#live-statistics" title="Permalink to this heading"></a></h4>
+<p>Artemis can collect live statistics about the student behaviour during the exam.
+For more details, please visit the <a class="reference internal" href="../live_statistics/#live-statistics"><span class="std std-ref">live statistics</span></a> page.</p>
+</section>
+</section>
+<section id="conduction">
+<span id="exam-conduction"></span><h3><a class="toc-backref" href="#id30">2. <strong>Conduction</strong></a><a class="headerlink" href="#conduction" title="Permalink to this heading"></a></h3>
 <p>The exam conduction starts when the exam becomes visible to the students and ends when the latest working time is over. When the exam conduction begins, you cannot make any changes anymore to the <a class="reference internal" href="#exam-creation-and-configuration"><span class="std std-ref">exam configuration</span></a> or individual <a class="reference internal" href="#student-exams"><span class="std std-ref">student exams</span></a>. When the conduction starts, the students can access and start their exam. They can submit their solutions to the exercises within the given individual working time. When a student submits the exam, they cannot make any changes anymore to his exercise submissions. For more information, see <a class="reference internal" href="../students_guide/#participation-guide"><span class="std std-ref">participating in the online exam</span></a>.</p>
 <blockquote>
 <div></div></blockquote>
-</div>
-<div class="section" id="assessment">
-<span id="exam-assessment"></span><h3><a class="toc-backref" href="#id24">3. <strong>Assessment</strong></a><a class="headerlink" href="#assessment" title="Permalink to this headline"></a></h3>
+</section>
+<section id="assessment">
+<span id="exam-assessment"></span><h3><a class="toc-backref" href="#id31">3. <strong>Assessment</strong></a><a class="headerlink" href="#assessment" title="Permalink to this heading"></a></h3>
 <p>The assessment begins as soon as the latest <a class="reference internal" href="#student-exams"><span class="std std-ref">student exam</span></a> working time is over.
 During this period, your team can assess the submissions of the students and provide results.
 Artemis executes the test suites for programming exercises automatically and grades these.
 You can enhance the automatic grading with a <a class="reference internal" href="#manual-assessment"><span class="std std-ref">manual review</span></a>.
 You can also trigger the <a class="reference internal" href="#evaluate-quiz-exercises"><span class="std std-ref">automatic grading of the quiz exercises</span></a> via the <em>Manage Student Exams Screen</em>.
 If you want you can also enable the <a class="reference internal" href="#before-the-exam-s-assessment"><span class="std std-ref">second correction</span></a> feature for the exam.</p>
-<div class="section" id="assess-student-exams">
-<h4>3.1 Assess Student Exams<a class="headerlink" href="#assess-student-exams" title="Permalink to this headline"></a></h4>
+<section id="assess-student-exams">
+<h4>3.1 Assess Student Exams<a class="headerlink" href="#assess-student-exams" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Once the <a class="reference internal" href="#exam-conduction"><span class="std std-ref">exam conduction</span></a> is over and the latest individual working time has passed, your team can begin the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">assessment</span></a> process.</p></li>
 <li><p>This is done through the <em>Assessment Dashboard</em>.</p></li>
@@ -380,10 +521,12 @@ If you want you can also enable the <a class="reference internal" href="#before-
 <p class="admonition-title">Note</p>
 <p>If you do not press this button, the unsubmitted student submissions and the empty submissions will appear in the assessment dashboard of the exam, which leads to unnecessary effort during grading.</p>
 </div>
-<div class="figure align-center" id="id16">
+<figure class="align-center" id="id22">
 <img alt="Assessment Dashboard" src="../../../_images/assessment_dashboard.png" />
-<p class="caption"><span class="caption-text">Assessment Dashboard</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Assessment Dashboard</span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>To assess a submission for an exercise, you can click on <img alt="exercise_dashboard" src="../../../_images/exercise_dashboard.png" />.</p></li>
 <li><p>Your assessors must first complete the example submissions and assessments, if you have attached those to the exercise, see <a class="reference internal" href="#add-exercises">1.4 Add Exercises</a>.</p></li>
@@ -391,45 +534,47 @@ If you want you can also enable the <a class="reference internal" href="#before-
 <li><p>Artemis grades programming exercises automatically. However, if the exercise allows <a class="reference internal" href="#manual-assessment"><span class="std std-ref">a manual assessment</span></a>, you can review and enhance the automatic results.</p></li>
 <li><p>You can trigger Artemis to <a class="reference internal" href="#evaluate-quiz-exercises"><span class="std std-ref">automatically grade quiz exercises</span></a> via the <em>Manage Student Exams Screen</em>. Therefore, quiz exercises do not appear in the <em>Assessment Dashboard</em>.</p></li>
 </ul>
-<div class="figure align-center" id="id17">
+<figure class="align-center" id="id23">
 <img alt="Programming Submission Assessment" src="../../../_images/programming_assessment.png" />
-<p class="caption"><span class="caption-text">Manually Assessing a Programming Submission</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
-</div>
-</div>
-<div class="section" id="assessment-with-second-correction-round">
-<span id="second-correction-explanation"></span><h4>3.2 Assessment with Second Correction Round<a class="headerlink" href="#assessment-with-second-correction-round" title="Permalink to this headline"></a></h4>
+<figcaption>
+<p><span class="caption-text">Manually Assessing a Programming Submission</span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="assessment-with-second-correction-round">
+<span id="second-correction-explanation"></span><h4>3.2 Assessment with Second Correction Round<a class="headerlink" href="#assessment-with-second-correction-round" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Set the number of correction rounds of the exam to 2.</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="Configure exam" src="../../../_images/set_second_correction_exam.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p>When the second correction is enabled, the assessment progress can be observed in the Assessment Dashboard.</p></li>
 <li><p>There you can see the state of the individual correction rounds, and the state of the complaints.</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="second correction status" src="../../../_images/second_correction_status.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p>You can toggle if tutors can assess specific exercises in the second round. Disabling the second correction again, does not affect already created second assessments.</p></li>
 <li><p>Correction in the second round can be enabled/disabled anytime.</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="Configure exam" src="../../../_images/exam_assessment_dashboard_second_correction.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p>To assess a submission a second time go to the exercise assessment dashboard. When it is enabled, a <img alt="start_new_assessment" src="../../../_images/start_new_assessment.png" /> button will be visible in the second correction round.</p></li>
 <li><p>The new second assessment will have all the feedback copied from the first assessment. Those can be overridden, and new feedback can be added as well. This does not override the original result, but saves a separate second result.</p></li>
 <li><p>Within the second correction round review instructors and tutors can highlight which feedback was created for which correction round. This is displayed as a badge at the bottom of every feedback. This view can be enabled or disabled any time during the second correction round review by pressing the button at the top of the page. The feature is currently available for text, modeling and file-upload exercises.</p></li>
 <li><p>You can access each assessment of both rounds by going to the exam’s <img alt="exercise_groups" src="../../../_images/exercise_groups.png" /> -&gt; <img alt="submissions" src="../../../_images/submissions.png" /></p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="Submissions" src="../../../_images/submissions1.png" />
-</div>
-</div>
-<div class="section" id="plagiarism-detection">
-<h4>3.3 Plagiarism detection<a class="headerlink" href="#plagiarism-detection" title="Permalink to this headline"></a></h4>
+</figure>
+</section>
+<section id="plagiarism-detection">
+<h4>3.3 Plagiarism detection<a class="headerlink" href="#plagiarism-detection" title="Permalink to this heading"></a></h4>
 <ul>
 <li><p>Artemis also allows you to detect plagiarism attempts.</p></li>
 <li><p>Artemis conducts this by analyzing the similarities between all student submissions and flagging those which exceed a given threshold. You can compare all flagged submissions side by side and confirm plagiarism attempts.</p></li>
@@ -440,20 +585,55 @@ If you want you can also enable the <a class="reference internal" href="#before-
 </div></blockquote>
 </li>
 </ul>
-<div class="figure align-center" id="id18">
+<figure class="align-center" id="id24">
 <img alt="Plagiarism Editor" src="../../../_images/plagiarism.png" />
-<p class="caption"><span class="caption-text">Detecting Plagiarism attempts on Modeling Exercises</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Detecting Plagiarism attempts on Modeling Exercises</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>At the bottom of the page you will find the option <img alt="check_plagiarism" src="../../../_images/check_plagiarism.png" />.</p></li>
 </ul>
+</section>
+<section id="grading-key">
+<span id="exam-grading-key"></span><h4>3.4 Grading Key<a class="headerlink" href="#grading-key" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Optionally, you can create a grading key for your exam by clicking <img alt="grade_key" src="../../../_images/grade_key.png" /> at the top of the exam’s detail page.</p></li>
+<li><p>Defining a grading key allows the exam score to be converted to a grade automatically by Artemis, students are then able to see their own grades after the specified <cite>Release Date of Results</cite>.</p></li>
+<li><p>Using a grading key also enhances the generated statistics so that the instructor is able to view grade distributions.</p></li>
+<li><p>For an easy out-of-the-box configuration, you can click <img alt="generate_default_grade_key" src="../../../_images/generate_default_grade_key.png" /> and then click <code class="docutils literal notranslate"><span class="pre">Save</span></code>.</p></li>
+<li><p>By default, grades are defined as percentages of the total obtainable score. You can also display their point equivalent if you specify <code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">points</span> <span class="pre">for</span> <span class="pre">exam</span></code>.</p></li>
+<li><p>If you would like to define custom grade steps, you can use the <img alt="add_grade_step" src="../../../_images/add_grade_step.png" /> button and modify the grade step intervals.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep an eye out for the warnings at the bottom of the page to ensure that the grading key is valid.</p>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Inclusivity</span></code> field allows you to decide which grade should be assigned if the student’s score is exactly equal to a boundary value between two grades.</p></li>
+<li><p>There are two grade types you can use: <code class="docutils literal notranslate"><span class="pre">Grade</span></code> and <code class="docutils literal notranslate"><span class="pre">Bonus</span></code>. The <code class="docutils literal notranslate"><span class="pre">Grade</span></code> type allows you to set a final grade for the exam with custom grade step names, while the <code class="docutils literal notranslate"><span class="pre">Bonus</span></code> type allows you to assign bonus points to each grade step so they can contribute to the grade of another course or exam.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Grade</span> <span class="pre">Type</span></code> is <code class="docutils literal notranslate"><span class="pre">Grade</span></code> you should set <code class="docutils literal notranslate"><span class="pre">First</span> <span class="pre">Passing</span> <span class="pre">Grade</span></code>.</p>
 </div>
-<div class="section" id="publication-of-results">
-<h3><a class="toc-backref" href="#id25">4. <strong>Publication of Results</strong></a><a class="headerlink" href="#publication-of-results" title="Permalink to this headline"></a></h3>
-<p>You can specify the moment when Artemis publishes the results of the exam, see <a class="reference internal" href="#create-and-configure-exam">1.2 Create and Configure Exam</a>. This is usually when the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">exam assessment</span></a> ends, but you can specify this at any point in time. During the publication of the results, the student can view their results from their summary page. You can also view the exam statistics from the exam <em>Scores</em> page and export the data into external platforms such as <a class="reference external" href="https://campus.tum.de">TUM Online</a> as a <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file, see <a class="reference internal" href="#exam-scores">4.1 Exam Scores</a>.</p>
-<div class="section" id="exam-scores">
-<h4>4.1 Exam Scores<a class="headerlink" href="#exam-scores" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>For more fine grained control, you can switch to <code class="docutils literal notranslate"><span class="pre">Detailed</span></code> editing mode and set grade step bounds manually.</p></li>
+<li><p><img alt="import_export" src="../../../_images/import_export.png" /> buttons enable you to save the grading key as a CSV file and re-use it in other courses and exams.</p></li>
+</ul>
+<figure class="align-center" id="id25">
+<img alt="Default Grading Key" src="../../../_images/grade_key_editor.png" />
+<figcaption>
+<p><span class="caption-text">Default Grading Key</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="publication-of-results">
+<h3><a class="toc-backref" href="#id32">4. <strong>Publication of Results</strong></a><a class="headerlink" href="#publication-of-results" title="Permalink to this heading"></a></h3>
+<p>You can specify the moment when Artemis publishes the results of the exam, see <a class="reference internal" href="#id1">1.2.2 Create Exam</a>. This is usually when the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">exam assessment</span></a> ends, but you can specify this at any point in time. During the publication of the results, the student can view their results from their summary page. You can also view the exam statistics from the exam <em>Scores</em> page and export the data into external platforms such as <a class="reference external" href="https://campus.tum.de">TUM Online</a> as a <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file, see <a class="reference internal" href="#exam-scores">4.1 Exam Scores</a>.</p>
+<section id="exam-scores">
+<h4>4.1 Exam Scores<a class="headerlink" href="#exam-scores" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>You can access the exam scores by clicking on <img alt="scores" src="../../../_images/scores.png" />. This view aggregates the results of the students and combines them to provide an overview over the students’ performance.</p></li>
 <li><p>You can view the spread between different achieved scores, the average results per exercise, as well as the individual students’ results.</p></li>
@@ -471,19 +651,21 @@ If you want you can also enable the <a class="reference internal" href="#before-
 <li><p>The exported <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file includes the <code class="docutils literal notranslate"><span class="pre">students</span> <span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">username</span></code>, <code class="docutils literal notranslate"><span class="pre">email</span></code>, <code class="docutils literal notranslate"><span class="pre">registration</span> <span class="pre">number</span></code>, their assigned <code class="docutils literal notranslate"><span class="pre">exercises</span></code>, and their <code class="docutils literal notranslate"><span class="pre">score</span></code> for every exercise.</p></li>
 <li><p>The exported <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file also contains the aggregated statistics of the <a class="reference internal" href="#exam-conduction"><span class="std std-ref">exam conduction</span></a> such as the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">participations</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">score</span></code> per exercise.</p></li>
 </ul>
-<div class="figure align-center" id="id19">
+<figure class="align-center" id="id26">
 <img alt="Exam Scores page" src="../../../_images/exam_statistics.png" />
-<p class="caption"><span class="caption-text">Exam Scores Page</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+<figcaption>
+<p><span class="caption-text">Exam Scores Page</span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
 <div class="legend">
 <blockquote>
 <div></div></blockquote>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="student-review">
-<span id="id3"></span><h3><a class="toc-backref" href="#id26">5. <strong>Student Review</strong></a><a class="headerlink" href="#student-review" title="Permalink to this headline"></a></h3>
-<p>During the review period, students have the opportunity to review the assessment of their exam. If they find inconsistencies, they can submit complaints about perceived mistakes made in the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">assessment</span></a>. Students can provide their reasoning through a text message to clarify their objections. You can set the student review period in the <a class="reference internal" href="#exam-creation-and-configuration"><span class="std std-ref">exam configuration</span></a>, see <a class="reference internal" href="#create-and-configure-exam">1.2 Create and Configure Exam</a>.</p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="student-review">
+<span id="id4"></span><h3><a class="toc-backref" href="#id33">5. <strong>Student Review</strong></a><a class="headerlink" href="#student-review" title="Permalink to this heading"></a></h3>
+<p>During the review period, students have the opportunity to review the assessment of their exam. If they find inconsistencies, they can submit complaints about perceived mistakes made in the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">assessment</span></a>. Students can provide their reasoning through a text message to clarify their objections. You can set the student review period in the <a class="reference internal" href="#exam-creation-and-configuration"><span class="std std-ref">exam configuration</span></a>, see <a class="reference internal" href="#id1">1.2.2 Create Exam</a>.</p>
 <ul class="simple">
 <li><p>Students can submit complaints about their assessment in the <em>Summary</em> page.</p></li>
 <li><p>During the student review, a complaint button will appear for every manually assessed exercise.</p></li>
@@ -500,29 +682,31 @@ If you want you can also enable the <a class="reference internal" href="#before-
 <div></div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="complaint-assessment">
-<span id="id4"></span><h3><a class="toc-backref" href="#id27">6. <strong>Complaint Assessment</strong></a><a class="headerlink" href="#complaint-assessment" title="Permalink to this headline"></a></h3>
+</section>
+<section id="complaint-assessment">
+<span id="id5"></span><h3><a class="toc-backref" href="#id34">6. <strong>Complaint Assessment</strong></a><a class="headerlink" href="#complaint-assessment" title="Permalink to this heading"></a></h3>
 <p>Artemis collects the complaints submitted by the students during the <a class="reference internal" href="#student-review"><span class="std std-ref">student review</span></a>. You can access and review the complaints similar to the <a class="reference internal" href="#exam-assessment"><span class="std std-ref">submissions</span></a> from the <em>Assessment Dashboard</em>. Every assessor can evaluate a complaint about the assessment of their peers and either accept or reject the complaint. Artemis will automatically update the results of accepted complaints. You can view the updated scores immediately in the <em>Scores</em> page. There you can also export the updated data in <code class="docutils literal notranslate"><span class="pre">CSV</span></code> format, see <a class="reference internal" href="#exam-scores">4.1 Exam Scores</a>.</p>
 <ul class="simple">
 <li><p>The complaints appear below the exercise submissions.</p></li>
 <li><p>The original assessor of an assessment cannot respond to the complaint. A second assessor must review the complaint and respond to it.</p></li>
 <li><p>Artemis tracks the progress of the complaint assessment and displays a progress bar in the <em>Assessment Dashboard</em>. This allows you to keep track of the complaint assessment and see how many open complaints are left.</p></li>
 </ul>
-<div class="figure align-center" id="id20">
+<figure class="align-center" id="id27">
 <img alt="Complaint Response" src="../../../_images/complaint_response.png" />
-<p class="caption"><span class="caption-text">Assessor responding to a Complaint</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
-</div>
-</div>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-text">Assessor responding to a Complaint</span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../../exam_mode/" class="btn btn-neutral float-left" title="Exam Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../students_guide/" class="btn btn-neutral float-right" title="Students’ Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../students_guide/" class="btn btn-neutral float-left" title="Students’ Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../live_statistics/" class="btn btn-neutral float-right" title="Live Statistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

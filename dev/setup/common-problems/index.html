@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Common Setup Problems &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -60,6 +71,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../programming-exercises/#caching-example-for-maven">Caching example for Maven</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kubernetes/">Kubernetes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-service-configuration">Run the server via a service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-docker">Run the server via Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-via-a-run-configuration-in-intellij">Run the server via a run configuration in IntelliJ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-spring-boot-and-spring-profiles">Run the server with Spring Boot and Spring profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../#run-the-server-with-the-command-line-gradle-wrapper">Run the server with the command line (Gradle wrapper)</a></li>
@@ -77,16 +89,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../system-design/">System Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -114,10 +129,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="common-setup-problems">
-<h1>Common Setup Problems<a class="headerlink" href="#common-setup-problems" title="Permalink to this headline"></a></h1>
-<div class="section" id="general-setup-problems">
-<h2>General Setup Problems<a class="headerlink" href="#general-setup-problems" title="Permalink to this headline"></a></h2>
+  <section id="common-setup-problems">
+<h1>Common Setup Problems<a class="headerlink" href="#common-setup-problems" title="Permalink to this heading"></a></h1>
+<section id="general-setup-problems">
+<h2>General Setup Problems<a class="headerlink" href="#general-setup-problems" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Restarting IntelliJ with invalidated caches <em>(File &gt; Invalidate Caches…)</em> might resolve the current issue.</p></li>
 <li><p>When facing issues with deep dependencies and changes were made to the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file, executing <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--force</span></code> might resolve the issue.</p></li>
@@ -131,8 +146,8 @@
 </div></blockquote>
 </li>
 </ul>
-<div class="section" id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline"></a></h3>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>On the first startup, there might be issues with the <code class="docutils literal notranslate"><span class="pre">text_block</span></code> table.
 You can resolve the issue by executing <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">text_block</span> <span class="pre">CONVERT</span> <span class="pre">TO</span> <span class="pre">CHARACTER</span> <span class="pre">SET</span> <span class="pre">utf8mb4</span> <span class="pre">COLLATE</span> <span class="pre">utf8mb4_unicode_ci;</span></code> in your database.</p></li>
@@ -147,19 +162,19 @@ changes can also be applied to the production server. In case you encounter erro
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="client">
-<h3>Client<a class="headerlink" href="#client" title="Permalink to this headline"></a></h3>
+</section>
+<section id="client">
+<h3>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>If you are using a machine with limited RAM <em>(e.g. ~8 GB RAM)</em> you might have issues starting the Artemis Client. You can resolve this by following
 the description in <a class="reference internal" href="../#usingthecommandline"><span class="std std-ref">Using the command line</span></a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="programming-exercise-setup">
-<h2>Programming Exercise Setup<a class="headerlink" href="#programming-exercise-setup" title="Permalink to this headline"></a></h2>
-<div class="section" id="atlassian-setup-bamboo-bitbucket-and-jira">
-<h3>Atlassian Setup (Bamboo, Bitbucket and Jira)<a class="headerlink" href="#atlassian-setup-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="programming-exercise-setup">
+<h2>Programming Exercise Setup<a class="headerlink" href="#programming-exercise-setup" title="Permalink to this heading"></a></h2>
+<section id="atlassian-setup-bamboo-bitbucket-and-jira">
+<h3>Atlassian Setup (Bamboo, Bitbucket and Jira)<a class="headerlink" href="#atlassian-setup-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>When setting up the Bamboo, Bitbucket, and Jira, at the same time within the same browser, you might receive the message that the Jira token expired.
 You can resolve the issue by using another browser for configuring Jira, as there seems to be a synchronization problem within the browser.</p></li>
@@ -173,7 +188,7 @@ You need to create new Atlassian Licenses, which requires you to retrieve the se
 creating new <a href="https://my.atlassian.com/license/evaluation">trial licenses</a>.
 <ul>
     <li>
-     Bamboo: Retrive the Server ID and edit the license in <a href="http://localhost:8085/admin/updateLicense!doDefault.action">License key details</a> <i>(Administration > Licensing)</i>
+     Bamboo: Retrieve the Server ID and edit the license in <a href="http://localhost:8085/admin/updateLicense!doDefault.action">License key details</a> <i>(Administration > Licensing)</i>
     </li>
     <li>
      Bitbucket: Retrieve the Server ID and edit the license in <a href="http://localhost:7990/admin/license">License Settings</a> <i>(Administration > Licensing)</i>
@@ -186,9 +201,9 @@ creating new <a href="https://my.atlassian.com/license/evaluation">trial license
 </details></div></blockquote>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

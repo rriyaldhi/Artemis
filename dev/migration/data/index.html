@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Migration with Java &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -39,9 +41,18 @@
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/lectures/">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/exam_mode/">Exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user/discussion/">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/communication/">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/plagiarism-check/">Plagiarism checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/learning-analytics/">Learning Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/notifications/">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/user-experience/">User Experience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/grading/">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/courses/customizable/">Customizing Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/scaling/">Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/markdown-support/">Markdown Support</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="current">
@@ -58,16 +69,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../use-local-user-management/">Using local user management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../docker/">Builds and Dependency Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cypress/">Cypress Bamboo Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/accessRights/">Access Rights</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -95,10 +109,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="data-migration-with-java">
-<h1>Data Migration with Java<a class="headerlink" href="#data-migration-with-java" title="Permalink to this headline"></a></h1>
-<div class="section" id="changelog">
-<h2>1. Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h2>
+  <section id="data-migration-with-java">
+<h1>Data Migration with Java<a class="headerlink" href="#data-migration-with-java" title="Permalink to this heading"></a></h1>
+<section id="changelog">
+<h2>1. Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading"></a></h2>
 <p>The changelog can be found in <code class="code docutils literal notranslate"><span class="pre">src/main/java/config/migration/MigrationRegistry.java</span></code>. To create a new change, you have to do the following:</p>
 <ul class="simple">
 <li><p>Get the current time in the format <code class="code docutils literal notranslate"><span class="pre">YYYYMMDD_HHmmss</span></code>.</p></li>
@@ -106,16 +120,17 @@
 <li><p>Implement the required methods in your class and follow the JavaDoc.</p></li>
 <li><p>Add the class to the <code class="code docutils literal notranslate"><span class="pre">migrationEntryMap</span></code> attribute in the <code class="code docutils literal notranslate"><span class="pre">MigrationRegistry.java</span></code> together with the next Integer key inside the constructor.</p></li>
 </ul>
-</div>
-<div class="section" id="development">
-<h2>2. Development<a class="headerlink" href="#development" title="Permalink to this headline"></a></h2>
+</section>
+<section id="development">
+<h2>2. Development<a class="headerlink" href="#development" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>All executed entries are saved in the table <code class="code docutils literal notranslate"><span class="pre">migration_changelog</span></code>. If you delete entries, they get executed again.</p></li>
 <li><p>Test your changes locally first, and only commit changes you are confident that work.</p></li>
 <li><p>Before deploying any database changes to a test server, ask for official permission from the project lead. If the changes don’t get approved, manual rollbacks can be necessary, which are avoidable.</p></li>
+<li><p>If queries fail due to the authorization object being null, call <cite>SecurityUtils.setAuthorizationObject()</cite> beforehand to set a dummy object.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
